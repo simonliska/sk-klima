@@ -1,0 +1,2657 @@
+[
+  {
+    "regionSlug": "bratislavsky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": -0.6,
+        "displayValue": "-0,6",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -0.8,
+        "displayValue": "-0,8",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -0.9,
+        "displayValue": "-0,9",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.9,
+        "displayValue": "+0,9",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.8,
+        "displayValue": "+0,8",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.9,
+        "displayValue": "+0,9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.6,
+        "displayValue": "+1,6",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "bratislavsky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 21,
+        "displayValue": "21",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 4,
+        "displayValue": "4",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 23,
+        "displayValue": "23",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 17,
+        "displayValue": "17",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 21,
+        "displayValue": "21",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 23,
+        "displayValue": "23",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 23,
+        "displayValue": "23",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 27,
+        "displayValue": "27",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "bratislavsky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 3,
+        "displayValue": "3",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 9,
+        "displayValue": "9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 13,
+        "displayValue": "13",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "bratislavsky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 91,
+        "displayValue": "91",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 75,
+        "displayValue": "75",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 75,
+        "displayValue": "75",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 102,
+        "displayValue": "102",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 70,
+        "displayValue": "70",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 71,
+        "displayValue": "71",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 74,
+        "displayValue": "74",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 58,
+        "displayValue": "58",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "bratislavsky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.7,
+        "displayValue": "0,7",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.4,
+        "displayValue": "0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.9,
+        "displayValue": "0,9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.0,
+        "displayValue": "1,0",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trnavsky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": -0.6,
+        "displayValue": "-0,6",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -0.8,
+        "displayValue": "-0,8",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -1.0,
+        "displayValue": "-1,0",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.6,
+        "displayValue": "+0,6",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.9,
+        "displayValue": "+0,9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.5,
+        "displayValue": "+1,5",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trnavsky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 23,
+        "displayValue": "23",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 4,
+        "displayValue": "4",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 24,
+        "displayValue": "24",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 17,
+        "displayValue": "17",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 22,
+        "displayValue": "22",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 25,
+        "displayValue": "25",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 31,
+        "displayValue": "31",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 37,
+        "displayValue": "37",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trnavsky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 3,
+        "displayValue": "3",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 8,
+        "displayValue": "8",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 12,
+        "displayValue": "12",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trnavsky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 90,
+        "displayValue": "90",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 83,
+        "displayValue": "83",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 77,
+        "displayValue": "77",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 105,
+        "displayValue": "105",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 73,
+        "displayValue": "73",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 74,
+        "displayValue": "74",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 75,
+        "displayValue": "75",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 59,
+        "displayValue": "59",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trnavsky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.8,
+        "displayValue": "0,8",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 0.2,
+        "displayValue": "0,2",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.4,
+        "displayValue": "0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.9,
+        "displayValue": "0,9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.0,
+        "displayValue": "1,0",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trenciansky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": -0.5,
+        "displayValue": "-0,5",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -1.2,
+        "displayValue": "-1,2",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.2,
+        "displayValue": "+0,2",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -1.1,
+        "displayValue": "-1,1",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.3,
+        "displayValue": "+0,3",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.4,
+        "displayValue": "+0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.2,
+        "displayValue": "+1,2",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trenciansky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 12,
+        "displayValue": "12",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 14,
+        "displayValue": "14",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 13,
+        "displayValue": "13",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 7,
+        "displayValue": "7",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 13,
+        "displayValue": "13",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 24,
+        "displayValue": "24",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 28,
+        "displayValue": "28",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trenciansky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 3,
+        "displayValue": "3",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 5,
+        "displayValue": "5",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trenciansky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 121,
+        "displayValue": "121",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 104,
+        "displayValue": "104",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 99,
+        "displayValue": "99",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 120,
+        "displayValue": "120",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 105,
+        "displayValue": "105",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 98,
+        "displayValue": "98",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 97,
+        "displayValue": "97",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 80,
+        "displayValue": "80",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "trenciansky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.8,
+        "displayValue": "0,8",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0.6,
+        "displayValue": "0,6",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.2,
+        "displayValue": "0,2",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 1.7,
+        "displayValue": "1,7",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.3,
+        "displayValue": "0,3",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.1,
+        "displayValue": "0,1",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.2,
+        "displayValue": "1,2",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.3,
+        "displayValue": "1,3",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "nitriansky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": -0.3,
+        "displayValue": "-0,3",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -0.7,
+        "displayValue": "-0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.8,
+        "displayValue": "+0,8",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -1.0,
+        "displayValue": "-1,0",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.4,
+        "displayValue": "+0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.6,
+        "displayValue": "+0,6",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.2,
+        "displayValue": "+1,2",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "nitriansky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 23,
+        "displayValue": "23",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 5,
+        "displayValue": "5",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 27,
+        "displayValue": "27",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 19,
+        "displayValue": "19",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 24,
+        "displayValue": "24",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 27,
+        "displayValue": "27",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 34,
+        "displayValue": "34",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 40,
+        "displayValue": "40",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "nitriansky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 2,
+        "displayValue": "2",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 7,
+        "displayValue": "7",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 11,
+        "displayValue": "11",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "nitriansky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 88,
+        "displayValue": "88",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 74,
+        "displayValue": "74",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 73,
+        "displayValue": "73",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 104,
+        "displayValue": "104",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 76,
+        "displayValue": "76",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 78,
+        "displayValue": "78",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 81,
+        "displayValue": "81",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 64,
+        "displayValue": "64",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "nitriansky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.7,
+        "displayValue": "0,7",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0.4,
+        "displayValue": "0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 1.1,
+        "displayValue": "1,1",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.4,
+        "displayValue": "0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.1,
+        "displayValue": "0,1",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.9,
+        "displayValue": "0,9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.0,
+        "displayValue": "1,0",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "zilinsky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.1,
+        "displayValue": "+0,1",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -1.2,
+        "displayValue": "-1,2",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.5,
+        "displayValue": "+0,5",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -0.7,
+        "displayValue": "-0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 1.2,
+        "displayValue": "+1,2",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.1,
+        "displayValue": "+1,1",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.6,
+        "displayValue": "+1,6",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "zilinsky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 4,
+        "displayValue": "4",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 4,
+        "displayValue": "4",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 11,
+        "displayValue": "11",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 13,
+        "displayValue": "13",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "zilinsky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0,
+        "displayValue": "0",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1,
+        "displayValue": "1",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "zilinsky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 150,
+        "displayValue": "150",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 154,
+        "displayValue": "154",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 124,
+        "displayValue": "124",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 145,
+        "displayValue": "145",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 148,
+        "displayValue": "148",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 125,
+        "displayValue": "125",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 128,
+        "displayValue": "128",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 110,
+        "displayValue": "110",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "zilinsky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.7,
+        "displayValue": "0,7",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 1.5,
+        "displayValue": "1,5",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.9,
+        "displayValue": "0,9",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 3.9,
+        "displayValue": "3,9",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.4,
+        "displayValue": "0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.5,
+        "displayValue": "0,5",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.6,
+        "displayValue": "1,6",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.8,
+        "displayValue": "1,8",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "banskobystricky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.4,
+        "displayValue": "+0,4",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -0.9,
+        "displayValue": "-0,9",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.5,
+        "displayValue": "+0,5",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -0.7,
+        "displayValue": "-0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.6,
+        "displayValue": "+0,6",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.8,
+        "displayValue": "+0,8",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.1,
+        "displayValue": "+1,1",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.6,
+        "displayValue": "+1,6",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "banskobystricky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 10,
+        "displayValue": "10",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 15,
+        "displayValue": "15",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 12,
+        "displayValue": "12",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 11,
+        "displayValue": "11",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 21,
+        "displayValue": "21",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 26,
+        "displayValue": "26",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "banskobystricky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 2,
+        "displayValue": "2",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 3,
+        "displayValue": "3",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "banskobystricky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 112,
+        "displayValue": "112",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 107,
+        "displayValue": "107",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 115,
+        "displayValue": "115",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 129,
+        "displayValue": "129",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 116,
+        "displayValue": "116",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 115,
+        "displayValue": "115",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 109,
+        "displayValue": "109",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 92,
+        "displayValue": "92",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "banskobystricky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.3,
+        "displayValue": "0,3",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 1.0,
+        "displayValue": "1,0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 1.1,
+        "displayValue": "1,1",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.6,
+        "displayValue": "0,6",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.3,
+        "displayValue": "0,3",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.3,
+        "displayValue": "1,3",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.5,
+        "displayValue": "1,5",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "presovsky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": -0.1,
+        "displayValue": "-0,1",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -0.9,
+        "displayValue": "-0,9",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.5,
+        "displayValue": "+0,5",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -0.4,
+        "displayValue": "-0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 1.0,
+        "displayValue": "+1,0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 1.3,
+        "displayValue": "+1,3",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.2,
+        "displayValue": "+1,2",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.8,
+        "displayValue": "+1,8",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "presovsky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 4,
+        "displayValue": "4",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 5,
+        "displayValue": "5",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 3,
+        "displayValue": "3",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 5,
+        "displayValue": "5",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 14,
+        "displayValue": "14",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 18,
+        "displayValue": "18",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "presovsky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1,
+        "displayValue": "1",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 2,
+        "displayValue": "2",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "presovsky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 128,
+        "displayValue": "128",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 120,
+        "displayValue": "120",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 119,
+        "displayValue": "119",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 127,
+        "displayValue": "127",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 123,
+        "displayValue": "123",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 110,
+        "displayValue": "110",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 118,
+        "displayValue": "118",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 101,
+        "displayValue": "101",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "presovsky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0.4,
+        "displayValue": "0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.2,
+        "displayValue": "0,2",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 2.6,
+        "displayValue": "2,6",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.3,
+        "displayValue": "0,3",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.3,
+        "displayValue": "0,3",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.4,
+        "displayValue": "1,4",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.6,
+        "displayValue": "1,6",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "kosicky",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": -0.4,
+        "displayValue": "-0,4",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -1.1,
+        "displayValue": "-1,1",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.2,
+        "displayValue": "+0,2",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -0.6,
+        "displayValue": "-0,6",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.9,
+        "displayValue": "+0,9",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.9,
+        "displayValue": "+0,9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.5,
+        "displayValue": "+1,5",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "kosicky",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 9,
+        "displayValue": "9",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 16,
+        "displayValue": "16",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 11,
+        "displayValue": "11",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 4,
+        "displayValue": "4",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 16,
+        "displayValue": "16",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 22,
+        "displayValue": "22",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 28,
+        "displayValue": "28",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "kosicky",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 3,
+        "displayValue": "3",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 6,
+        "displayValue": "6",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "kosicky",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 109,
+        "displayValue": "109",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 99,
+        "displayValue": "99",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 106,
+        "displayValue": "106",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 115,
+        "displayValue": "115",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 98,
+        "displayValue": "98",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 98,
+        "displayValue": "98",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 103,
+        "displayValue": "103",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 86,
+        "displayValue": "86",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "kosicky",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 1.3,
+        "displayValue": "1,3",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.1,
+        "displayValue": "0,1",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.2,
+        "displayValue": "1,2",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.3,
+        "displayValue": "1,3",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "slovensko",
+    "metricId": "avg_temp",
+    "unit": "°C vs 1991–2020",
+    "points": [
+      {
+        "year": 1950,
+        "value": -0.2,
+        "displayValue": "-0,2",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": -0.9,
+        "displayValue": "-0,9",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.5,
+        "displayValue": "+0,5",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": -0.8,
+        "displayValue": "-0,8",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.7,
+        "displayValue": "+0,7",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.8,
+        "displayValue": "+0,8",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 0.9,
+        "displayValue": "+0,9",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.5,
+        "displayValue": "+1,5",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "slovensko",
+    "metricId": "tropical_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 13,
+        "displayValue": "13",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 2,
+        "displayValue": "2",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 16,
+        "displayValue": "16",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 12,
+        "displayValue": "12",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 10,
+        "displayValue": "10",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 15,
+        "displayValue": "15",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 22,
+        "displayValue": "22",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 27,
+        "displayValue": "27",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "slovensko",
+    "metricId": "tropical_nights",
+    "unit": "nocí / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 1,
+        "displayValue": "1",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0,
+        "displayValue": "0",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 4,
+        "displayValue": "4",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 7,
+        "displayValue": "7",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "slovensko",
+    "metricId": "frost_days",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 111,
+        "displayValue": "111",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 102,
+        "displayValue": "102",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 98,
+        "displayValue": "98",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 118,
+        "displayValue": "118",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 101,
+        "displayValue": "101",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 96,
+        "displayValue": "96",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 98,
+        "displayValue": "98",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 81,
+        "displayValue": "81",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "regionSlug": "slovensko",
+    "metricId": "heavy_precip",
+    "unit": "dní / rok",
+    "points": [
+      {
+        "year": 1950,
+        "value": 0.5,
+        "displayValue": "0,5",
+        "status": "observed"
+      },
+      {
+        "year": 1960,
+        "value": 0.5,
+        "displayValue": "0,5",
+        "status": "observed"
+      },
+      {
+        "year": 2000,
+        "value": 0.2,
+        "displayValue": "0,2",
+        "status": "observed"
+      },
+      {
+        "year": 2010,
+        "value": 1.5,
+        "displayValue": "1,5",
+        "status": "observed"
+      },
+      {
+        "year": 2020,
+        "value": 0.4,
+        "displayValue": "0,4",
+        "status": "observed"
+      },
+      {
+        "year": 2025,
+        "value": 0.2,
+        "displayValue": "0,2",
+        "status": "observed"
+      },
+      {
+        "year": 2050,
+        "value": 1.2,
+        "displayValue": "1,2",
+        "status": "projected"
+      },
+      {
+        "year": 2100,
+        "value": 1.3,
+        "displayValue": "1,3",
+        "status": "projected"
+      }
+    ],
+    "referencePeriod": "1991–2020",
+    "scenario": "RCP4.5",
+    "sourceId": "E-OBS + SHMÚ",
+    "lastUpdated": "2026-09-12"
+  }
+]

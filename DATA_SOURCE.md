@@ -1,0 +1,284 @@
+# DATA_SOURCE.md — Real SHMÚ data for sk-klima
+
+> Status: **PROPOSAL — awaiting approval.** No frontend changes made.
+> All facts below were verified live against https://opendata.shmu.sk on 2026-09-11.
+> No values in this document are invented; anything unverified is marked as such.
+
+## 1. Source overview
+
+- **Server:** https://opendata.shmu.sk (plain Apache directory index, no registration)
+- **License:** CC BY 4.0 (both Slovak and English deeds linked in `README.txt`).
+  Attribution of SHMÚ is **mandatory** in the app.
+- **Structure (verified):**
+  - `meteorology/climate/recent/data/daily/YYYY-MM/kli-inter%20-%20YYYY-MM.json`
+    — daily climatological observations, one JSON file per month (~3.3 MB).
+  - `meteorology/climate/recent/metadata/kli_inter_metadata.json` (+ `.txt`)
+    — 72-column data dictionary (Slovak descriptions + units).
+  - `meteorology/products/grids/climateAdaptation/standardNormals/KlimaAdapt_*.zip`
+    — 19 files: gridded 1991–2020 climate normals (GeoTIFF).
+  - `meteorology/products/grids/climateAdaptation/scenarios/rcp45/KlimaAdapt_*_{2021_2050,2071_2100}.zip`
+    — gridded scenario projections (GeoTIFF). Server poskytuje aj `rcp85/`,
+    tento web ich nepoužíva.
+  - `meteorology/climate/now/`, `meteorology/precipitation/now/`
+    — rolling ~30-day 1-minute AWS data (not needed for this task).
+- **Dataset catalogue entries:** `https://data.slovensko.sk/datasety/1cd736f6-291c-44e5-ba1d-1683bc5c3e98`
+  (daily climate), `9bdd8179-9cb0-46c6-a0d0-a52e50d2e2bc` (1-min AWS).
+  Catalogue is a JS SPA; machine-readable metadata was not retrievable.
+
+## 2. Exact files needed
+
+### A. Daily observations (indicators 1–5, recent period)
+
+- Pattern: `meteorology/climate/recent/data/daily/<YYYY-MM>/kli-inter%20-%20<YYYY-MM>.json`
+- Top-level keys: `id, dataset ("Climatological stations"), interval ("1 day"), frequency, statistics, data`.
+- `data` = array of daily rows. Verified May 2025 file:
+  `statistics = {"stations_count": 101, "records_count": 3131}`, full month 2025-05-01…31.
+- Relevant columns (from official metadata):
+  - `ind_kli` — numeric station code ("klimatologický indikatív stanice"), e.g. 11800…11995
+  - `datum` — ISO date (`2025-05-01T00:00:00`)
+  - `t_max` — daily max, 21h–21h MSSC, °C
+  - `t_min` — daily min, 21h–21h MSSC, °C
+  - `t7, t14, t21` — term observations, °C (no `t_avg` column exists)
+  - `zra_uhrn` — daily precipitation total 7h–7h next day, mm
+  - `sneh_novy, sneh_pokr` — new/total snow cover, cm
+
+### B. 1991–2020 normals grids (reference period for the app)
+
+19 ZIPs, each = `README.txt` + `.tif` + `.tfw` + `.tif.aux.xml`.
+Verified content (500 m GeoTIFF; `.tfw` pixel size 500; CRS is S-JTSK per
+coordinates — pipeline will confirm EPSG:5514 with `gdalinfo`):
+
+| File | Content |
+|---|---|
+| `KlimaAdapt_PriemernaRocnaTeplotaVzduchu_1991_2020.zip` | Annual mean temperature, °C (verified stats: national mean 8.56, range −2.36…11.49) |
+| `KlimaAdapt_PriemernyPocetTropickychDni_1991_2020.zip` | Mean annual tropical days |
+| `KlimaAdapt_PriemernyPocetTropickychNoci_1991_2020.zip` | Mean annual tropical nights |
+| `KlimaAdapt_PriemernyPocetMrazovychDni_1991_2020.zip` | Mean annual frost days |
+| `KlimaAdapt_PriemerneRocneAtmosferickeZrazky_1991_2020.zip` | Mean annual precipitation, mm |
+| (+ seasonal temp/precip, summer/ice days, dry/cold spells, days >40 mm) | Bonus indicators for later |
+
+### C. Scenario grids (future — replaces demo 2050/2100 later)
+
+`scenarios/rcp45/`, periods **2021–2050** and **2071–2100**,
+same 19-indicator set (incl. tropical days/nights, frost days, mean temp, precip).
+(Server ponúka aj `rcp85/`, tento web používa len RCP4.5.)
+
+## 3. Indicator computation (daily data)
+
+Per station, per year, from daily rows:
+
+1. **Annual mean temperature** — daily mean is NOT provided.
+   Use standard Central-European climatological formula and document it:
+   `t_day = (t7 + t14 + 2·t21) / 4`, then arithmetic mean over the year.
+2. **Tropical days** — count days with `t_max >= 30.0`.
+3. **Tropical nights** — count days with `t_min >= 20.0`.
+   (SHMÚ operational definition; thresholds to be cross-checked against the
+   RPI metadata record before publishing.)
+4. **Frost days** — count days with `t_min < 0.0`.
+5. **Annual precipitation** — `SUM(zra_uhrn)` with `null → 0.0 mm`
+   (verified: on rainy 2025-05-05 only 1 of 101 stations was null;
+   on dry days nulls dominate; one station, 11974, is always null = non-measuring).
+
+**Completeness rule (proposed):** publish an annual value only if ≥ 90% of days
+have non-null temperature (i.e. ≥ 329/365 days); otherwise mark the year
+`insufficient_data` and exclude it. Precipitation sums always published with
+`precip_completeness` fraction attached.
+
+## 4. Station identifiers (verified, no guessing)
+
+- Codes are 5-digit numbers (`ind_kli`), 101 distinct codes in the May 2025 file.
+- **Verified:** the numbering matches WMO SYNOP numbering — station `11801`
+  appears both in `kli-inter` and in live Slovak SYNOP traffic
+  (checked via `ogimet.com/cgi-bin/getsynop?...&state=Slo`).
+- **Names and coordinates are NOT included in any opendata file.**
+  A `ind_kli → name/lat/lon` table must be built from an external authority
+  (SHMÚ station directory / ECA&D station list) and stored as
+  `scripts/shmu_pipeline/stations.csv` with a `source` column per row.
+  The pipeline MUST NOT contain hand-guessed mappings.
+
+### Proposed 8 representative stations (names only — codes pending verification)
+
+One per kraj, all are real SHMÚ stations appearing on shmu.sk's public
+current-weather board: **Bratislava** (BA) · **Piešťany** (TT) ·
+**Trenčín** or Prievidza (TN) · **Hurbanovo** or Nitra (NR — Hurbanovo has
+the flagship series since 1872) · **Žilina** (ZA) · **Sliač** (BB) ·
+**Poprad** or Prešov (PO) · **Košice** (KE).
+
+## 5. Available historical period (important limitation)
+
+- `climate/recent/data/daily/` contains **only 2025-01 … 2026-05**
+  (17 monthly files; dataset `issued: 2025-06-06`).
+- **There is NO multi-decadal daily station archive on opendata.shmu.sk.**
+  Consequences:
+  - `1900 / 1950 / 2000` station values **cannot** come from this server.
+  - Realistic division of labour:
+    - **Reference / "today":** 1991–2020 normals grids (sampled at the 8 stations
+      or averaged per kraj) — fully real SHMÚ data. ✅
+    - **Trend / history:** ECA&D / E-OBS gridded observations (Copernicus,
+      homogenised, 1950→present) — proposed as the second source, needs
+      separate approval.
+    - **Future:** SHMÚ RCP4.5 grids.
+    - **Recent validation:** 2025+ daily JSON validates our threshold logic
+      against the grids.
+
+## 6. Raw vs quality-controlled
+
+- **Daily `kli-inter` (recent):** operational / near-real-time character —
+  current month is published, missing values are bare `null` with **no QC flags**
+  in the schema. Treat as **preliminary, not final validated** data.
+- **Normals + scenario grids:** quality-controlled climatological products
+  derived from homogenised station series ("normálové obdobie 1991–2020").
+  Treat as **authoritative**.
+
+## 7. Limitations and open questions
+
+1. No `t_avg` column → daily-mean formula is our methodological choice (documented above).
+2. `zra_uhrn: null ≈ 0 mm` is an inference (strong evidence, §3) — pipeline asserts
+   it: a station-day with `null` precip but `jav_a` (rain phenomenon) present is
+   counted as missing, not zero.
+3. Exact index thresholds (≥30 / ≥20 / <0) to be confirmed from the RPI metadata
+   record; pipeline cross-checks grid-sampled counts vs daily-computed counts
+   where periods overlap.
+4. Scenario grids are **RCP4.5 (CMIP5)** for 2021–2050 / 2071–2100;
+   the UI labels future values as RCP4.5 projections (SHMÚ provides
+   RCP8.5 grids too, but this web does not use them).
+5. No snow-cover normals grid exists → snow indicators were deleted
+   (no real data source).
+6. Grid CRS assumed S-JTSK (EPSG:5514) from `.tfw` — pipeline verifies with
+   `gdalinfo` and fails loudly otherwise.
+7. Station name/code mapping is external — unverified mappings are blocked by
+   a pipeline assertion (every `ind_kli` used must exist in `stations.csv`
+   with a citable source).
+
+## 8. Proposed reproducible pipeline (to be implemented after approval)
+
+```
+scripts/shmu_pipeline/
+  stations.csv          # ind_kli,name,lat,lon,elevation_m,source  (hand-verified, cited)
+  requirements.txt      # requests, pandas, numpy, rasterio, geopandas/fiona
+  01_fetch_daily.py     # download kli-inter monthly JSONs 2025-01→present, hash + archive raw/
+  02_fetch_grids.py     # download normals + rcp45 zips, verify README, archive
+  03_compute_indicators.py  # daily → annual indicators per §3 (+ completeness flags)
+  04_sample_grids.py    # sample .tif at station coords (and kraj means) → reference values
+  05_emit_frontend.py   # write src/data/observations.real.json in the EXISTING
+                        # ClimateRecord schema with status:"observed"/"projected",
+                        # sourceId:"SHMU", referencePeriod, scenario, lastUpdated
+  checks.py             # assertions: code mapping, completeness, threshold sanity,
+                        # grid-vs-daily consistency, no invented values
+```
+
+- Raw downloads are content-hashed and kept in `data_raw/` (git-ignored);
+  only `stations.csv` + emitted JSON are committed.
+- Emission reuses the current `ClimateRecord` schema — **no frontend redesign**;
+  `DemoBadge` disappears automatically where `status != "demo"`.
+- Snow and drought indices were deleted (no real data source);
+  heavy-rain index (days >40 mm) is computed from real E-OBS + SHMÚ data.
+
+## 9. What approval covers
+
+1. Indicator definitions + completeness rule (§3).
+2. 8 station names (§4) — final `ind_kli` codes verified before coding.
+3. Division of labour: SHMÚ grids = reference, E-OBS/ECA&D = history trend (follow-up), RCP grids = future with relabelling, daily JSON = validation only.
+4. Permission to implement `scripts/shmu_pipeline/` as specified in §8.
+
+## 10. Povinné atribučné znenie (CC BY 4.0)
+
+Licencia CC BY 4.0 vyžaduje pri každom použití uviesť autora, odkaz na
+licenciu a označenie zmien. Nižšie sú záväzné formulácie pre tento projekt
+— používajú sa doslovne, bez preformulovania.
+
+### 10.1 Krátky odznak (pri každom čísle / v `SourceBadge`)
+
+> Zdroj: SHMÚ · CC BY 4.0
+
+S odkazom na `https://opendata.shmu.sk` (zdroj) a
+`https://creativecommons.org/licenses/by/4.0/deed.sk` (licencia).
+
+### 10.2 Plné znenie (stránka `/metodika`, pätička, pod grafmi)
+
+> Zdroj dát: Slovenský hydrometeorologický ústav (SHMÚ), otvorené dáta
+> opendata.shmu.sk, licencia CC BY 4.0
+> (https://creativecommons.org/licenses/by/4.0/deed.sk).
+> Údaje upravené a agregované do ročných indikátorov.
+
+Anglická verzia (ak bude EN mutácia):
+
+> Data source: Slovak Hydrometeorological Institute (SHMI), open data
+> opendata.shmu.sk, licence CC BY 4.0
+> (https://creativecommons.org/licenses/by/4.0/deed.en).
+> Data modified and aggregated into annual indicators.
+
+### 10.3 Citácia datasetu (dokumentácia, `stations.csv`, commit messages)
+
+> SHMÚ (Slovenský hydrometeorologický ústav). Otvorené dáta:
+> `<názov datasetu / URL súboru>`, stiahnuté `<RRRR-MM-DD>`,
+> licencia CC BY 4.0. Agregované do ročných indikátorov
+> (denný priemer `(t7+t14+2·t21)/4`; `zra_uhrn: null → 0 mm`).
+
+### 10.4 Pravidlá použitia
+
+1. Krátke znenie (§10.1) sa zobrazuje pri **každom** čísle so
+   `status: "observed"` / `"projected"` a `sourceId: "SHMU"`.
+2. Plné znenie (§10.2) je vždy na `/metodika` a v pätičke.
+3. **Nikdy nepoužívať dáta z `www.shmu.sk`** (články, tabuľky, grafy na
+   webe) — tie spadajú pod prísnejšie podmienky („len pre vlastnú
+   potrebu"). Výhradne `opendata.shmu.sk` a gridy z
+   `meteorology/products/grids/`.
+4. Pri každom datasete sa eviduje URL + dátum stiahnutia + hash
+   (pipeline `data_raw/`, git-ignored) — preukázateľná proveniencia.
+
+## 11. E-OBS / ECA&D — história 1950–2000 (overené 2026-09-11)
+
+### 11.1 Dostupnosť: ÁNO, technicky vyhovuje
+
+- **Aktuálna verzia: E-OBSv33.0e** (vydaná máj 2026), pokrýva
+  **1950-01-01 → 2025-12-31**, denné hodnoty, grid **0,1° (~11 km)**
+  aj 0,25°, formát NetCDF-4, premenné `TX` (denné max), `TN` (denné min),
+  `TG` (priemer), `RR` (zrážky) + tlak, vietor, vlhkosť, radiácia.
+  Zdroj: https://www.ecad.eu (KNMI) a Copernicus CDS dataset
+  `insitu-gridded-observations-europe` (DOI: 10.24381/cds.151d3ec6).
+- Naše indikátory sa dajú počítať **rovnakými prahmi** ako zo SHMÚ
+  (≥30 / ≥20 / <0, súčet zrážok) — buď výberom bunky nad stanicou,
+  alebo priemerom buniek za kraj.
+- ECA&D staničné denné rady (vrátane slovenských staníc) sú čiastočne
+  stiahnuteľné; aktualizované do 2026-01-31.
+
+### 11.2 Licencia: POZOR — nekomerčný výskum a vzdelávanie
+
+Doslovné znenie licencie (E-OBS product licence rev. 1, CDS):
+
+> "These data … are strictly for use in **non-commercial research and
+> education projects only**.
+
+**Verdikt pre náš projekt: podmienečne.** Verejný osvetový web má blízko
+k "education", ale ak má projekt **akýkoľvek komerčný prvok** (firma ako
+prevádzkovateľ, reklama, platené služby), hrozí porušenie licencie.
+
+### 11.3 Povinná citácia E-OBS (ak sa použije)
+
+Doslovne, pri každom čísle odvodenom z E-OBS + na `/metodika`:
+
+> "We acknowledge the E-OBS dataset and the data providers in the ECA&D
+> project (https://www.ecad.eu). Cornes, R., G. van der Schrier,
+> E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of
+> the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res.
+> Atmos., 123. doi:10.1029/2017JD028200"
+>
+> Verzia datasetu: E-OBSv33.0e (príp. novšia). DOI: 10.24381/cds.151d3ec6.
+
+(CDS variant navyše uvádza Copernicus Climate Change Service,
+https://surfobs.climate.copernicus.eu — použije sa podľa zdroja stiahnutia.)
+
+### 11.4 Metodické upozornenia E-OBS
+
+1. Hustota staníc sa v čase mení (riedka v 50. rokoch) — trendy brať
+   s rezervou; pre trendy existuje homogenizovaná verzia (HOM).
+2. 24-hodinové okno merania sa líši podľa krajiny (polnoc–polnoc vs.
+   ráno–ráno) — nepresne lícuje s oknami SHMÚ (21h–21h / 7h–7h MSSC).
+3. Odporúča sa pracovať so strednou hodnotou ensemblu (ensemble mean).
+
+### 11.5 Rozhodnutie: časová os bez rokov pred 1950
+
+Schválené: všetko pred rokom 1950 sa odstraňuje (nie sú dáta).
+Nová časová os MVP: **1950 → 2000 → 2025 → 2050 → 2100**.
+Frontend úprava (odstránenie 1900) sa spraví pri implementácii pipeline.

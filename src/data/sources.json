@@ -1,0 +1,23 @@
+[
+  {
+    "id": "SHMU",
+    "nameSk": "Slovenský hydrometeorologický ústav (SHMÚ)",
+    "name": "Slovak Hydrometeorological Institute",
+    "url": "https://opendata.shmu.sk",
+    "roleSk": "Klimatický normál 1991–2020 (500 m gridy): základ porovnania odchýlok a zmien. Licencia CC BY 4.0."
+  },
+  {
+    "id": "EOBS",
+    "nameSk": "E-OBS (ECA&D / Copernicus C3S)",
+    "name": "E-OBS ensemble dataset",
+    "url": "https://www.ecad.eu",
+    "roleSk": "Pozorované ročné indikátory 1950–2025 (denný grid 0,1°): tropické dni/noci, mrazové dni, dni so zrážkami nad 40 mm a priemerná teplota. Len na nekomerčné vzdelávacie použitie."
+  },
+  {
+    "id": "IPCC",
+    "nameSk": "IPCC — Medzivládny panel pre klimatickú zmenu",
+    "name": "Intergovernmental Panel on Climate Change",
+    "url": "https://www.ipcc.ch/",
+    "roleSk": "Výkladový rámec emisných scenárov (RCP) a neistoty projekcií — z IPCC sa nepreberajú žiadne číselné údaje."
+  }
+]

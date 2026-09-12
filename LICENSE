@@ -1,0 +1,46 @@
+MIT License
+
+Copyright (c) 2026 Simon Liska
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+DATA LICENCE NOTE (not covered by the MIT licence above):
+
+This repository contains derived climate indicators
+(`src/data/climate.real.json`, annual aggregates only — no raw grids).
+
+- E-OBS derived values (history up to 2025): strictly for use in
+  NON-COMMERCIAL research and education projects only. Any commercial
+  element (company as operator, advertising, paid services) violates the
+  E-OBS licence — such use requires a different history source.
+  Required acknowledgment (see also the in-app `/metodika` page):
+  "We acknowledge the E-OBS dataset and the data providers in the ECA&D
+  project (https://www.ecad.eu). Cornes, R., G. van der Schrier,
+  E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of
+  the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res.
+  Atmos., 123. doi:10.1029/2017JD028200. Dataset version: E-OBSv33.0e.
+  DOI: 10.24381/cds.151d3ec6."
+- SHMÚ derived values (1991–2020 normals, RCP4.5 projections):
+  source SHMÚ open data (https://opendata.shmu.sk), licence CC BY 4.0
+  (https://creativecommons.org/licenses/by/4.0/deed.sk).
+  Data modified and aggregated into annual indicators.
+
+See DATA_SOURCE.md for full provenance.

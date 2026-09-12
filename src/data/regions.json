@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "bratislavsky",
+    "name": "Bratislavský kraj",
+    "shortName": "Bratislava",
+    "populationApprox": "≈ 730-tisíc",
+    "characterSk": "Nížina, mesto, Dunaj"
+  },
+  {
+    "slug": "trnavsky",
+    "name": "Trnavský kraj",
+    "shortName": "Trnava",
+    "populationApprox": "≈ 560-tisíc",
+    "characterSk": "Nížina, polia, málo lesov"
+  },
+  {
+    "slug": "trenciansky",
+    "name": "Trenčiansky kraj",
+    "shortName": "Trenčín",
+    "populationApprox": "≈ 580-tisíc",
+    "characterSk": "Údolie Váhu, kopce"
+  },
+  {
+    "slug": "nitriansky",
+    "name": "Nitriansky kraj",
+    "shortName": "Nitra",
+    "populationApprox": "≈ 670-tisíc",
+    "characterSk": "Teplá nížina, polia"
+  },
+  {
+    "slug": "zilinsky",
+    "name": "Žilinský kraj",
+    "shortName": "Žilina",
+    "populationApprox": "≈ 690-tisíc",
+    "characterSk": "Hory, doliny, lesy"
+  },
+  {
+    "slug": "banskobystricky",
+    "name": "Banská Bystrica",
+    "shortName": "Banská Bystrica",
+    "populationApprox": "≈ 620-tisíc",
+    "characterSk": "Juh nížina, sever hory"
+  },
+  {
+    "slug": "presovsky",
+    "name": "Prešovský kraj",
+    "shortName": "Prešov",
+    "populationApprox": "≈ 820-tisíc",
+    "characterSk": "Tatry, Šariš, Spiš"
+  },
+  {
+    "slug": "kosicky",
+    "name": "Košický kraj",
+    "shortName": "Košice",
+    "populationApprox": "≈ 780-tisíc",
+    "characterSk": "Nížina, kras, mesto"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "byvanie",
+    "icon": "🏠",
+    "titleSk": "Bývanie",
+    "headlineSk": "Očakáva sa častejšie prehrievanie bytov v lete",
+    "statSk": "Viac tropických dní aj nocí",
+    "explanationSk": "Viac horúcich dní znamená väčšiu záťaž na prehrievanie budov. Najviac to pocítia podkrovné byty a domy bez tienenia.",
+    "praxSk": "Pomáha vonkajšie tienenie, vetranie v noci a izolácia. Klimatizácia zvyšuje spotrebu aj účty."
+  },
+  {
+    "id": "zdravie",
+    "icon": "❤️",
+    "titleSk": "Zdravie",
+    "headlineSk": "Očakáva sa väčšia záťaž horúčav na telo",
+    "statSk": "Viac tropických nocí bez ochladenia",
+    "explanationSk": "Dlhé horúčavy a teplé noci zvyšujú únavu a riziko pre seniorov, malé deti a ľudí s chronickými ochoreniami.",
+    "praxSk": "Piť vodu, obmedziť námahu na poludnie, sledovať zraniteľných susedov počas horúčav."
+  },
+  {
+    "id": "voda",
+    "icon": "💧",
+    "titleSk": "Voda",
+    "headlineSk": "Dlhšie obdobia sucha, tlak na vodu",
+    "statSk": "Vyššie riziko sucha",
+    "explanationSk": "Dlhšie obdobia bez dažďa môžu zvýšiť tlak na vodné zdroje, studne a záhrady — najmä na juhu.",
+    "praxSk": "Zadržiavanie dažďovej vody, úsporné zalievanie, tieň a mulč v záhrade."
+  },
+  {
+    "id": "potraviny",
+    "icon": "🌾",
+    "titleSk": "Potraviny",
+    "headlineSk": "Mení sa to, čo sa urodí",
+    "statSk": "Teplo a sucho menia podmienky",
+    "explanationSk": "Meniace sa podmienky ovplyvňujú úrodu, škodcov a vhodnosť plodín. Môže to ovplyvniť aj ceny.",
+    "praxSk": "Lokálne a sezónne potraviny tak môžu dávať ešte väčší zmysel."
+  },
+  {
+    "id": "doprava",
+    "icon": "🚗",
+    "titleSk": "Doprava",
+    "headlineSk": "Extrémy skomplikujú cestovanie",
+    "statSk": "Horúčavy + prívalové dažde",
+    "explanationSk": "Teplo zaťažuje cesty a koľaje, prudké dažde môžu znamenať lokálne záplavy a meškania.",
+    "praxSk": "V horúčavách plánovať cestu mimo špičky, sledovať výstrahy SHMÚ."
+  },
+  {
+    "id": "priroda",
+    "icon": "🌲",
+    "titleSk": "Príroda",
+    "headlineSk": "Lesy pod väčším stresom",
+    "statSk": "Teplo + sucho + škodcovia",
+    "explanationSk": "Lesy a ekosystémy môžu čeliť väčšiemu tepelnému a vodnému stresu, očakáva sa aj množenie škodcov.",
+    "praxSk": "Rozmanitejšie lesy zvládajú zmenu lepšie. V suchu rastie aj riziko požiarov."
+  },
+  {
+    "id": "zima",
+    "icon": "🏔️",
+    "titleSk": "Zima",
+    "headlineSk": "Menej pravidelný sneh a mráz",
+    "statSk": "Menej mrazových dní a snehu",
+    "explanationSk": "Očakávajú sa skôr kratšie a teplejšie zimy. Sneh môže byť najmä v nížinách vzácnejší.",
+    "praxSk": "Na horách kratšia sezóna prírodného snehu, v nížinách častejšie blato než sneh."
+  },
+  {
+    "id": "volny-cas",
+    "icon": "🏖️",
+    "titleSk": "Voľný čas",
+    "headlineSk": "Vonku inak — podľa horúčav",
+    "statSk": "Viac horúcich dní na plánovanie",
+    "explanationSk": "Turistika, šport a kúpanie sa môžu viac riadiť teplotou. Rána a večery môžu byť príjemnejšie než poludnie.",
+    "praxSk": "Plánovať výlety skoro ráno, mať vodu a tieň, sledovať búrky."
+  }
+]

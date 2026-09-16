@@ -17,8 +17,8 @@
   - `meteorology/products/grids/climateAdaptation/standardNormals/KlimaAdapt_*.zip`
     — 19 files: gridded 1991–2020 climate normals (GeoTIFF).
   - `meteorology/products/grids/climateAdaptation/scenarios/rcp45/KlimaAdapt_*_{2021_2050,2071_2100}.zip`
-    — gridded scenario projections (GeoTIFF). Server poskytuje aj `rcp85/`,
-    tento web ich nepoužíva.
+    — gridded scenario projections (GeoTIFF). The server also provides `rcp85/`;
+    this web does not use it.
   - `meteorology/climate/now/`, `meteorology/precipitation/now/`
     — rolling ~30-day 1-minute AWS data (not needed for this task).
 - **Dataset catalogue entries:** `https://data.slovensko.sk/datasety/1cd736f6-291c-44e5-ba1d-1683bc5c3e98`
@@ -61,7 +61,7 @@ coordinates — pipeline will confirm EPSG:5514 with `gdalinfo`):
 
 `scenarios/rcp45/`, periods **2021–2050** and **2071–2100**,
 same 19-indicator set (incl. tropical days/nights, frost days, mean temp, precip).
-(Server ponúka aj `rcp85/`, tento web používa len RCP4.5.)
+(The server also offers `rcp85/`; this web uses RCP4.5 only.)
 
 ## 3. Indicator computation (daily data)
 
@@ -180,82 +180,86 @@ scripts/shmu_pipeline/
 3. Division of labour: SHMÚ grids = reference, E-OBS/ECA&D = history trend, RCP grids = future with relabelling, daily JSON = validation only.
 4. `scripts/shmu_pipeline/` implemented as specified in §8.
 
-## 10. Povinné atribučné znenie (CC BY 4.0)
+## 10. Mandatory attribution wording (CC BY 4.0)
 
-Licencia CC BY 4.0 vyžaduje pri každom použití uviesť autora, odkaz na
-licenciu a označenie zmien. Nižšie sú záväzné formulácie pre tento projekt
-— používajú sa doslovne, bez preformulovania.
+The CC BY 4.0 licence requires every use to credit the author, link the
+licence, and indicate changes. Below are the binding formulations for this
+project — used verbatim, without rephrasing. The Slovak wording is legally
+binding; the English version is provided only where noted.
 
-### 10.1 Krátky odznak (pri každom čísle / v `SourceBadge`)
+### 10.1 Short badge (at every number / in `SourceBadge`)
 
 > Zdroj: SHMÚ · CC BY 4.0
 
-S odkazom na `https://opendata.shmu.sk` (zdroj) a
-`https://creativecommons.org/licenses/by/4.0/deed.sk` (licencia).
+Linked as source: `https://opendata.shmu.sk`;
+licence link: `https://creativecommons.org/licenses/by/4.0/deed.sk`.
 
-### 10.2 Plné znenie (stránka `/metodika`, pätička, pod grafmi)
+### 10.2 Full wording (`/metodika` page, footer, under charts)
 
 > Zdroj dát: Slovenský hydrometeorologický ústav (SHMÚ), otvorené dáta
 > opendata.shmu.sk, licencia CC BY 4.0
 > (https://creativecommons.org/licenses/by/4.0/deed.sk).
 > Údaje upravené a agregované do ročných indikátorov.
 
-Anglická verzia (ak bude EN mutácia):
+English version (if an EN mutation is added):
 
 > Data source: Slovak Hydrometeorological Institute (SHMI), open data
 > opendata.shmu.sk, licence CC BY 4.0
 > (https://creativecommons.org/licenses/by/4.0/deed.en).
 > Data modified and aggregated into annual indicators.
 
-### 10.3 Citácia datasetu (dokumentácia, `stations.csv`, commit messages)
+### 10.3 Dataset citation (documentation, `stations.csv`, commit messages)
+
+Slovak template, used verbatim (field names stay Slovak):
 
 > SHMÚ (Slovenský hydrometeorologický ústav). Otvorené dáta:
 > `<názov datasetu / URL súboru>`, stiahnuté `<RRRR-MM-DD>`,
 > licencia CC BY 4.0. Agregované do ročných indikátorov
 > (denný priemer `(t7+t14+2·t21)/4`; `zra_uhrn: null → 0 mm`).
 
-### 10.4 Pravidlá použitia
+### 10.4 Usage rules
 
-1. Krátke znenie (§10.1) sa zobrazuje pri **každom** čísle so
-   `status: "observed"` / `"projected"` a `sourceId: "SHMU"`.
-2. Plné znenie (§10.2) je vždy na `/metodika` a v pätičke.
-3. **Nikdy nepoužívať dáta z `www.shmu.sk`** (články, tabuľky, grafy na
-   webe) — tie spadajú pod prísnejšie podmienky („len pre vlastnú
-   potrebu"). Výhradne `opendata.shmu.sk` a gridy z
+1. The short wording (§10.1) is shown at **every** number with
+   `status: "observed"` / `"projected"` and `sourceId: "SHMU"`.
+2. The full wording (§10.2) always appears on `/metodika` and in the footer.
+3. **Never use data from `www.shmu.sk`** (articles, tables, charts on the
+   website) — those fall under stricter terms ("for personal use only").
+   Use exclusively `opendata.shmu.sk` and the grids from
    `meteorology/products/grids/`.
-4. Pri každom datasete sa eviduje URL + dátum stiahnutia + hash
-   (pipeline `data_raw/`, git-ignored) — preukázateľná proveniencia.
+4. For every dataset, record URL + download date + hash
+   (pipeline `data_raw/`, git-ignored) — provable provenance.
 
-## 11. E-OBS / ECA&D — história 1950–2000 (overené 2026-09-11)
+## 11. E-OBS / ECA&D — history 1950–2000 (verified 2026-09-11)
 
-### 11.1 Dostupnosť: ÁNO, technicky vyhovuje
+### 11.1 Availability: YES, technically suitable
 
-- **Aktuálna verzia: E-OBSv33.0e** (vydaná máj 2026), pokrýva
-  **1950-01-01 → 2025-12-31**, denné hodnoty, grid **0,1° (~11 km)**
-  aj 0,25°, formát NetCDF-4, premenné `TX` (denné max), `TN` (denné min),
-  `TG` (priemer), `RR` (zrážky) + tlak, vietor, vlhkosť, radiácia.
-  Zdroj: https://www.ecad.eu (KNMI) a Copernicus CDS dataset
+- **Current version: E-OBSv33.0e** (released May 2026), covering
+  **1950-01-01 → 2025-12-31**, daily values, **0.1° (~11 km)**
+  and 0.25° grid, NetCDF-4 format, variables `TX` (daily max),
+  `TN` (daily min), `TG` (mean), `RR` (precipitation) + pressure,
+  wind, humidity, radiation.
+  Source: https://www.ecad.eu (KNMI) and the Copernicus CDS dataset
   `insitu-gridded-observations-europe` (DOI: 10.24381/cds.151d3ec6).
-- Naše indikátory sa dajú počítať **rovnakými prahmi** ako zo SHMÚ
-  (≥30 / ≥20 / <0, súčet zrážok) — buď výberom bunky nad stanicou,
-  alebo priemerom buniek za kraj.
-- ECA&D staničné denné rady (vrátane slovenských staníc) sú čiastočne
-  stiahnuteľné; aktualizované do 2026-01-31.
+- Our indicators can be computed with the **same thresholds** as from SHMÚ
+  (≥30 / ≥20 / <0, precipitation sums) — either by selecting the grid cell
+  above a station or by averaging cells per kraj.
+- ECA&D station daily series (including Slovak stations) are partly
+  downloadable; updated to 2026-01-31.
 
-### 11.2 Licencia: nekomerčný výskum a vzdelávanie
+### 11.2 Licence: non-commercial research and education
 
-Doslovné znenie licencie (E-OBS product licence rev. 1, CDS):
+Verbatim licence wording (E-OBS product licence rev. 1, CDS):
 
 > "These data … are strictly for use in **non-commercial research and
 > education projects only**.
 
-**Tento projekt je nekomerčný osvetový web (education), takže podmienky
-licencie spĺňa.** Podmienkou je, že projekt zostane bez komerčných prvkov
-(žiadna reklama, platené služby, firemný prevádzkovateľ).
+**This project is a non-commercial educational web (education), so it meets
+the licence terms.** The condition is that the project stays free of
+commercial elements (no ads, no paid services, no company operator).
 
-### 11.3 Povinná citácia E-OBS (ak sa použije)
+### 11.3 Mandatory E-OBS citation (when used)
 
-Doslovne, pri každom čísle odvodenom z E-OBS + na `/metodika`:
+Verbatim, at every number derived from E-OBS + on `/metodika`:
 
 > "We acknowledge the E-OBS dataset and the data providers in the ECA&D
 > project (https://www.ecad.eu). Cornes, R., G. van der Schrier,
@@ -263,21 +267,21 @@ Doslovne, pri každom čísle odvodenom z E-OBS + na `/metodika`:
 > the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res.
 > Atmos., 123. doi:10.1029/2017JD028200"
 >
-> Verzia datasetu: E-OBSv33.0e (príp. novšia). DOI: 10.24381/cds.151d3ec6.
+> "Dataset version: E-OBSv33.0e (or newer). DOI: 10.24381/cds.151d3ec6."
 
-(CDS variant navyše uvádza Copernicus Climate Change Service,
-https://surfobs.climate.copernicus.eu — použije sa podľa zdroja stiahnutia.)
+(The CDS variant additionally cites the Copernicus Climate Change Service,
+https://surfobs.climate.copernicus.eu — used according to the download source.)
 
-### 11.4 Metodické upozornenia E-OBS
+### 11.4 E-OBS methodological notes
 
-1. Hustota staníc sa v čase mení (riedka v 50. rokoch) — trendy brať
-   s rezervou; pre trendy existuje homogenizovaná verzia (HOM).
-2. 24-hodinové okno merania sa líši podľa krajiny (polnoc–polnoc vs.
-   ráno–ráno) — nepresne lícuje s oknami SHMÚ (21h–21h / 7h–7h MSSC).
-3. Odporúča sa pracovať so strednou hodnotou ensemblu (ensemble mean).
+1. Station density changes over time (sparse in the 1950s) — treat trends
+   with caution; a homogenised version (HOM) exists for trends.
+2. The 24-hour measurement window differs by country (midnight–midnight vs.
+   morning–morning) — does not align exactly with SHMÚ windows
+   (21h–21h / 7h–7h MSSC).
+3. Working with the ensemble mean is recommended.
 
-### 11.5 Rozhodnutie: časová os bez rokov pred 1950
+### 11.5 Decision: timeline without years before 1950
 
-Platí: všetko pred rokom 1950 sa odstraňuje (nie sú dáta).
-Nová časová os MVP: **1950 → 2000 → 2025 → 2050 → 2100**.
-Frontend úprava (odstránenie 1900) sa spraví pri implementácii pipeline.
+Applies: everything before 1950 is removed (no data).
+New MVP timeline: **1950 → 2000 → 2025 → 2050 → 2100**.

@@ -1,6 +1,6 @@
 # DATA_SOURCE.md — Real SHMÚ data for sk-klima
 
-> Status: **PROPOSAL — awaiting approval.** No frontend changes made.
+> Status: **ACTIVE — implemented.** Frontend uses real data.
 > All facts below were verified live against https://opendata.shmu.sk on 2026-09-11.
 > No values in this document are invented; anything unverified is marked as such.
 
@@ -115,8 +115,7 @@ the flagship series since 1872) · **Žilina** (ZA) · **Sliač** (BB) ·
     - **Reference / "today":** 1991–2020 normals grids (sampled at the 8 stations
       or averaged per kraj) — fully real SHMÚ data. ✅
     - **Trend / history:** ECA&D / E-OBS gridded observations (Copernicus,
-      homogenised, 1950→present) — proposed as the second source, needs
-      separate approval.
+      homogenised, 1950→present) — second source for history points.
     - **Future:** SHMÚ RCP4.5 grids.
     - **Recent validation:** 2025+ daily JSON validates our threshold logic
       against the grids.
@@ -150,7 +149,7 @@ the flagship series since 1872) · **Žilina** (ZA) · **Sliač** (BB) ·
    a pipeline assertion (every `ind_kli` used must exist in `stations.csv`
    with a citable source).
 
-## 8. Proposed reproducible pipeline (to be implemented after approval)
+## 8. Reproducible pipeline
 
 ```
 scripts/shmu_pipeline/
@@ -174,12 +173,12 @@ scripts/shmu_pipeline/
 - Snow and drought indices were deleted (no real data source);
   heavy-rain index (days >40 mm) is computed from real E-OBS + SHMÚ data.
 
-## 9. What approval covers
+## 9. Method decisions
 
 1. Indicator definitions + completeness rule (§3).
 2. 8 station names (§4) — final `ind_kli` codes verified before coding.
-3. Division of labour: SHMÚ grids = reference, E-OBS/ECA&D = history trend (follow-up), RCP grids = future with relabelling, daily JSON = validation only.
-4. Permission to implement `scripts/shmu_pipeline/` as specified in §8.
+3. Division of labour: SHMÚ grids = reference, E-OBS/ECA&D = history trend, RCP grids = future with relabelling, daily JSON = validation only.
+4. `scripts/shmu_pipeline/` implemented as specified in §8.
 
 ## 10. Povinné atribučné znenie (CC BY 4.0)
 
@@ -243,16 +242,16 @@ Anglická verzia (ak bude EN mutácia):
 - ECA&D staničné denné rady (vrátane slovenských staníc) sú čiastočne
   stiahnuteľné; aktualizované do 2026-01-31.
 
-### 11.2 Licencia: POZOR — nekomerčný výskum a vzdelávanie
+### 11.2 Licencia: nekomerčný výskum a vzdelávanie
 
 Doslovné znenie licencie (E-OBS product licence rev. 1, CDS):
 
 > "These data … are strictly for use in **non-commercial research and
 > education projects only**.
 
-**Verdikt pre náš projekt: podmienečne.** Verejný osvetový web má blízko
-k "education", ale ak má projekt **akýkoľvek komerčný prvok** (firma ako
-prevádzkovateľ, reklama, platené služby), hrozí porušenie licencie.
+**Tento projekt je nekomerčný osvetový web (education), takže podmienky
+licencie spĺňa.** Podmienkou je, že projekt zostane bez komerčných prvkov
+(žiadna reklama, platené služby, firemný prevádzkovateľ).
 
 ### 11.3 Povinná citácia E-OBS (ak sa použije)
 
@@ -279,6 +278,6 @@ https://surfobs.climate.copernicus.eu — použije sa podľa zdroja stiahnutia.)
 
 ### 11.5 Rozhodnutie: časová os bez rokov pred 1950
 
-Schválené: všetko pred rokom 1950 sa odstraňuje (nie sú dáta).
+Platí: všetko pred rokom 1950 sa odstraňuje (nie sú dáta).
 Nová časová os MVP: **1950 → 2000 → 2025 → 2050 → 2100**.
 Frontend úprava (odstránenie 1900) sa spraví pri implementácii pipeline.

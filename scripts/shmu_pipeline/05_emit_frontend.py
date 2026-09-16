@@ -133,7 +133,7 @@ def main() -> int:
             (r["regionSlug"], r["metricId"])
         for p in r["points"]:
             assert set(p) == {"year", "value", "displayValue", "status"}
-            assert p["status"] in ("demo", "observed", "projected")
+            assert p["status"] in ("observed", "projected")
             assert isinstance(p["value"], (int, float))
 
     OUT_PATH.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n",

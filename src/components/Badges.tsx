@@ -1,17 +1,5 @@
 import Link from "next/link";
 
-export function DemoBadge({ compact = false }: { compact?: boolean }) {
-  return (
-    <span
-      className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-amber-900"
-      title="Ilustračné demo dáta — nie sú to skutočné vedecké merania"
-    >
-      <span aria-hidden="true">◐</span>
-      {compact ? "Demo" : "Ilustračné dáta"}
-    </span>
-  );
-}
-
 export function SourceBadge({
   source,
   href = "/metodika",

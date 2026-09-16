@@ -41,7 +41,7 @@ export default function KrajIndicators({ slug }: { slug: string }) {
                 {metric.labelSk}
               </h3>
               <SourceBadge
-                source={getPointSource(slug, metric.id, 2025, scenario) ?? "DEMO"}
+                source={getPointSource(slug, metric.id, 2025, scenario) ?? "—"}
               />
             </div>
             <div className="mt-3 flex items-center justify-between gap-2">

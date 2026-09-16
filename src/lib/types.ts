@@ -12,7 +12,7 @@ export const METRIC_IDS = [
 ] as const;
 export type MetricId = (typeof METRIC_IDS)[number];
 
-export type DataStatus = "demo" | "observed" | "projected";
+export type DataStatus = "observed" | "projected";
 export type Era = "HISTÓRIA" | "DNES" | "PROJEKCIA";
 
 export function eraForYear(year: number): Era {
@@ -25,7 +25,7 @@ export const ClimatePointSchema = z.object({
   year: z.number(),
   value: z.number(),
   displayValue: z.string(),
-  status: z.enum(["demo", "observed", "projected"]),
+  status: z.enum(["observed", "projected"]),
 });
 
 export const ClimateRecordSchema = z.object({

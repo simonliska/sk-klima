@@ -25,7 +25,7 @@ export const NATIONAL_SLUG = "slovensko";
 export const DEFAULT_SCENARIO = "RCP4.5";
 export type ScenarioId = typeof DEFAULT_SCENARIO;
 
-/** Find record for region×metric under a scenario (demo records have scenario null). */
+/** Find record for region×metric under a scenario. */
 function findRecord(regionSlug: string, metricId: string, scenario: string) {
   return RECORDS.find(
     (r) =>
@@ -78,9 +78,8 @@ export function getPointSource(
   const rec = findRecord(regionSlug, metricId, scenario);
   const point = rec?.points.find((p) => p.year === year);
   if (!point) return undefined;
-  if (point.status === "demo") return "DEMO";
   if (point.status === "projected") return "SHMÚ";
-  return year <= 2025 ? "E-OBS" : "DEMO";
+  return "E-OBS";
 }
 
 export function getMetricSeries(

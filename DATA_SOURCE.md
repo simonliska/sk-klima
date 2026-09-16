@@ -57,7 +57,7 @@ coordinates — pipeline will confirm EPSG:5514 with `gdalinfo`):
 | `KlimaAdapt_PriemerneRocneAtmosferickeZrazky_1991_2020.zip` | Mean annual precipitation, mm |
 | (+ seasonal temp/precip, summer/ice days, dry/cold spells, days >40 mm) | Bonus indicators for later |
 
-### C. Scenario grids (future — replaces demo 2050/2100 later)
+### C. Scenario grids (future — SHMÚ RCP4.5 grids)
 
 `scenarios/rcp45/`, periods **2021–2050** and **2071–2100**,
 same 19-indicator set (incl. tropical days/nights, frost days, mean temp, precip).
@@ -159,17 +159,16 @@ scripts/shmu_pipeline/
   02_fetch_grids.py     # download normals + rcp45 zips, verify README, archive
   03_compute_indicators.py  # daily → annual indicators per §3 (+ completeness flags)
   04_sample_grids.py    # sample .tif at station coords (and kraj means) → reference values
-  05_emit_frontend.py   # write src/data/observations.real.json in the EXISTING
+  05_emit_frontend.py   # write src/data/climate.real.json in the EXISTING
                         # ClimateRecord schema with status:"observed"/"projected",
-                        # sourceId:"SHMU", referencePeriod, scenario, lastUpdated
+                        # sourceId, referencePeriod, scenario, lastUpdated
   checks.py             # assertions: code mapping, completeness, threshold sanity,
                         # grid-vs-daily consistency, no invented values
 ```
 
 - Raw downloads are content-hashed and kept in `data_raw/` (git-ignored);
   only `stations.csv` + emitted JSON are committed.
-- Emission reuses the current `ClimateRecord` schema — **no frontend redesign**;
-  `DemoBadge` disappears automatically where `status != "demo"`.
+- Emission reuses the current `ClimateRecord` schema — **no frontend redesign**.
 - Snow and drought indices were deleted (no real data source);
   heavy-rain index (days >40 mm) is computed from real E-OBS + SHMÚ data.
 

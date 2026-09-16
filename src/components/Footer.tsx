@@ -37,7 +37,15 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-stone-100 py-4 text-center text-xs text-stone-500">
-        Pozorované dáta E-OBS, klimatický normál a projekcie SHMÚ • Hodnoty 2050/2100 sú projekcie scenára RCP4.5 (očakávané približné hodnoty), nie predpoveď počasia.
+        Pozorované dáta E-OBS, klimatický normál a projekcie SHMÚ • Hodnoty 2050/2100 sú projekcie scenára RCP4.5 (očakávané približné hodnoty), nie predpoveď počasia. •{" "}
+        <a
+          href="https://github.com/simonliska/sk-klima"
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:text-stone-700"
+        >
+          GitHub projekt
+        </a>
       </div>
     </footer>
   );

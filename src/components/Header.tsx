@@ -28,12 +28,6 @@ export default function Header() {
             Slovensko v čase
           </Link>
           <Link
-            href="/#mapa"
-            className="hidden rounded-full px-3 py-2 text-stone-700 hover:bg-stone-100 sm:block"
-          >
-            Mapa
-          </Link>
-          <Link
             href="/#zivot"
             className="hidden rounded-full px-3 py-2 text-stone-700 hover:bg-stone-100 sm:block"
           >

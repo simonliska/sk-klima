@@ -1,4 +1,4 @@
-# Ako sa zmení Slovensko?
+## Ako sa zmení Slovensko?
 
 > **EN abstract:** Slovak educational website about climate change — what it
 > can mean for Slovakia, its regions and everyday life (past → today → 2050
@@ -21,7 +21,7 @@ npm run build
 npm run lint
 ```
 
-## Dáta (žiadne vymyslené čísla)
+### Dáta
 
 Všetky zobrazené hodnoty sú ročné agregáty spočítané z reálnych zdrojov
 (plná proveniancia v `DATA_SOURCE.md`, reprodukovateľná pipeline

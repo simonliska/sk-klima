@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sk-klima.sk"),
   title: {
     default: "Ako sa zmení Slovensko? | Klimatická zmena jednoducho",
     template: "%s | Ako sa zmení Slovensko?",

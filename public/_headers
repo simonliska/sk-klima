@@ -1,0 +1,7 @@
+# StaticHost custom headers (read from the root of the public folder).
+# Goal: cut repeat bandwidth on the 10 GB free plan.
+*
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+/_next/static/*
+    Cache-Control: public, max-age=31536000, immutable

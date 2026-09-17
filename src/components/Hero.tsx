@@ -37,13 +37,13 @@ export default function Hero() {
                 Čo to znamená v praxi
               </Link>
             </div>
-            <p className="mt-4 text-xs text-teal-100/70">
+            <p className="mt-4 text-xs text-teal-100/80">
               Do roku 2025 pozorované dáta • 2050 a 2100 projekcia RCP4.5
             </p>
           </div>
 
           {/* Real Slovakia shape + mini stats */}
-          <div className="reveal rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur" style={{ animationDelay: "120ms" }}>
+          <div className="reveal rounded-3xl border border-white/15 bg-teal-950 p-5 shadow-xl" style={{ animationDelay: "120ms" }}>
             <svg
               viewBox={VIEWBOX}
               role="img"
@@ -63,7 +63,7 @@ export default function Hero() {
                 ))}
               </g>
             </svg>
-            <p className="mt-3 text-center text-xs font-bold uppercase tracking-widest text-teal-100/80">
+            <p className="mt-3 text-center text-xs font-bold uppercase tracking-widest text-teal-100">
               Priemer Slovenska • Projekcia 2050
             </p>
             <div className="mt-2 grid grid-cols-3 gap-1.5 text-center sm:gap-2">
@@ -91,7 +91,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <p className="mt-2 text-center text-[11px] leading-relaxed text-teal-100/70">
+            <p className="mt-2 text-center text-[11px] leading-relaxed text-teal-50/90">
               Všetko sa porovnáva s klimatickým normálom 1991–2020 (SHMÚ):
               teplota je odchýlka, pri dňoch rozdiel počtu. 2050 = 30-ročný
               priemer 2021–2050, scenár RCP4.5 (očakávané približné hodnoty).

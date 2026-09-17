@@ -193,6 +193,49 @@ export function compareTodayVs2050(
   });
 }
 
+/** Unique 2–3 sentence intro per region, built from real 2025→2050 values.
+ *  Server-rendered so every /kraj page has distinct indexable text
+ *  (fixes thin/duplicate content across the 8 region pages). */
+export function getRegionIntro(
+  regionSlug: string,
+  scenario: string = DEFAULT_SCENARIO
+): string {
+  const region = getRegion(regionSlug);
+  if (!region) return "";
+  const val = (id: MetricId, year: TimelineYear) =>
+    getPoint(regionSlug, id, year, scenario)?.displayValue ?? "–";
+  const num = (id: MetricId, year: TimelineYear) =>
+    getPoint(regionSlug, id, year, scenario)?.value ?? 0;
+
+  const t25 = val("avg_temp", 2025);
+  const t50 = val("avg_temp", 2050);
+  const td = `${val("tropical_days", 2025)} → ${val("tropical_days", 2050)}`;
+  const tn = `${val("tropical_nights", 2025)} → ${val("tropical_nights", 2050)}`;
+  const fd = `${val("frost_days", 2025)} → ${val("frost_days", 2050)}`;
+  const hp = `${val("heavy_precip", 2025)} → ${val("heavy_precip", 2050)}`;
+
+  const tn50 = num("tropical_nights", 2050);
+  const td50 = num("tropical_days", 2050);
+  const fd25 = num("frost_days", 2025);
+  let focus: string;
+  if (tn50 >= 5) {
+    focus = "najciteľnejšie budú častejšie horúčavy a tropické noci, ktoré zhoršujú spánok a prehrievajú byty";
+  } else if (td50 >= 25) {
+    focus = "najciteľnejšie budú častejšie horúčavy a prehrievanie bytov počas leta";
+  } else if (fd25 >= 100) {
+    focus = "najviditeľnejšia bude kratšia a teplejšia zima s menej pravidelným snehom";
+  } else {
+    focus = "prejavia sa teplejšie letá aj miernejšie zimy";
+  }
+
+  return (
+    `V regióne ${region.name} (${region.characterSk}) bola v roku 2025 odchýlka priemernej teploty ${t25} °C oproti normálu 1991–2020, ` +
+    `projekcia na rok 2050 je ${t50} °C (scenár RCP4.5). ` +
+    `Tropické dni: ${td}, tropické noci: ${tn}, mrazové dni: ${fd}, dni s prívalovým dažďom: ${hp} (2025 pozorované, 2050 projekcia). ` +
+    `Pre ${region.shortName} to znamená, že ${focus}.`
+  );
+}
+
 export function getImpacts(): ImpactCategory[] {
   return IMPACTS;
 }

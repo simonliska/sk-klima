@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
+  DEFAULT_SCENARIO,
   getImpacts,
   getRegion,
+  getRegionIntro,
   getRegions,
 } from "@/lib/climate";
 import { DataEraBadge } from "@/components/Badges";
@@ -21,9 +23,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const region = getRegion(slug);
   if (!region) return { title: "Kraj sa nenašiel" };
+  const intro = getRegionIntro(slug);
   return {
     title: `Klimatická zmena ${region.name} do roku 2050`,
-    description: `Ako sa môže zmeniť život v regióne ${region.name} do roku 2050? Teploty, horúčavy, mráz a zrážky — jednoducho a zrozumiteľne.`,
+    description:
+      intro ||
+      `Ako sa môže zmeniť život v regióne ${region.name} do roku 2050? Teploty, horúčavy, mráz a zrážky — jednoducho a zrozumiteľne.`,
+    alternates: { canonical: `/kraj/${region.slug}` },
+    openGraph: {
+      title: `Klimatická zmena ${region.name} do roku 2050`,
+      url: `https://sk-klima.sk/kraj/${region.slug}`,
+    },
   };
 }
 
@@ -36,11 +46,47 @@ export default async function RegionPage({
   const region = getRegion(slug);
   if (!region) notFound();
 
+  const scenario = DEFAULT_SCENARIO;
+  const intro = getRegionIntro(slug, scenario);
   const impacts = getImpacts().slice(0, 4);
   const others = getRegions().filter((r) => r.slug !== slug);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `Klimatická zmena ${region.name} do roku 2050`,
+    description: intro,
+    inLanguage: "sk-SK",
+    mainEntityOfPage: `https://sk-klima.sk/kraj/${region.slug}`,
+  };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Domov", item: "https://sk-klima.sk/" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: region.name,
+        item: `https://sk-klima.sk/kraj/${region.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-6xl space-y-8 px-4 py-8 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* Breadcrumb */}
       <nav className="text-sm text-stone-500" aria-label="Navigačná cesta">
         <Link href="/" className="hover:underline">Domov</Link>
@@ -60,10 +106,10 @@ export default async function RegionPage({
           {region.characterSk}
         </p>
         <h1 className="mt-1 text-4xl font-black tracking-tight sm:text-5xl">
-          {region.name}
+          {region.name}: klimatická zmena do roku 2050
         </h1>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-teal-50/90">
-          Ako sa môže zmeniť život v regióne {region.shortName} do roku 2050?
+          {intro || `Ako sa môže zmeniť život v regióne ${region.shortName} do roku 2050?`}
         </p>
         <p className="mt-3 text-xs text-teal-100/60">
           Rok 2025: pozorované (E-OBS) • Klimatický normál 1991–2020: SHMÚ •
@@ -71,7 +117,7 @@ export default async function RegionPage({
         </p>
       </header>
 
-      {/* Today → 2050 grid (client island) */}
+      {/* Today → 2050 numbers (prerendered to static HTML at build time) */}
       <KrajIndicators slug={slug} />
 
       {/* Practical meaning */}

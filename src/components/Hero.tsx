@@ -1,6 +1,6 @@
 import Link from "next/link";
 import geo from "@/data/kraje.paths.json";
-import { getHeroCards } from "@/lib/climate";
+import { getHeroCards, getRegion } from "@/lib/climate";
 import { SourceBadge } from "./Badges";
 
 const PATHS = (geo.paths as unknown) as Record<string, { d: string }>;
@@ -58,7 +58,7 @@ export default function Hero() {
               >
                 {Object.entries(PATHS).map(([slug, p]) => (
                   <path key={slug} d={p.d}>
-                    <title>{slug}</title>
+                    <title>{getRegion(slug)?.name ?? slug}</title>
                   </path>
                 ))}
               </g>

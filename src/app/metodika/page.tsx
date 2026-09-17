@@ -5,12 +5,33 @@ export const metadata = {
   title: "Metodika a zdroje",
   description:
     "Odkiaľ pochádzajú dáta, čo sú pozorovania a projekcie, prečo existujú scenáre a prečo je budúcnosť neistá. Zrozumiteľne pre nevedcov.",
+  alternates: { canonical: "/metodika" },
 };
 
 export default function MetodikaPage() {
   const sources = getSources();
+  const datasetJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Klimatické indikátory Slovenska — pozorované dáta a projekcie",
+    description:
+      "Ročné klimatické indikátory pre Slovensko a kraje: pozorované dáta E-OBS do roku 2025, klimatický normál SHMÚ 1991–2020 a projekcie scenára RCP4.5 na roky 2050 a 2100.",
+    url: "https://sk-klima.sk/metodika",
+    inLanguage: "sk-SK",
+    creator: [
+      { "@type": "Organization", name: "SHMÚ" },
+      { "@type": "Organization", name: "E-OBS (ECA&D)" },
+    ],
+    license: "https://creativecommons.org/licenses/by/4.0/deed.sk",
+  };
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(datasetJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <nav className="text-sm text-stone-500" aria-label="Navigačná cesta">
         <Link href="/" className="hover:underline">Domov</Link>
         <span aria-hidden> / </span>

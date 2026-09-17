@@ -8,6 +8,7 @@ export const metadata = {
   title: "Ako sa zmení Slovensko? | Klimatická zmena jednoducho",
   description:
     "Pozrite sa, čo môže klimatická zmena znamenať pre vaše mesto, región a každodenný život. Včera → dnes → 2050 → 2100.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

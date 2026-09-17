@@ -1,6 +1,7 @@
 import regionsData from "@/data/regions.json";
 import metricsData from "@/data/metrics.json";
 import climateData from "@/data/climate.real.json";
+import normalsData from "@/data/normals.1991_2020.json";
 import impactsData from "@/data/impacts.sk.json";
 import sourcesData from "@/data/sources.json";
 import {
@@ -172,14 +173,70 @@ export function getHeroCards(
   });
 }
 
-/** Compare today (2025) vs 2050 for a region — used on region pages. */
-export function compareTodayVs2050(
+/** Krajský klimatický normál 1991–2020 (SHMÚ 500 m gridy,
+ *  sampling scripts/shmu_pipeline/04_sample_shmu_grids.py), CC BY 4.0.
+ *  Pre avg_temp je normálom definitoricky anomália 0 — teplota sa
+ *  vždy vyjadruje ako odchýlka od normálu, nie absolútna hodnota. */
+interface NormalEntry {
+  avg_temp_c: number;
+  tropical_days: number;
+  tropical_nights: number;
+  frost_days: number;
+  heavy_days: number;
+}
+const KRAJ_NORMALS = (normalsData as { kraje: Record<string, NormalEntry> })
+  .kraje;
+
+export function getRegionalNormal(
+  regionSlug: string,
+  metricId: MetricId
+): number | undefined {
+  if (regionSlug === NATIONAL_SLUG) return NORMAL_1991_2020[metricId];
+  const entry = KRAJ_NORMALS[regionSlug];
+  if (!entry) return undefined;
+  switch (metricId) {
+    case "avg_temp":
+      return 0;
+    case "tropical_days":
+      return entry.tropical_days;
+    case "tropical_nights":
+      return entry.tropical_nights;
+    case "frost_days":
+      return entry.frost_days;
+    case "heavy_precip":
+      return entry.heavy_days;
+  }
+}
+
+/** Formát normálu na zobrazenie: rovnaké desatinné miesta ako
+ *  displayValue projekcie (teplota 1 des. miesto, lejaky 1 des.
+ *  miesto, počty dní celé čísla). */
+function formatNormal(metricId: MetricId, value: number): string {
+  if (metricId === "avg_temp") return "0,0";
+  if (metricId === "heavy_precip")
+    return String(Math.round(value * 10) / 10).replace(".", ",");
+  return String(Math.round(value));
+}
+
+/** Compare 1991–2020 normal vs 2050 projection (RCP4.5) — the
+ *  climate-standard baseline comparison (same convention as Hero
+ *  cards and IPCC practice: future period mean vs reference normal).
+ *  Shape mirrors point-based entries so cards render unchanged;
+ *  `today` is the normal baseline, `future` the 2050 projection. */
+export function compareNormalVs2050(
   regionSlug: string,
   scenario: string = DEFAULT_SCENARIO
 ) {
   return METRICS.map((metric) => {
-    const today = getPoint(regionSlug, metric.id, 2025, scenario);
+    const normalValue = getRegionalNormal(regionSlug, metric.id);
     const future = getPoint(regionSlug, metric.id, 2050, scenario);
+    const today =
+      normalValue === undefined
+        ? undefined
+        : {
+            displayValue: formatNormal(metric.id, normalValue),
+            value: normalValue,
+          };
     let delta: string | null = null;
     if (today && future) {
       const d = Math.round((future.value - today.value) * 10) / 10;
@@ -193,45 +250,46 @@ export function compareTodayVs2050(
   });
 }
 
-/** Unique 2–3 sentence intro per region, built from real 2025→2050 values.
- *  Server-rendered so every /kraj page has distinct indexable text
- *  (fixes thin/duplicate content across the 8 region pages). */
+/** Unique 2–3 sentence intro per region, built from real normal→2050
+ *  values (RCP4.5 projection vs 1991–2020 normal — same convention as
+ *  Hero cards). Server-rendered so every /kraj page has distinct
+ *  indexable text (fixes thin/duplicate content across the 8 pages). */
 export function getRegionIntro(
   regionSlug: string,
   scenario: string = DEFAULT_SCENARIO
 ): string {
   const region = getRegion(regionSlug);
   if (!region) return "";
-  const val = (id: MetricId, year: TimelineYear) =>
-    getPoint(regionSlug, id, year, scenario)?.displayValue ?? "–";
-  const num = (id: MetricId, year: TimelineYear) =>
-    getPoint(regionSlug, id, year, scenario)?.value ?? 0;
+  const comp = compareNormalVs2050(regionSlug, scenario);
+  const entry = (id: MetricId) => comp.find((c) => c.metric.id === id);
+  const pair = (id: MetricId) => {
+    const e = entry(id);
+    return `${e?.today?.displayValue ?? "–"} → ${e?.future?.displayValue ?? "–"}`;
+  };
 
-  const t25 = val("avg_temp", 2025);
-  const t50 = val("avg_temp", 2050);
-  const td = `${val("tropical_days", 2025)} → ${val("tropical_days", 2050)}`;
-  const tn = `${val("tropical_nights", 2025)} → ${val("tropical_nights", 2050)}`;
-  const fd = `${val("frost_days", 2025)} → ${val("frost_days", 2050)}`;
-  const hp = `${val("heavy_precip", 2025)} → ${val("heavy_precip", 2050)}`;
+  const t50 = entry("avg_temp")?.future?.displayValue ?? "–";
+  const td = pair("tropical_days");
+  const tn = pair("tropical_nights");
+  const fd = pair("frost_days");
+  const hp = pair("heavy_precip");
 
-  const tn50 = num("tropical_nights", 2050);
-  const td50 = num("tropical_days", 2050);
-  const fd25 = num("frost_days", 2025);
+  const tn50 = entry("tropical_nights")?.future?.value ?? 0;
+  const td50 = entry("tropical_days")?.future?.value ?? 0;
+  const fdNorm = entry("frost_days")?.today?.value ?? 0;
   let focus: string;
   if (tn50 >= 5) {
     focus = "najciteľnejšie budú častejšie horúčavy a tropické noci, ktoré zhoršujú spánok a prehrievajú byty";
   } else if (td50 >= 25) {
     focus = "najciteľnejšie budú častejšie horúčavy a prehrievanie bytov počas leta";
-  } else if (fd25 >= 100) {
+  } else if (fdNorm >= 100) {
     focus = "najviditeľnejšia bude kratšia a teplejšia zima s menej pravidelným snehom";
   } else {
     focus = "prejavia sa teplejšie letá aj miernejšie zimy";
   }
 
   return (
-    `V regióne ${region.name} (${region.characterSk}) bola v roku 2025 odchýlka priemernej teploty ${t25} °C oproti normálu 1991–2020, ` +
-    `projekcia na rok 2050 je ${t50} °C (scenár RCP4.5). ` +
-    `Tropické dni: ${td}, tropické noci: ${tn}, mrazové dni: ${fd}, dni s prívalovým dažďom: ${hp} (2025 pozorované, 2050 projekcia). ` +
+    `Projekcia RCP4.5 pre ${region.name} (${region.characterSk}) porovnáva 30-ročný priemer 2021–2050 s klimatickým normálom 1991–2020. ` +
+    `Priemerná teplota: ${t50} °C oproti normálu; tropické dni: ${td}; tropické noci: ${tn}; mrazové dni: ${fd}; dni s prívalovým dažďom: ${hp}. ` +
     `Pre ${region.shortName} to znamená, že ${focus}.`
   );
 }

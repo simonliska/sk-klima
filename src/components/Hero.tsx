@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           <div className="reveal">
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-100">
-              <span aria-hidden="true">●</span> Klimatická zmena • Slovensko • jednoducho
+              <span aria-hidden="true">●</span> Klimatická zmena • Slovensko
             </p>
             <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl">
               Ako sa zmení Slovensko?
@@ -37,9 +37,6 @@ export default function Hero() {
                 Čo to znamená v praxi
               </Link>
             </div>
-            <p className="mt-4 text-xs text-teal-100/80">
-              Do roku 2025 pozorované dáta • 2050 a 2100 projekcia RCP4.5
-            </p>
           </div>
 
           {/* Real Slovakia shape + mini stats */}
@@ -64,7 +61,7 @@ export default function Hero() {
               </g>
             </svg>
             <p className="mt-3 text-center text-xs font-bold uppercase tracking-widest text-teal-100">
-              Priemer Slovenska • Projekcia 2050
+              Priemer Slovenska • Projekcia 2021-2050
             </p>
             <div className="mt-2 grid grid-cols-3 gap-1.5 text-center sm:gap-2">
               {cards.map((c) => (
@@ -92,9 +89,8 @@ export default function Hero() {
               ))}
             </div>
             <p className="mt-2 text-center text-[11px] leading-relaxed text-teal-50/90">
-              Všetko sa porovnáva s klimatickým normálom 1991–2020 (SHMÚ):
-              teplota je odchýlka, pri dňoch rozdiel počtu. 2050 = 30-ročný
-              priemer 2021–2050, scenár RCP4.5 (očakávané približné hodnoty).
+              Projekcia porovnáva 30-ročný priemer 2021–2050 s klimatickým normálom 1991–2020.
+              Scenár RCP4.5 (stredne optimistický klimatický scenár).
             </p>
             <div className="mt-2 flex justify-center">
               <SourceBadge source="E-OBS, SHMÚ" />

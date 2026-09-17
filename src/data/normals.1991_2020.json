@@ -1,0 +1,62 @@
+{
+  "source": "SHMÚ otvorené dáta opendata.shmu.sk, normály 1991–2020, licencia CC BY 4.0",
+  "period": "1991–2020",
+  "kraje": {
+    "bratislavsky": {
+      "avg_temp_c": 10.41,
+      "tropical_days": 18.1,
+      "tropical_nights": 4.4,
+      "frost_days": 84.4,
+      "heavy_days": 0.8
+    },
+    "trnavsky": {
+      "avg_temp_c": 10.51,
+      "tropical_days": 25.6,
+      "tropical_nights": 3.6,
+      "frost_days": 85.9,
+      "heavy_days": 0.6
+    },
+    "trenciansky": {
+      "avg_temp_c": 9.0,
+      "tropical_days": 19.1,
+      "tropical_nights": 1.3,
+      "frost_days": 109.1,
+      "heavy_days": 0.8
+    },
+    "nitriansky": {
+      "avg_temp_c": 10.56,
+      "tropical_days": 27.9,
+      "tropical_nights": 2.9,
+      "frost_days": 92.2,
+      "heavy_days": 0.6
+    },
+    "zilinsky": {
+      "avg_temp_c": 6.36,
+      "tropical_days": 7.5,
+      "tropical_nights": 0.1,
+      "frost_days": 139.7,
+      "heavy_days": 0.9
+    },
+    "banskobystricky": {
+      "avg_temp_c": 8.24,
+      "tropical_days": 17.1,
+      "tropical_nights": 0.6,
+      "frost_days": 122.0,
+      "heavy_days": 0.9
+    },
+    "presovsky": {
+      "avg_temp_c": 7.32,
+      "tropical_days": 10.9,
+      "tropical_nights": 0.4,
+      "frost_days": 131.2,
+      "heavy_days": 0.9
+    },
+    "kosicky": {
+      "avg_temp_c": 8.95,
+      "tropical_days": 17.9,
+      "tropical_nights": 1.3,
+      "frost_days": 116.8,
+      "heavy_days": 0.8
+    }
+  }
+}

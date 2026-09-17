@@ -150,8 +150,8 @@ export default function KrajMap({
         ))}
       </svg>
       <p className="mt-1 text-xs text-stone-500">
-        Skutočné hranice krajov (zdroj: Geoportal.sk via UN OCHA HDX,
-        zjednodušené pre web).         Vyberte kraj na mape alebo zo zoznamu nižšie.
+        Hranice krajov: Geoportal (geoportal.gov.sk, ZBGIS) via
+        drakh/slovakia-gps-data, zjednodušené pre web.
       </p>
       {/* Text fallback — important especially for tiny Bratislavský kraj */}
       <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Zoznam krajov">

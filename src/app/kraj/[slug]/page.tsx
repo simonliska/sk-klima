@@ -98,7 +98,7 @@ export default async function RegionPage({
 
       <header className="rounded-3xl bg-teal-950 p-6 text-white sm:p-10">
         <div className="flex flex-wrap items-center gap-2">
-          <DataEraBadge era="DNES" />
+          <DataEraBadge era="HISTÓRIA" />
           <span aria-hidden className="text-teal-300">→</span>
           <DataEraBadge era="PROJEKCIA" />
         </div>
@@ -112,12 +112,12 @@ export default async function RegionPage({
           {intro || `Ako sa môže zmeniť život v regióne ${region.shortName} do roku 2050?`}
         </p>
         <p className="mt-3 text-xs text-teal-100/60">
-          Rok 2025: pozorované (E-OBS) • Klimatický normál 1991–2020: SHMÚ •
-          2050: projekcia RCP4.5 (SHMÚ, očakávané približné hodnoty)
+          Klimatický normál 1991–2020: SHMÚ •
+          2050: projekcia RCP4.5 (SHMÚ, 30-ročný priemer 2021–2050, očakávané približné hodnoty)
         </p>
       </header>
 
-      {/* Today → 2050 numbers (prerendered to static HTML at build time) */}
+      {/* Normal → 2050 numbers (prerendered to static HTML at build time) */}
       <KrajIndicators slug={slug} />
 
       {/* Practical meaning */}

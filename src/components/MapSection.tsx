@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import KrajMap from "./KrajMap";
 import {
-  compareTodayVs2050,
+  compareNormalVs2050,
   DEFAULT_SCENARIO,
   getRegion,
 } from "@/lib/climate";
@@ -14,7 +14,7 @@ export default function MapSection() {
   const [selected, setSelected] = useState<string>("bratislavsky");
   const scenario = DEFAULT_SCENARIO;
   const region = getRegion(selected);
-  const comparison = compareTodayVs2050(selected, scenario).slice(0, 5);
+  const comparison = compareNormalVs2050(selected, scenario).slice(0, 5);
 
   return (
     <section id="mapa" className="mx-auto max-w-6xl scroll-mt-20 px-4 sm:px-6">
@@ -32,7 +32,7 @@ export default function MapSection() {
         <div className="min-w-0 rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
             <span className="text-xs text-stone-500">
-              Vyberte kraj — v paneli uvidíte rok 2025 a projekciu 2050 (scenár RCP4.5)
+              Vyberte kraj — v paneli uvidíte normál 1991–2020 a projekciu 2050 (scenár RCP4.5)
             </span>
           </div>
           <KrajMap selected={selected} onSelect={setSelected} />
@@ -69,7 +69,7 @@ export default function MapSection() {
                       {delta && (
                         <span
                           className="ml-1 rounded-full bg-white/15 px-2 py-0.5 text-xs"
-                          title="Zmena oproti roku 2025"
+                          title="Zmena oproti normálu 1991–2020"
                         >
                           {delta}
                         </span>
@@ -83,14 +83,14 @@ export default function MapSection() {
                 href={`/kraj/${region.slug}`}
                 className="mt-4 block rounded-full bg-white px-5 py-3 text-center font-bold text-teal-950 hover:bg-teal-50"
               >
-                Detail {region.shortName}: 2025 vs. 2050 →
+                Detail {region.shortName}: normál vs. 2050 →
               </Link>
               <div className="mt-3 flex flex-col items-start gap-2">
                 <span className="text-[11px] leading-relaxed text-teal-100/70">
-                  Rok 2025 je pozorovaná hodnota (E-OBS) • 2050 je projekcia {scenario} (SHMÚ,
-                  očakávané približné hodnoty) • Číslo v pilulke je zmena oproti roku 2025
+                  Normál 1991–2020 (SHMÚ) • 2050 je projekcia {scenario} (SHMÚ,
+                  30-ročný priemer 2021–2050, očakávané približné hodnoty).
                 </span>
-                <SourceBadge source="E-OBS, SHMÚ" />
+                <SourceBadge source="SHMÚ" />
               </div>
             </>
           )}

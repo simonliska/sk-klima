@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import {
-  compareTodayVs2050,
+  compareNormalVs2050,
   DEFAULT_SCENARIO,
-  getPointSource,
   skCountUnit,
 } from "@/lib/climate";
 import { SourceBadge } from "@/components/Badges";
@@ -12,17 +11,17 @@ import { SourceBadge } from "@/components/Badges";
 /** Today → 2050 numbers for the single RCP4.5 scenario (client island on server page). */
 export default function KrajIndicators({ slug }: { slug: string }) {
   const scenario = DEFAULT_SCENARIO;
-  const comparison = compareTodayVs2050(slug, scenario);
+  const comparison = compareNormalVs2050(slug, scenario);
   return (
     <section aria-labelledby="indikatory">
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div>
           <h2 id="indikatory" className="text-2xl font-black">
-            Rok 2025 → projekcia 2050 v číslach
+            Normál 1991–2020 → projekcia 2050 v číslach
           </h2>
           <p className="mt-1 text-stone-600">
-            Jednoduché porovnanie. Šípka neznamená istotu — znamená smer podľa
-            modelovaného scenára.
+            Porovnanie klimatického normálu s projekciou. Šípka neznamená
+            istotu — znamená smer podľa modelovaného scenára.
           </p>
         </div>
         <span className="inline-flex rounded-full bg-violet-700 px-3 py-1.5 text-xs font-bold text-white">
@@ -40,13 +39,11 @@ export default function KrajIndicators({ slug }: { slug: string }) {
                 <span aria-hidden>{metric.icon} </span>
                 {metric.labelSk}
               </h3>
-              <SourceBadge
-                source={getPointSource(slug, metric.id, 2025, scenario) ?? "—"}
-              />
+              <SourceBadge source="SHMÚ" />
             </div>
             <div className="mt-3 flex items-center justify-between gap-2">
               <div className="rounded-2xl bg-teal-50 px-4 py-3 text-center">
-                <p className="text-[11px] font-bold uppercase text-teal-800">V roku 2025</p>
+                <p className="text-[11px] font-bold uppercase text-teal-800">Normál 1991–2020</p>
                 <p className="text-2xl font-black tabular-nums">
                   {today?.displayValue}
                 </p>
@@ -61,7 +58,7 @@ export default function KrajIndicators({ slug }: { slug: string }) {
             </div>
             {delta && (
               <p className="mt-2 text-sm font-bold text-teal-800">
-                Zmena oproti roku 2025: {delta}
+                Zmena oproti normálu: {delta}
                 {metric.id === "avg_temp"
                   ? ""
                   : ` ${skCountUnit(
@@ -76,10 +73,9 @@ export default function KrajIndicators({ slug }: { slug: string }) {
         ))}
       </div>
       <p className="mt-3 text-xs text-stone-500">
-        *Rok 2050 je projekcia scenára {scenario} (SHMÚ, 30-ročný priemer
-        2021–2050, očakávané približné hodnoty). Hodnoty za rok 2025 boli
-        pozorované (E-OBS; teplota ako odchýlka oproti klimatickému normálu
-        SHMÚ 1991–2020). Skutočný vývoj závisí od emisií
+        *2050 je projekcia scenára {scenario} (SHMÚ, 30-ročný priemer
+        2021–2050, očakávané približné hodnoty). Normál 1991–2020 je
+        30-ročný priemer SHMÚ. Skutočný vývoj závisí od emisií
         a ďalších faktorov.{" "}
         <Link href="/metodika" className="underline">Viac v metodike</Link>.
       </p>

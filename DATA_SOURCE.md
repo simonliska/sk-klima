@@ -284,3 +284,13 @@ https://surfobs.climate.copernicus.eu — used according to the download source.
 
 Applies: everything before 1950 is removed (no data).
 New MVP timeline: **1950 → 2000 → 2025 → 2050 → 2100**.
+
+## 12. Kraj boundaries (map) — provenance
+
+`public/geo/kraje.geo.json` is a simplified, 4-decimal-rounded copy of
+`regions_epsg_4326.geojson` from `drakh/slovakia-gps-data` (whose README
+cites Geoportal.sk -> geoportal.gov.sk, ZBGIS, as the border source).
+Verified 2026-09-18 by vertex comparison. `src/data/kraje.paths.json`
+holds the precomputed SVG paths for the web. On-map credit
+(`KrajMap.tsx`): "Hranice krajov: Geoportal (geoportal.gov.sk, ZBGIS)
+via drakh/slovakia-gps-data, zjednodušené pre web."

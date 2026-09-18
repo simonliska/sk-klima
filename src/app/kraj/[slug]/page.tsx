@@ -102,18 +102,17 @@ export default async function RegionPage({
           <span aria-hidden className="text-teal-300">→</span>
           <DataEraBadge era="PROJEKCIA" />
         </div>
-        <p className="mt-4 text-sm font-bold uppercase tracking-widest text-teal-300">
-          {region.characterSk}
-        </p>
-        <h1 className="mt-1 text-4xl font-black tracking-tight sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
           {region.name}: klimatická zmena do roku 2050
         </h1>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-teal-50/90">
           {intro || `Ako sa môže zmeniť život v regióne ${region.shortName} do roku 2050?`}
         </p>
         <p className="mt-3 text-xs text-teal-100/60">
-          Klimatický normál 1991–2020: SHMÚ •
-          2050: projekcia RCP4.5 (SHMÚ, 30-ročný priemer 2021–2050, očakávané približné hodnoty)
+          Normál 1991–2020 a projekcia 2021–2050 (RCP4.5) • SHMÚ •{" "}
+          <Link href="/metodika" className="underline hover:text-white">
+            Ako vznikli tieto údaje? →
+          </Link>
         </p>
       </header>
 

@@ -15,7 +15,7 @@ export default function MetodikaPage() {
     "@type": "Dataset",
     name: "Klimatické indikátory Slovenska — pozorované dáta a projekcie",
     description:
-      "Ročné klimatické indikátory pre Slovensko a kraje: pozorované dáta E-OBS do roku 2025, klimatický normál SHMÚ 1991–2020 a projekcie scenára RCP4.5 na roky 2050 a 2100.",
+      "30-ročné klimatické priemery pre Slovensko a kraje: pozorovania E-OBS (1951–1980 až 1981–2010), klimatický normál SHMÚ 1991–2020 a projekcie scenára RCP4.5 na obdobia 2021–2050 a 2071–2100.",
     url: "https://sk-klima.sk/metodika",
     inLanguage: "sk-SK",
     creator: [
@@ -54,10 +54,10 @@ export default function MetodikaPage() {
         <div className="rounded-3xl bg-sky-50 p-5">
           <h2 className="font-black text-sky-950">📜 Pozorované dáta</h2>
           <p className="mt-2 text-sm leading-relaxed text-stone-700">
-            Merania a gridy — čo sa reálne stalo. Roky 1950–2025 sa počítajú
-            z európskeho datasetu E-OBS (denný grid 0,1°), klimatický
-            normál 1991–2020 tvoria oficiálne 500 m normály SHMÚ.
-            Všetkých 5 metrík sa počíta z reálnych dát.
+            Merania a gridy — čo sa reálne stalo. Zobrazujú sa len 3×
+            30-ročné priemery WMO (1951–1980, 1961–1990, 1981–2010)
+            z európskeho datasetu E-OBS. Klimatický
+            normál 1991–2020 tvoria normály SHMÚ.
           </p>
         </div>
         <div className="rounded-3xl bg-teal-50 p-5">
@@ -94,8 +94,7 @@ export default function MetodikaPage() {
             najpesimistickejší variant — práve preto ho tento web používa:
             nepreháňa ani nebagatelizuje. SHMÚ poskytuje aj gridy
             RCP8.5 (vysoké emisie), tento web však používa len stredný
-            scenár RCP4.5. Rozdiel medzi scenármi sa naplno ukáže až okolo
-            roku 2100; do roku 2050 sa scenáre takmer prekrývajú.
+            scenár RCP4.5.
           </p>
         </div>
       </section>
@@ -104,24 +103,27 @@ export default function MetodikaPage() {
         <h2 className="text-2xl font-black">Prečo je budúcnosť neistá?</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-stone-700 sm:text-base">
           <li>Modely sú zjednodušením reality — rôzne modely dávajú mierne iné výsledky.</li>
-          <li>Regionálne detaily (údolie vs hrebeň) sa modelujú ťažšie než celoslovenský priemer.</li>
+          <li>Regionálne detaily sa modelujú ťažšie než celoslovenský priemer.</li>
           <li>Extrémy (lejak, sucho) sú neistejšie než priemerná teplota.</li>
-          <li>Kraje sú vnútorne rôznorodé — napr. Žilinský kraj zahŕňa nížiny aj Tatry.</li>
         </ul>
-        <p className="mt-3 rounded-2xl bg-stone-100 p-4 text-sm">
-          Preto tento web hovorí jazykom pravdepodobnosti: „Očakávajú sa častejšie
-          horúčavy.“, „Očakávajú sa skôr kratšie a teplejšie zimy.“,
-          „Obdobia sucha môžu
-          byť dlhšie.“ — nie katastrofickými titulkami.
-        </p>
+      </section>
+
+      <section className="rounded-3xl border border-stone-200 bg-white p-6 sm:p-8">
+        <h2 className="text-2xl font-black">Dajú sa obdobia z dvoch zdrojov porovnať?</h2>
+        <div className="mt-3 space-y-3 text-sm leading-relaxed text-stone-700 sm:text-base">
+          <p>
+            Staršie obdobia (1951–1980 až 1981–2010) pochádzajú z hrubšieho
+            gridu E-OBS (cca 11 km), normál 1991–2020 a projekcie
+            z jemných gridov SHMÚ (500 m). Hrubší grid vyhladzuje lokálne
+            extrémy — horúčavy a lejaky preto vychádzajú skôr nižšie,
+            mrazové dni vyššie. Smer zmeny je naprieč zdrojmi robustný;
+            presné čísla sa líšia aj rozlíšením, nielen klímou.
+          </p>
+        </div>
       </section>
 
       <section className="rounded-3xl border border-stone-200 bg-white p-6 sm:p-8">
         <h2 className="text-2xl font-black">Zdroje dát</h2>
-        <p className="mt-1 text-sm text-stone-600">
-          Každé dôležité číslo má svoj zdroj. Používame tieto
-          autoritatívne zdroje:
-        </p>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full min-w-[560px] text-left text-sm">
             <thead>
@@ -156,21 +158,15 @@ export default function MetodikaPage() {
       <section className="rounded-3xl bg-stone-950 p-6 text-white sm:p-8">
         <h2 className="text-xl font-black">Ako vznikli súčasné dáta?</h2>
         <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-stone-300">
-          <li>Skripty v <code>/scripts/shmu_pipeline</code> stiahli E-OBS gridy a SHMÚ normály 1991–2020 (raw dáta sa nepublikujú, len agregáty).</li>
-          <li>Validácia (<code>checks.py</code>) porovnala E-OBS proti SHMÚ gridom aj denným staniciam; publikuje sa len pri kompletnosti ≥ 90 % dní.</li>
-          <li>Emisia do <code>src/data/climate.real.json</code> v schéme ClimateRecord: roky 1950–2025 so statusom „observed“, 2050/2100 ako projekcie RCP4.5 so statusom „projected“.</li>
-          <li>Každý záznam nesie <code>sourceId, referencePeriod, scenario, lastUpdated</code>.</li>
+          <li>Skripty v <code>/scripts/shmu_pipeline</code> stiahli E-OBS gridy, SHMÚ normály 1991–2020 a RCP4.5 gridy 2021–2050 / 2071–2100 (raw dáta sa nepublikujú, len agregáty).</li>
+          <li>Kontrola (<code>checks.py</code>) porovná E-OBS s normálmi SHMÚ a bodovo s jedným mesiacom denných dát; prejde len pri kompletnosti ≥ 90 % a potvrdenom oteplení (2024 teplejšie ako 1951, 2050 teplejšie ako normál).</li>
+          <li>Emisia do <code>src/data/climate.real.json</code> v schéme ClimateRecord: obdobia 1951–1980, 1961–1990 a 1981–2010 (E-OBS, „observed“), normál 1991–2020 (SHMÚ, „observed“) a projekcie 2021–2050 / 2071–2100 (RCP4.5, „projected“).</li>
+          <li>Každý záznam nesie aj zdroj, referenčné obdobie, scenár a dátum (<code>sourceId, referencePeriod, scenario, lastUpdated</code>); každý bod obdobie, hodnotu a status (<code>periodId, value, displayValue, status</code>).</li>
         </ol>
-        <Link
-          href="/"
-          className="mt-4 inline-block rounded-full bg-white px-5 py-2.5 font-bold text-stone-900 hover:bg-stone-200"
-        >
-          ← Späť na homepage
-        </Link>
       </section>
 
       <section className="rounded-3xl border border-stone-200 bg-white p-6 sm:p-8">
-        <h2 className="text-2xl font-black">Povinné citácie zdrojov</h2>
+        <h2 className="text-2xl font-black">Citácie zdrojov</h2>
         <div className="mt-3 space-y-4 text-sm leading-relaxed text-stone-700">
           <div className="rounded-2xl bg-stone-100 p-4">
             <p className="font-bold">SHMÚ (plné znenie, CC BY 4.0)</p>

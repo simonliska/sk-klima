@@ -4,10 +4,9 @@
     "labelSk": "Priemerná teplota",
     "shortLabelSk": "Teplota",
     "icon": "🌡️",
-    "unit": "°C, odchýlka oproti klimatickému normálu 1991–2020",
-    "definitionSk": "Odchýlka priemernej ročnej teploty oproti klimatickému normálu 1991–2020.",
+    "unit": "°C",
+    "definitionSk": "Priemerná ročná teplota – rozdiel oproti normálu 1991–2020.",
     "goodDirection": "neutral",
-    "headlineTemplateSk": "Teplejšie ako dnes",
     "praxSk": "Dlhšie teplé obdobie roka, kratšia zima."
   },
   {
@@ -16,9 +15,8 @@
     "shortLabelSk": "Horúce dni",
     "icon": "☀️",
     "unit": "dní / rok",
-    "definitionSk": "Počet dní v roku s teplotou nad 30 °C.",
+    "definitionSk": "Dni s teplotou nad 30 °C za rok.",
     "goodDirection": "up-bad",
-    "headlineTemplateSk": "Viac horúcich dní",
     "praxSk": "Očakáva sa, že horúčavy budú častejšie a potrvajú dlhšie."
   },
   {
@@ -27,9 +25,8 @@
     "shortLabelSk": "Tropické noci",
     "icon": "🌙",
     "unit": "nocí / rok",
-    "definitionSk": "Počet nocí, keď teplota neklesne pod 20 °C. Telo si neoddýchne.",
+    "definitionSk": "Noci s teplotou nad 20 °C za rok.",
     "goodDirection": "up-bad",
-    "headlineTemplateSk": "Noci bez ochladenia",
     "praxSk": "Horší spánok, väčšia záťaž hlavne pre seniorov."
   },
   {
@@ -38,9 +35,8 @@
     "shortLabelSk": "Mrazové dni",
     "icon": "❄️",
     "unit": "dní / rok",
-    "definitionSk": "Počet dní s teplotou pod 0 °C.",
+    "definitionSk": "Dni s teplotou pod 0 °C za rok.",
     "goodDirection": "neutral",
-    "headlineTemplateSk": "Menej mrazu",
     "praxSk": "Kratšia zima, menej dní so stabilným mrazom."
   },
   {
@@ -49,9 +45,8 @@
     "shortLabelSk": "Prívalové dažde",
     "icon": "⛈️",
     "unit": "dní / rok",
-    "definitionSk": "Počet dní v roku s úhrnom zrážok nad 40 mm (SHMÚ). Krátke výdatné dažde znamenajú riziko lokálnych záplav.",
+    "definitionSk": "Dni s úhrnom nad 40 mm za rok.",
     "goodDirection": "up-bad",
-    "headlineTemplateSk": "Silnejšie lejaky",
     "praxSk": "Krátke intenzívne dažde môžu znamenať lokálne záplavy."
   }
 ]

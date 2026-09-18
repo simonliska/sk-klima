@@ -28,22 +28,15 @@ export default function ImpactsSection() {
             <p className="mt-1 text-sm font-semibold text-teal-800">
               {c.headlineSk}
             </p>
-            <p className="mt-1 inline-flex w-fit rounded-full bg-stone-100 px-2.5 py-1 text-[11px] font-semibold text-stone-700">
-              {c.statSk}
-            </p>
             <p className="mt-2 text-sm leading-relaxed text-stone-600">
               {c.explanationSk}
             </p>
-            <div className="mt-3 rounded-2xl bg-teal-50 p-3 text-sm leading-relaxed">
-              <p className="font-bold text-teal-950">Čo to znamená v praxi?</p>
-              <p className="mt-1 text-teal-950/80">{c.praxSk}</p>
+            <div className="mt-auto pt-3">
+              <div className="rounded-2xl bg-teal-50 p-3 text-sm leading-relaxed">
+                <p className="font-bold text-teal-950">Čo to znamená v praxi?</p>
+                <p className="mt-1 text-teal-950/80">{c.praxSk}</p>
+              </div>
             </div>
-            <a
-              href="/metodika"
-              className="mt-auto pt-3 text-xs font-medium text-stone-500 hover:underline"
-            >
-              Zdroj údajov a metodika →
-            </a>
           </article>
         ))}
       </div>

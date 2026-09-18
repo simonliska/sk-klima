@@ -28,10 +28,10 @@ export default function MethodologyModal({ label = "Ako vznikli tieto údaje?" }
           >
             <h2 className="text-lg font-black">Ako vznikli tieto údaje?</h2>
             <p className="mt-2 text-sm leading-relaxed text-stone-600">
-              Roky do 2025 sú pozorované dáta E-OBS (teplotné
-              odchýlky oproti klimatickému normálu SHMÚ 1991–2020).
-              Budúcnosť je projekcia
-              scenára RCP4.5 (SHMÚ, očakávané približné hodnoty), nie predpoveď počasia.
+              1951–2010 pozorovania E-OBS (30-ročné priemery), 1991–2020
+              klimatický normál SHMÚ (teplotné odchýlky sa vzťahujú k nemu).
+              Budúcnosť je projekcia RCP4.5 (30-ročné priemery 2021–2050
+              a 2071–2100), nie predpoveď počasia.
             </p>
             <div className="mt-4 flex gap-2">
               <Link

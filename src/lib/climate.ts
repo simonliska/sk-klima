@@ -5,14 +5,16 @@ import normalsData from "@/data/normals.1991_2020.json";
 import impactsData from "@/data/impacts.sk.json";
 import sourcesData from "@/data/sources.json";
 import {
-  eraForYear,
+  eraForPeriod,
+  periodById,
+  TIMELINE_PERIODS,
   type ClimateRecord,
   type ImpactCategory,
   type MetricDef,
   type MetricId,
   type Region,
   type SourceDef,
-  type TimelineYear,
+  type TimelinePeriodId,
 } from "./types";
 
 export const REGIONS = regionsData as Region[];
@@ -59,27 +61,27 @@ export function getRecordsForRegion(regionSlug: string): ClimateRecord[] {
 export function getPoint(
   regionSlug: string,
   metricId: MetricId,
-  year: TimelineYear,
+  periodId: TimelinePeriodId,
   scenario: string = DEFAULT_SCENARIO
 ) {
   const rec = findRecord(regionSlug, metricId, scenario);
-  return rec?.points.find((p) => p.year === year);
+  return rec?.points.find((p) => p.periodId === periodId);
 }
 
-/** Per-point source: history/today (≤2025) is pure E-OBS; SHMÚ normals
- *  serve only as the 1991–2020 baseline for temperature anomalies;
- *  projections are SHMÚ RCP4.5 scenario grids (SHMÚ provides RCP8.5
+/** Per-point source: past periods are E-OBS observations; the 1991–2020
+ *  normal and both RCP4.5 projections are SHMÚ grids (SHMÚ provides RCP8.5
  *  grids too, but this web uses RCP4.5 only). */
 export function getPointSource(
   regionSlug: string,
   metricId: string,
-  year: number,
+  periodId: string,
   scenario: string = DEFAULT_SCENARIO
 ) {
   const rec = findRecord(regionSlug, metricId, scenario);
-  const point = rec?.points.find((p) => p.year === year);
+  const point = rec?.points.find((p) => p.periodId === periodId);
   if (!point) return undefined;
   if (point.status === "projected") return "SHMÚ";
+  if (point.periodId === "1991-2020") return "SHMÚ";
   return "E-OBS";
 }
 
@@ -91,12 +93,17 @@ export function getMetricSeries(
   const rec = findRecord(regionSlug, metricId, scenario);
   return (
     rec?.points.map((p) => ({
+      periodId: p.periodId,
+      labelSk: p.labelSk,
+      shortLabelSk:
+        TIMELINE_PERIODS.find((t) => t.id === p.periodId)?.shortLabelSk ??
+        p.labelSk,
       year: p.year,
       value: p.value,
       displayValue: p.displayValue,
       status: p.status,
-      era: eraForYear(p.year),
-      sourceId: getPointSource(regionSlug, metricId, p.year, scenario),
+      era: eraForPeriod(p.periodId),
+      sourceId: getPointSource(regionSlug, metricId, p.periodId, scenario),
     })) ?? []
   );
 }
@@ -106,9 +113,9 @@ export function getMetricSeries(
  *  sampling scripts/shmu_pipeline/04_sample_shmu_grids.py), CC BY 4.0.
  *  Teplota je anomália voči normálu, preto je definitoricky 0.
  *  Slúži ako baseline „dneška" pre delty v Hero: 30-ročný priemer
- *  vs 30-ročný priemer 2021–2050 (UI rok „2050").
- *  TODO: roky 2021–2024 existujú v data_raw/eobs/indicators.json —
- *  prípadné rozšírenie TIMELINE_YEARS z 8 na 12 bodov. */
+ *  vs 30-ročný priemer 2021–2050. Tá istá hodnota je aj
+ *  bodom časovej osi s periodId "1991-2020" — normál je na webe
+ *  vždy a všade to isté číslo. */
 export const NORMAL_1991_2020: Record<MetricId, number> = {
   avg_temp: 0,
   tropical_days: 18.0,
@@ -156,7 +163,7 @@ export function getHeroCards(
 ): HeroCard[] {
   return HERO_METRICS.map((id) => {
     const metric = METRICS.find((m) => m.id === id)!;
-    const future = getPoint(NATIONAL_SLUG, id, 2050, scenario);
+    const future = getPoint(NATIONAL_SLUG, id, "2021-2050", scenario);
     const base = NORMAL_PRECISE[id] ?? 0;
     const rawDelta = (future?.value ?? 0) - base;
     let big: string;
@@ -229,7 +236,7 @@ export function compareNormalVs2050(
 ) {
   return METRICS.map((metric) => {
     const normalValue = getRegionalNormal(regionSlug, metric.id);
-    const future = getPoint(regionSlug, metric.id, 2050, scenario);
+    const future = getPoint(regionSlug, metric.id, "2021-2050", scenario);
     const today =
       normalValue === undefined
         ? undefined
@@ -250,9 +257,8 @@ export function compareNormalVs2050(
   });
 }
 
-/** Unique 2–3 sentence intro per region, built from real normal→2050
- *  values (RCP4.5 projection vs 1991–2020 normal — same convention as
- *  Hero cards). Server-rendered so every /kraj page has distinct
+/** Unique short intro per region (no numbers — details are in the
+ *  cards below). Server-rendered so every /kraj page has distinct
  *  indexable text (fixes thin/duplicate content across the 8 pages). */
 export function getRegionIntro(
   regionSlug: string,
@@ -262,16 +268,6 @@ export function getRegionIntro(
   if (!region) return "";
   const comp = compareNormalVs2050(regionSlug, scenario);
   const entry = (id: MetricId) => comp.find((c) => c.metric.id === id);
-  const pair = (id: MetricId) => {
-    const e = entry(id);
-    return `${e?.today?.displayValue ?? "–"} → ${e?.future?.displayValue ?? "–"}`;
-  };
-
-  const t50 = entry("avg_temp")?.future?.displayValue ?? "–";
-  const td = pair("tropical_days");
-  const tn = pair("tropical_nights");
-  const fd = pair("frost_days");
-  const hp = pair("heavy_precip");
 
   const tn50 = entry("tropical_nights")?.future?.value ?? 0;
   const td50 = entry("tropical_days")?.future?.value ?? 0;
@@ -288,8 +284,8 @@ export function getRegionIntro(
   }
 
   return (
-    `Projekcia RCP4.5 pre ${region.name} (${region.characterSk}) porovnáva 30-ročný priemer 2021–2050 s klimatickým normálom 1991–2020. ` +
-    `Priemerná teplota: ${t50} °C oproti normálu; tropické dni: ${td}; tropické noci: ${tn}; mrazové dni: ${fd}; dni s prívalovým dažďom: ${hp}. ` +
+    `Ako sa môže zmeniť klíma v regióne ${region.name}? ` +
+    `Porovnávame klimatický normál 1991–2020 s projekciou 2021–2050 (scenár RCP4.5). ` +
     `Pre ${region.shortName} to znamená, že ${focus}.`
   );
 }
@@ -302,4 +298,4 @@ export function getSources(): SourceDef[] {
   return SOURCES;
 }
 
-export { eraForYear };
+export { eraForPeriod, periodById, TIMELINE_PERIODS };

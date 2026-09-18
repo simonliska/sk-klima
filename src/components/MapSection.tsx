@@ -8,7 +8,6 @@ import {
   DEFAULT_SCENARIO,
   getRegion,
 } from "@/lib/climate";
-import { SourceBadge } from "./Badges";
 
 export default function MapSection() {
   const [selected, setSelected] = useState<string>("bratislavsky");
@@ -49,7 +48,7 @@ export default function MapSection() {
               </p>
               <h3 className="mt-1 text-2xl font-black">{region.name}</h3>
               <p className="mt-1 text-sm text-teal-100/80">
-                {region.characterSk} • {region.populationApprox}
+                {region.populationApprox}
               </p>
 
               <ul className="mt-4 space-y-2 text-sm">
@@ -83,14 +82,19 @@ export default function MapSection() {
                 href={`/kraj/${region.slug}`}
                 className="mt-4 block rounded-full bg-white px-5 py-3 text-center font-bold text-teal-950 hover:bg-teal-50"
               >
-                Detail {region.shortName}: normál vs. 2050 →
+                Detail {region.shortName}: 2021-2050
               </Link>
               <div className="mt-3 flex flex-col items-start gap-2">
                 <span className="text-[11px] leading-relaxed text-teal-100/70">
                   Normál 1991–2020 (SHMÚ) • 2050 je projekcia {scenario} (SHMÚ,
                   30-ročný priemer 2021–2050, očakávané približné hodnoty).
                 </span>
-                <SourceBadge source="SHMÚ" />
+                <Link
+                  href="/metodika"
+                  className="text-[11px] font-medium text-teal-100 underline hover:text-white"
+                >
+                  Ako vznikli tieto údaje? →
+                </Link>
               </div>
             </>
           )}

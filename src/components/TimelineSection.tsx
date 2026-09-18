@@ -7,25 +7,47 @@ import {
   getMetrics,
   NATIONAL_SLUG,
 } from "@/lib/climate";
-import { TIMELINE_YEARS, type TimelineYear } from "@/lib/types";
+import {
+  DEFAULT_PERIOD_ID,
+  TIMELINE_PERIODS,
+  periodById,
+  type TimelinePeriodId,
+} from "@/lib/types";
 import { DataEraBadge, SourceBadge } from "./Badges";
 import ClimateChart from "./ClimateChart";
 
+function periodHint(periodId: string): string {
+  if (periodId === "1991-2020")
+    return "Klimatický normál 1991–2020 (SHMÚ) — dnešná klíma";
+  const p = periodById(periodId);
+  if (!p) return "";
+  if (p.status === "projected")
+    return "Projekcia RCP4.5: 30-ročný priemer — nie predpoveď počasia";
+  return "Pozorovaný 30-ročný priemer (E-OBS)";
+}
+
+function pointHint(periodId: string, status: string): string {
+  if (status === "projected") return "Projekcia: 30-ročný priemer";
+  if (periodId === "1991-2020") return "Klimatický normál (SHMÚ)";
+  return "Pozorovaný 30-ročný priemer (E-OBS)";
+}
+
 export default function TimelineSection() {
-  const [year, setYear] = useState<TimelineYear>(2025);
+  const [periodId, setPeriodId] = useState<TimelinePeriodId>(DEFAULT_PERIOD_ID);
   const scenario = DEFAULT_SCENARIO;
   const metrics = getMetrics();
 
-  const yearIndex = TIMELINE_YEARS.indexOf(year);
+  const periodIndex = TIMELINE_PERIODS.findIndex((p) => p.id === periodId);
+  const period = periodById(periodId);
 
   const cards = useMemo(
     () =>
       metrics.map((m) => {
         const series = getMetricSeries(NATIONAL_SLUG, m.id, scenario);
-        const point = series.find((p) => p.year === year);
+        const point = series.find((p) => p.periodId === periodId);
         return { metric: m, series, point };
       }),
-    [year, metrics, scenario]
+    [periodId, metrics, scenario]
   );
 
   return (
@@ -36,58 +58,51 @@ export default function TimelineSection() {
         </h2>
         <p className="mt-2 text-lg text-stone-600">
           Ako sa menila klíma na Slovensku a čo sa očakáva v najbližších
-          desaťročiach? Vyberte rok na posuvníku alebo ťuknite na graf.
+          desaťročiach? Vyberte obdobie na posuvníku alebo ťuknite na graf.
+          Každý bod je 30-ročný priemer — jeden rok je počasie, nie klíma.
         </p>
       </div>
 
       {/* Slider */}
       <div className="mt-5 rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-        <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm">
-          <DataEraBadge
-            era={year < 2025 ? "HISTÓRIA" : year === 2025 ? "DNES" : "PROJEKCIA"}
-          />
-          <p className="text-sm text-stone-500">
-            Klimatický normál 1991–2020 • Scenár {scenario} pre budúcnosť
-          </p>
-        </div>
-
         <label htmlFor="timeline" className="mt-4 block">
           <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-            <span className="text-5xl font-black tabular-nums">{year}</span>
+            <span className="text-4xl font-black tabular-nums sm:text-5xl">
+              {period?.labelSk}
+            </span>
             <span className="text-sm text-stone-500 sm:text-right">
-              {year < 2025
-                ? "Pozorované zmeny (E-OBS)"
-                : year === 2025
-                  ? "Pozorovaná hodnota za rok 2025 (E-OBS)"
-                  : "Projekcia: očakávané približné hodnoty — nie predpoveď počasia"}
+              {periodHint(periodId)}
             </span>
           </span>
           <input
             id="timeline"
             type="range"
             min={0}
-            max={TIMELINE_YEARS.length - 1}
+            max={TIMELINE_PERIODS.length - 1}
             step={1}
-            value={yearIndex}
+            value={periodIndex}
             onChange={(e) =>
-              setYear(TIMELINE_YEARS[Number(e.target.value)] as TimelineYear)
+              setPeriodId(
+                TIMELINE_PERIODS[Number(e.target.value)].id as TimelinePeriodId
+              )
             }
             className="timeline-range mt-3 w-full"
-            aria-valuetext={`Rok ${year}`}
+            aria-valuetext={`Obdobie ${period?.labelSk}`}
           />
         </label>
         <div
           className="mt-3 flex flex-wrap gap-1 text-xs font-semibold text-stone-500"
           role="group"
-          aria-label="Vyberte rok na časovej osi"
+          aria-label="Vyberte obdobie na časovej osi"
         >
-          {TIMELINE_YEARS.map((y) => (
+          {TIMELINE_PERIODS.map((p) => (
             <button
-              key={y}
-              onClick={() => setYear(y)}
-              className={`min-h-[44px] min-w-[44px] rounded-full px-2.5 py-2 hover:bg-stone-100 ${y === year ? "bg-teal-700 text-white" : ""}`}
+              key={p.id}
+              onClick={() => setPeriodId(p.id as TimelinePeriodId)}
+              title={p.labelSk}
+              className={`min-h-[44px] min-w-[44px] rounded-full px-2.5 py-2 hover:bg-stone-100 ${p.id === periodId ? "bg-teal-700 text-white" : ""}`}
             >
-              {y}
+              {p.labelSk}
             </button>
           ))}
         </div>
@@ -117,35 +132,28 @@ export default function TimelineSection() {
               </span>
             </p>
             <p className="mt-1 text-sm text-stone-600">
-              {point && point.year > 2025
-                ? metric.headlineTemplateSk
-                : metric.definitionSk}
+              {metric.definitionSk}
             </p>
             {point && (
               <p className="mt-1 text-xs text-stone-500">
-                {point.status === "projected"
-                  ? "Projekcia: približná hodnota"
-                  : point.year === 2025
-                    ? "Pozorovaná hodnota za rok 2025"
-                    : "Pozorovaná hodnota"}
+                {pointHint(point.periodId, point.status)} • {point.labelSk}
               </p>
             )}
             <div className="mt-3">
               <ClimateChart
-                data={series.map((s) => ({ year: s.year, value: s.value }))}
-                activeYear={year}
-                onSelectYear={(y) => {
-                  if ((TIMELINE_YEARS as readonly number[]).includes(y))
-                    setYear(y as TimelineYear);
-                }}
+                data={series.map((s) => ({
+                  periodId: s.periodId,
+                  label: s.shortLabelSk,
+                  value: s.value,
+                }))}
+                activePeriodId={periodId}
+                onSelectPeriod={(id) => setPeriodId(id as TimelinePeriodId)}
               />
             </div>
             <div className="mt-3 flex items-center justify-between">
               <SourceBadge source={point?.sourceId ?? "E-OBS"} />
               <span className="text-xs tabular-nums text-stone-400">
-                {point?.year === 2050 || point?.year === 2100
-                  ? "Projekcia: 30-ročný priemer"
-                  : "Pozorovaný rok"}
+                30-ročný priemer
               </span>
             </div>
           </article>
@@ -162,11 +170,10 @@ export default function TimelineSection() {
       </div>
 
       <p className="mt-4 rounded-2xl bg-violet-50 p-4 text-sm leading-relaxed text-violet-950">
-        <strong>Budúce hodnoty sú projekcie, nie predpoveď.</strong> Minulosť
-        a rok 2025 sú pozorované dáta E-OBS (teplotné odchýlky oproti
-        klimatickému normálu SHMÚ 1991–2020); roky 2050 a 2100 sú projekcie scenára
-        RCP4.5. Skutočný vývoj
-        závisí od budúcich emisií skleníkových plynov a ďalších faktorov.
+        <strong>Budúce hodnoty sú projekcie, nie predpoveď.</strong>{" "}
+        1951–2010 pozorovania E-OBS, 1991–2020 normál SHMÚ, 2021–2050 /
+        2071–2100 projekcia RCP4.5 (30-ročné priemery). Skutočný vývoj
+        závisí od budúcich emisií a ďalších faktorov.
       </p>
     </section>
   );

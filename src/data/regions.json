@@ -3,56 +3,48 @@
     "slug": "bratislavsky",
     "name": "Bratislavský kraj",
     "shortName": "Bratislava",
-    "populationApprox": "≈ 730-tisíc",
-    "characterSk": "Nížina, mesto, Dunaj"
+    "populationApprox": "≈ 730-tisíc"
   },
   {
     "slug": "trnavsky",
     "name": "Trnavský kraj",
     "shortName": "Trnava",
-    "populationApprox": "≈ 560-tisíc",
-    "characterSk": "Nížina, polia, málo lesov"
+    "populationApprox": "≈ 560-tisíc"
   },
   {
     "slug": "trenciansky",
     "name": "Trenčiansky kraj",
     "shortName": "Trenčín",
-    "populationApprox": "≈ 580-tisíc",
-    "characterSk": "Údolie Váhu, kopce"
+    "populationApprox": "≈ 580-tisíc"
   },
   {
     "slug": "nitriansky",
     "name": "Nitriansky kraj",
     "shortName": "Nitra",
-    "populationApprox": "≈ 670-tisíc",
-    "characterSk": "Teplá nížina, polia"
+    "populationApprox": "≈ 670-tisíc"
   },
   {
     "slug": "zilinsky",
     "name": "Žilinský kraj",
     "shortName": "Žilina",
-    "populationApprox": "≈ 690-tisíc",
-    "characterSk": "Hory, doliny, lesy"
+    "populationApprox": "≈ 690-tisíc"
   },
   {
     "slug": "banskobystricky",
     "name": "Banská Bystrica",
     "shortName": "Banská Bystrica",
-    "populationApprox": "≈ 620-tisíc",
-    "characterSk": "Juh nížina, sever hory"
+    "populationApprox": "≈ 620-tisíc"
   },
   {
     "slug": "presovsky",
     "name": "Prešovský kraj",
     "shortName": "Prešov",
-    "populationApprox": "≈ 820-tisíc",
-    "characterSk": "Tatry, Šariš, Spiš"
+    "populationApprox": "≈ 820-tisíc"
   },
   {
     "slug": "kosicky",
     "name": "Košický kraj",
     "shortName": "Košice",
-    "populationApprox": "≈ 780-tisíc",
-    "characterSk": "Nížina, kras, mesto"
+    "populationApprox": "≈ 780-tisíc"
   }
 ]

@@ -3,9 +3,10 @@
 Input:  data_raw/eobs/eobs_v33_0e_<chunk>.nc (ZIPs with 4 NetCDF members)
 Output: data_raw/eobs/sk/<var>_<year>.nc  (small working files)
 
-Needed years (timeline 1950->1960->2000->2010->2020->2025->2050->2100):
-  1950, 1960 (from 1950_1964), 2000, 2010 (from 1995_2010),
-  2020..2025 (from 2011_2025, validation vs SHMU grids + daily JSON)
+Needed years (timeline = 30-year WMO periods):
+  1951..1980 (period 1951-1980), 1961..1990 (period 1961-1990),
+  1981..2010 (period 1981-2010) + 2020..2025 (validation vs SHMU
+  grids + daily JSON; recent single years kept only for checks).
 
 Slovakia bbox with margin: lat 47.5-49.8, lon 16.5-22.8 (0.1deg grid).
 Provenance attributes are copied to every output file.
@@ -28,8 +29,10 @@ LON_MIN, LON_MAX = 16.5, 22.8
 
 # chunk -> years we actually need from it
 CHUNK_YEARS = {
-    "1950_1964": [1950, 1960],
-    "1995_2010": [2000, 2010],
+    "1950_1964": list(range(1951, 1965)),
+    "1965_1979": list(range(1965, 1980)),
+    "1980_1994": list(range(1980, 1995)),
+    "1995_2010": list(range(1995, 2011)),
     "2011_2025": [2020, 2021, 2022, 2023, 2024, 2025],
 }
 

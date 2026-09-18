@@ -280,10 +280,24 @@ https://surfobs.climate.copernicus.eu — used according to the download source.
    (21h–21h / 7h–7h MSSC).
 3. Working with the ensemble mean is recommended.
 
-### 11.5 Decision: timeline without years before 1950
+### 11.5 Decision: timeline = 30-year periods, no single years
 
-Applies: everything before 1950 is removed (no data).
-New MVP timeline: **1950 → 2000 → 2025 → 2050 → 2100**.
+One year is weather, not climate (WMO normals are 30-year means), so the
+timeline shows only 30-year periods — six points, computed 2026-09-18 from
+the full E-OBS 1950–2025 chunks plus SHMÚ grids:
+
+- **1951–1980, 1961–1990, 1981–2010** — E-OBS v33.0e period means
+  (`data_raw/eobs/periods.json`, kraj threshold counts = mean of
+  per-cell annual counts to match SHMÚ per-pixel semantics).
+- **1991–2020** — SHMÚ 500 m normals (authoritative; the same value the
+  Hero/Map/kraj pages compare against — one normal everywhere).
+- **2021–2050, 2071–2100** — SHMÚ RCP4.5 grids (v mini grafoch skrátene
+  „2021–50" / „2071–00").
+
+Known limitation (documented on `/metodika`): the coarser E-OBS grid
+(~11 km) smooths local extremes vs SHMÚ 500 m grids, so pre-1991 hot-day
+/ heavy-rain means read rather low and frost days rather high; the trend
+direction is robust and check-enforced (`checks.py` §6b).
 
 ## 12. Kraj boundaries (map) — provenance
 

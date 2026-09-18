@@ -15,8 +15,14 @@ Two spatial levels:
   - capitals: 8 kraj cities, nearest-grid-cell (0.1deg grid ~ 11 km).
   - kraje: daily spatial mean over grid cells whose centre falls inside
     the kraj polygon from public/geo/kraje.geo.json (ray-casting
-    point-in-polygon, pure stdlib — no geopandas), then same thresholds
-    applied to the regional-mean daily series.
+    point-in-polygon, pure stdlib — no geopandas). Linear indicators
+    (avg_temp_c, precip_sum_mm) are computed on the regional-mean daily
+    series. Threshold-count indicators (tropical_days, tropical_nights,
+    frost_days, heavy_days) are computed PER CELL and then averaged
+    over kraj cells (mean of per-cell annual counts) — counting on the
+    smoothed mean series would systematically erase hot events in
+    mountainous kraje and inflate frost days. This matches the SHMU
+    grid semantics (mean of per-pixel mean counts).
 
 Completeness rule (DATA_SOURCE.md §3): an annual value is published only
 if >= 90 % of days are valid; otherwise the year is flagged
@@ -41,8 +47,20 @@ BASE = Path(__file__).resolve().parents[2]
 SK_DIR = BASE / "data_raw" / "eobs" / "sk"
 GEO_PATH = BASE / "public" / "geo" / "kraje.geo.json"
 OUT_PATH = BASE / "data_raw" / "eobs" / "indicators.json"
+PERIODS_PATH = BASE / "data_raw" / "eobs" / "periods.json"
 
-YEARS = [1950, 1960, 2000, 2010, 2020, 2021, 2022, 2023, 2024, 2025]
+# Annual years: full coverage for the three WMO past periods
+# (1951-1980, 1961-1990, 1981-2010) + recent years for validation.
+YEARS = list(range(1951, 2011)) + [2020, 2021, 2022, 2023, 2024, 2025]
+
+# Past timeline periods (WMO 30-year normals from observations).
+# 1991-2020 comes from the authoritative SHMU grids (not E-OBS),
+# 2021-2050 / 2071-2100 from SHMU RCP4.5 grids — see 05_emit_frontend.py.
+PERIODS: dict[str, list[int]] = {
+    "1951-1980": list(range(1951, 1981)),
+    "1961-1990": list(range(1961, 1991)),
+    "1981-2010": list(range(1981, 2011)),
+}
 
 # Approximate city centres (lat, lon). Only used to pick the nearest
 # 0.1° grid cell (~11 km), so metre-level precision is irrelevant.
@@ -172,11 +190,24 @@ def annual_indicators(
 def kraj_heavy_mean(rr: np.ma.MaskedArray, mask: np.ndarray) -> dict:
     """Mean of per-cell annual RR>40 counts over kraj cells.
 
-    Exception to the regional-mean-series rule: heavy rain is localized;
-    counting on the smoothed mean series would systematically erase events.
-    This matches the SHMU grid semantics (mean of per-pixel mean counts).
+    Heavy rain is localized; counting on the smoothed mean series would
+    systematically erase events. This matches the SHMU grid semantics
+    (mean of per-pixel mean counts).
     """
-    cell = rr[:, mask]  # [time, cells]
+    return kraj_count_mean(rr, mask, 40.0, ">", "heavy_days")
+
+
+def kraj_count_mean(var: np.ma.MaskedArray, mask: np.ndarray,
+                    threshold: float, op: str, field: str) -> dict:
+    """Mean of per-cell annual threshold counts over kraj cells.
+
+    Generalization of the heavy-rain rule for TX>=30 (tropical days),
+    TN>=20 (tropical nights), TN<0 (frost days): per-cell annual
+    counts, then arithmetic mean over cells. Returns the same
+    completeness/status envelope as annual_indicators plus
+    {field} = mean count (1 decimal).
+    """
+    cell = var[:, mask]  # [time, cells]
     valid_days = ~np.ma.getmaskarray(cell).any(axis=1)
     n_valid = int(valid_days.sum())
     completeness = n_valid / cell.shape[0]
@@ -185,11 +216,65 @@ def kraj_heavy_mean(rr: np.ma.MaskedArray, mask: np.ndarray) -> dict:
     if completeness < 0.9:
         out["status"] = "insufficient_data"
         return out
-    counts = ((cell[valid_days] > 40.0).sum(axis=0)).compressed() \
-        if isinstance(cell, np.ma.MaskedArray) else (cell[valid_days] > 40.0).sum(axis=0)
+    sel = cell[valid_days]
+    if op == ">":
+        hits = (sel > threshold).sum(axis=0)
+    elif op == ">=":
+        hits = (sel >= threshold).sum(axis=0)
+    else:  # "<"
+        hits = (sel < threshold).sum(axis=0)
+    counts = hits.compressed() \
+        if isinstance(hits, np.ma.MaskedArray) else np.asarray(hits)
     out["status"] = "ok"
-    out["heavy_days"] = round(float(np.asarray(counts).mean()), 1)
+    out[field] = round(float(np.asarray(counts).mean()), 1)
     return out
+
+
+def write_periods(result: dict) -> None:
+    """Average annual indicators into 30-year WMO period means.
+
+    Output: data_raw/eobs/periods.json — {capitals, kraje}[name][period]
+    with mean annual values over the 30 years (temp 2dec, heavy/precip
+    1dec, counts 1dec fractional — final display rounding in 05_emit).
+    A period is published only if all 30 years have status ok.
+    """
+    MEAN_FIELDS = ("tropical_days", "tropical_nights", "frost_days",
+                   "heavy_days", "precip_sum_mm", "avg_temp_c")
+    out: dict = {
+        "source": result["source"],
+        "method": ("30-year arithmetic mean of annual indicators "
+                   "from indicators.json; kraje threshold counts = mean of "
+                   "annual mean-of-cell counts"),
+        "periods": list(PERIODS),
+        "capitals": {},
+        "kraje": {},
+    }
+    for level in ("capitals", "kraje"):
+        for name, by_year in result[level].items():
+            for period, years in PERIODS.items():
+                vals = [by_year.get(str(y)) for y in years]
+                if any(v is None or v.get("status") != "ok" for v in vals):
+                    out[level].setdefault(name, {})[period] = {
+                        "status": "insufficient_data",
+                        "reason": "not all 30 years ok",
+                    }
+                    continue
+                agg: dict = {"status": "ok", "n_years": 30}
+                for f in MEAN_FIELDS:
+                    m = sum(v[f] for v in vals) / len(vals)  # type: ignore[index]
+                    agg[f] = round(float(m), 2 if f == "avg_temp_c" else 1)
+                if level == "kraje":
+                    agg["n_cells"] = vals[0]["n_cells"]
+                out[level].setdefault(name, {})[period] = agg
+    PERIODS_PATH.write_text(json.dumps(out, ensure_ascii=False, indent=1),
+                            encoding="utf-8")
+    print(f"Wrote {PERIODS_PATH} ({PERIODS_PATH.stat().st_size / 1024:.0f} KB)")
+    for slug in sorted(out["kraje"]):
+        row = " ".join(
+            f"{p}:{out['kraje'][slug][p].get('avg_temp_c', '?')}"
+            for p in PERIODS
+        )
+        print(f"  [period] KRAJ {slug:14s} TG {row}")
 
 
 def main(argv: list[str]) -> int:
@@ -215,9 +300,12 @@ def main(argv: list[str]) -> int:
 
     result: dict = {
         "source": "E-OBS v33.0e ensemble_mean, CDS insitu-gridded-observations-europe",
-        "method": ("capitals = nearest 0.1deg grid cell; kraje = daily spatial mean "
-                   "of cells inside GeoJSON polygon, then same thresholds; "
-                   "thresholds TX>=30, TN>=20, TN<0; completeness >= 90%"),
+        "method": ("capitals = nearest 0.1deg grid cell; kraje linear "
+                   "(avg_temp_c, precip_sum_mm) = daily spatial mean of cells, "
+                   "then indicators; kraje threshold counts (tropical_days "
+                   "TX>=30, tropical_nights TN>=20, frost_days TN<0, "
+                   "heavy_days RR>40) = mean of per-cell annual counts; "
+                   "completeness >= 90%"),
         "citation": ("We acknowledge the E-OBS dataset and the data providers in the "
                      "ECA&D project (https://www.ecad.eu). Cornes, R., G. van der Schrier, "
                      "E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of "
@@ -249,21 +337,32 @@ def main(argv: list[str]) -> int:
                     "reason": "no grid cells in polygon",
                 }
                 continue
-            # Daily spatial mean (masked-aware), then thresholds on the series.
+            # Linear indicators on the daily spatial mean series
+            # (mean of means = mean, no threshold distortion).
             txm = np.ma.mean(tx[:, mask], axis=1)
             tnm = np.ma.mean(tn[:, mask], axis=1)
             tgm = np.ma.mean(tg[:, mask], axis=1)
             rrm = np.ma.mean(rr[:, mask], axis=1)
             ind = annual_indicators(txm, tnm, tgm, rrm)
             ind["n_cells"] = n_cells
-            # Heavy rain: mean of per-cell counts (see kraj_heavy_mean).
-            heavy = kraj_heavy_mean(rr, mask)
-            ind["heavy_days"] = heavy.get("heavy_days")
+            # Threshold counts: mean of per-cell annual counts
+            # (matches SHMU grid semantics; counting on the smoothed
+            # mean series would erase hot events / inflate frost).
+            for var, thr, op, field in (
+                (tx, 30.0, ">=", "tropical_days"),
+                (tn, 20.0, ">=", "tropical_nights"),
+                (tn, 0.0, "<", "frost_days"),
+                (rr, 40.0, ">", "heavy_days"),
+            ):
+                c = kraj_count_mean(var, mask, thr, op, field)
+                ind[field] = c.get(field)
             result["kraje"].setdefault(slug, {})[str(year)] = ind
 
     OUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=1),
                         encoding="utf-8")
     print(f"Wrote {OUT_PATH} ({OUT_PATH.stat().st_size / 1024:.0f} KB)")
+
+    write_periods(result)
 
     # Console summary for validation.
     print("\nYear  city/KRAJ        tropD tropN frost precip  tmean  compl")
@@ -277,8 +376,8 @@ def main(argv: list[str]) -> int:
         for slug in sorted(masks):
             d = result["kraje"][slug][str(year)]
             if d.get("status") == "ok":
-                print(f"{year}  KRAJ {slug:14s} {d['tropical_days']:5d} {d['tropical_nights']:5d} "
-                      f"{d['frost_days']:5d} {d['precip_sum_mm']:6.0f} {d['avg_temp_c']:6.2f} "
+                print(f"{year}  KRAJ {slug:14s} {d['tropical_days']:5.1f} {d['tropical_nights']:5.1f} "
+                      f"{d['frost_days']:5.1f} {d['precip_sum_mm']:6.0f} {d['avg_temp_c']:6.2f} "
                       f"{d['completeness']:.2f} ({d['n_cells']} cells)")
     return 0
 

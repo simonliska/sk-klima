@@ -5,49 +5,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": -0.6,
-        "displayValue": "-0,6",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.2,
+        "displayValue": "-1,2",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -0.8,
-        "displayValue": "-0,8",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.1,
+        "displayValue": "-1,1",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.7,
-        "displayValue": "+0,7",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": -0.4,
+        "displayValue": "-0,4",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": -0.9,
-        "displayValue": "-0,9",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.9,
-        "displayValue": "+0,9",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.8,
-        "displayValue": "+0,8",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.9,
         "displayValue": "+0,9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.6,
         "displayValue": "+1,6",
         "status": "projected"
@@ -56,7 +56,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "bratislavsky",
@@ -64,49 +64,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 21,
-        "displayValue": "21",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 10,
+        "displayValue": "10",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 4,
-        "displayValue": "4",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 12,
+        "displayValue": "12",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 23,
-        "displayValue": "23",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 17,
         "displayValue": "17",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 21,
-        "displayValue": "21",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 18,
+        "displayValue": "18",
         "status": "observed"
       },
       {
-        "year": 2025,
-        "value": 23,
-        "displayValue": "23",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 23,
         "displayValue": "23",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 27,
         "displayValue": "27",
         "status": "projected"
@@ -115,7 +115,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "bratislavsky",
@@ -123,49 +123,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 1,
         "displayValue": "1",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 3,
-        "displayValue": "3",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 4,
+        "displayValue": "4",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 1,
-        "displayValue": "1",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 9,
         "displayValue": "9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 13,
         "displayValue": "13",
         "status": "projected"
@@ -174,7 +174,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "bratislavsky",
@@ -182,49 +182,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 91,
-        "displayValue": "91",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 100,
+        "displayValue": "100",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 75,
-        "displayValue": "75",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 98,
+        "displayValue": "98",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 75,
-        "displayValue": "75",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 93,
+        "displayValue": "93",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 102,
-        "displayValue": "102",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 84,
+        "displayValue": "84",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 70,
-        "displayValue": "70",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 71,
-        "displayValue": "71",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 74,
         "displayValue": "74",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 58,
         "displayValue": "58",
         "status": "projected"
@@ -233,7 +233,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "bratislavsky",
@@ -241,49 +241,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.7,
-        "displayValue": "0,7",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 0.1,
+        "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0.0,
         "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.0,
-        "displayValue": "0,0",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.1,
+        "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 0.0,
-        "displayValue": "0,0",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.8,
+        "displayValue": "0,8",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.4,
-        "displayValue": "0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.0,
-        "displayValue": "0,0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.9,
         "displayValue": "0,9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.0,
         "displayValue": "1,0",
         "status": "projected"
@@ -292,7 +292,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trnavsky",
@@ -300,49 +300,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.2,
+        "displayValue": "-1,2",
+        "status": "observed"
+      },
+      {
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.2,
+        "displayValue": "-1,2",
+        "status": "observed"
+      },
+      {
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": -0.6,
         "displayValue": "-0,6",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -0.8,
-        "displayValue": "-0,8",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.7,
-        "displayValue": "+0,7",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
-        "value": -1.0,
-        "displayValue": "-1,0",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 0.6,
-        "displayValue": "+0,6",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.7,
-        "displayValue": "+0,7",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.9,
         "displayValue": "+0,9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.5,
         "displayValue": "+1,5",
         "status": "projected"
@@ -351,7 +351,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trnavsky",
@@ -359,49 +359,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 23,
-        "displayValue": "23",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 11,
+        "displayValue": "11",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 4,
-        "displayValue": "4",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 12,
+        "displayValue": "12",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 24,
-        "displayValue": "24",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 18,
+        "displayValue": "18",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 17,
-        "displayValue": "17",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 26,
+        "displayValue": "26",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 22,
-        "displayValue": "22",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 25,
-        "displayValue": "25",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 31,
         "displayValue": "31",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 37,
         "displayValue": "37",
         "status": "projected"
@@ -410,7 +410,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trnavsky",
@@ -418,49 +418,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
-        "value": 3,
-        "displayValue": "3",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 1,
         "displayValue": "1",
         "status": "observed"
       },
       {
-        "year": 2050,
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 4,
+        "displayValue": "4",
+        "status": "observed"
+      },
+      {
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 8,
         "displayValue": "8",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 12,
         "displayValue": "12",
         "status": "projected"
@@ -469,7 +469,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trnavsky",
@@ -477,49 +477,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 90,
-        "displayValue": "90",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 101,
+        "displayValue": "101",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 83,
-        "displayValue": "83",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 100,
+        "displayValue": "100",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 77,
-        "displayValue": "77",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 97,
+        "displayValue": "97",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 105,
-        "displayValue": "105",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 86,
+        "displayValue": "86",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 73,
-        "displayValue": "73",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 74,
-        "displayValue": "74",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 75,
         "displayValue": "75",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 59,
         "displayValue": "59",
         "status": "projected"
@@ -528,7 +528,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trnavsky",
@@ -536,49 +536,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.8,
-        "displayValue": "0,8",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 0.1,
+        "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0.0,
         "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.0,
-        "displayValue": "0,0",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.1,
+        "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 0.2,
-        "displayValue": "0,2",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.6,
+        "displayValue": "0,6",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.4,
-        "displayValue": "0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.0,
-        "displayValue": "0,0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.9,
         "displayValue": "0,9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.0,
         "displayValue": "1,0",
         "status": "projected"
@@ -587,7 +587,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trenciansky",
@@ -595,49 +595,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": -0.5,
-        "displayValue": "-0,5",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.5,
+        "displayValue": "-1,5",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -1.2,
-        "displayValue": "-1,2",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.5,
+        "displayValue": "-1,5",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.2,
-        "displayValue": "+0,2",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": -1.0,
+        "displayValue": "-1,0",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": -1.1,
-        "displayValue": "-1,1",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.3,
-        "displayValue": "+0,3",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.4,
-        "displayValue": "+0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.7,
         "displayValue": "+0,7",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.2,
         "displayValue": "+1,2",
         "status": "projected"
@@ -646,7 +646,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trenciansky",
@@ -654,49 +654,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 12,
-        "displayValue": "12",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 4,
+        "displayValue": "4",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 1,
-        "displayValue": "1",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 4,
+        "displayValue": "4",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 14,
-        "displayValue": "14",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 8,
+        "displayValue": "8",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 13,
-        "displayValue": "13",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 19,
+        "displayValue": "19",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 7,
-        "displayValue": "7",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 13,
-        "displayValue": "13",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 24,
         "displayValue": "24",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 28,
         "displayValue": "28",
         "status": "projected"
@@ -705,7 +705,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trenciansky",
@@ -713,49 +713,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2010,
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
         "value": 1,
         "displayValue": "1",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 3,
         "displayValue": "3",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 5,
         "displayValue": "5",
         "status": "projected"
@@ -764,7 +764,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trenciansky",
@@ -772,49 +772,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 126,
+        "displayValue": "126",
+        "status": "observed"
+      },
+      {
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 124,
+        "displayValue": "124",
+        "status": "observed"
+      },
+      {
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 121,
         "displayValue": "121",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 104,
-        "displayValue": "104",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 109,
+        "displayValue": "109",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 99,
-        "displayValue": "99",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
-        "value": 120,
-        "displayValue": "120",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 105,
-        "displayValue": "105",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 98,
-        "displayValue": "98",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 97,
         "displayValue": "97",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 80,
         "displayValue": "80",
         "status": "projected"
@@ -823,7 +823,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "trenciansky",
@@ -831,49 +831,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.8,
-        "displayValue": "0,8",
-        "status": "observed"
-      },
-      {
-        "year": 1960,
-        "value": 0.6,
-        "displayValue": "0,6",
-        "status": "observed"
-      },
-      {
-        "year": 2000,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0.2,
         "displayValue": "0,2",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 1.7,
-        "displayValue": "1,7",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 0.2,
+        "displayValue": "0,2",
         "status": "observed"
       },
       {
-        "year": 2020,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 0.3,
         "displayValue": "0,3",
         "status": "observed"
       },
       {
-        "year": 2025,
-        "value": 0.1,
-        "displayValue": "0,1",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.8,
+        "displayValue": "0,8",
         "status": "observed"
       },
       {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.2,
         "displayValue": "1,2",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.3,
         "displayValue": "1,3",
         "status": "projected"
@@ -882,7 +882,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "nitriansky",
@@ -890,49 +890,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": -0.3,
-        "displayValue": "-0,3",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.1,
+        "displayValue": "-1,1",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -0.7,
-        "displayValue": "-0,7",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.1,
+        "displayValue": "-1,1",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.8,
-        "displayValue": "+0,8",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": -0.6,
+        "displayValue": "-0,6",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": -1.0,
-        "displayValue": "-1,0",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.4,
-        "displayValue": "+0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.6,
-        "displayValue": "+0,6",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.7,
         "displayValue": "+0,7",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.2,
         "displayValue": "+1,2",
         "status": "projected"
@@ -941,7 +941,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "nitriansky",
@@ -949,49 +949,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 23,
-        "displayValue": "23",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 13,
+        "displayValue": "13",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 5,
-        "displayValue": "5",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 14,
+        "displayValue": "14",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 27,
-        "displayValue": "27",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 20,
+        "displayValue": "20",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 19,
-        "displayValue": "19",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 28,
+        "displayValue": "28",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 24,
-        "displayValue": "24",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 27,
-        "displayValue": "27",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 34,
         "displayValue": "34",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 40,
         "displayValue": "40",
         "status": "projected"
@@ -1000,7 +1000,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "nitriansky",
@@ -1008,49 +1008,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 1,
         "displayValue": "1",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 2,
-        "displayValue": "2",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 3,
+        "displayValue": "3",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 7,
         "displayValue": "7",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 11,
         "displayValue": "11",
         "status": "projected"
@@ -1059,7 +1059,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "nitriansky",
@@ -1067,49 +1067,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 88,
-        "displayValue": "88",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 101,
+        "displayValue": "101",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 74,
-        "displayValue": "74",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 100,
+        "displayValue": "100",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 73,
-        "displayValue": "73",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 98,
+        "displayValue": "98",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 104,
-        "displayValue": "104",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 92,
+        "displayValue": "92",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 76,
-        "displayValue": "76",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 78,
-        "displayValue": "78",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 81,
         "displayValue": "81",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 64,
         "displayValue": "64",
         "status": "projected"
@@ -1118,7 +1118,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "nitriansky",
@@ -1126,49 +1126,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.7,
-        "displayValue": "0,7",
-        "status": "observed"
-      },
-      {
-        "year": 1960,
-        "value": 0.4,
-        "displayValue": "0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2000,
-        "value": 0.0,
-        "displayValue": "0,0",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
-        "value": 1.1,
-        "displayValue": "1,1",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 0.4,
-        "displayValue": "0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0.1,
         "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 2050,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 0.0,
+        "displayValue": "0,0",
+        "status": "observed"
+      },
+      {
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.1,
+        "displayValue": "0,1",
+        "status": "observed"
+      },
+      {
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.6,
+        "displayValue": "0,6",
+        "status": "observed"
+      },
+      {
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.9,
         "displayValue": "0,9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.0,
         "displayValue": "1,0",
         "status": "projected"
@@ -1177,7 +1177,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "zilinsky",
@@ -1185,49 +1185,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": 0.1,
-        "displayValue": "+0,1",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.6,
+        "displayValue": "-1,6",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -1.2,
-        "displayValue": "-1,2",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.5,
+        "displayValue": "-1,5",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.5,
-        "displayValue": "+0,5",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": -0.7,
         "displayValue": "-0,7",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.7,
-        "displayValue": "+0,7",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2025,
-        "value": 1.2,
-        "displayValue": "+1,2",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.1,
         "displayValue": "+1,1",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.6,
         "displayValue": "+1,6",
         "status": "projected"
@@ -1236,7 +1236,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "zilinsky",
@@ -1244,49 +1244,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 1,
         "displayValue": "1",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 4,
-        "displayValue": "4",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 2,
+        "displayValue": "2",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 4,
-        "displayValue": "4",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 8,
+        "displayValue": "8",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 1,
-        "displayValue": "1",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 11,
         "displayValue": "11",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 13,
         "displayValue": "13",
         "status": "projected"
@@ -1295,7 +1295,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "zilinsky",
@@ -1303,49 +1303,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2010,
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0,
         "displayValue": "0",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1,
         "displayValue": "1",
         "status": "projected"
@@ -1354,7 +1354,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "zilinsky",
@@ -1362,49 +1362,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 150,
-        "displayValue": "150",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 169,
+        "displayValue": "169",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 166,
+        "displayValue": "166",
+        "status": "observed"
+      },
+      {
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 154,
         "displayValue": "154",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 124,
-        "displayValue": "124",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 140,
+        "displayValue": "140",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 145,
-        "displayValue": "145",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 148,
-        "displayValue": "148",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 125,
-        "displayValue": "125",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 128,
         "displayValue": "128",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 110,
         "displayValue": "110",
         "status": "projected"
@@ -1413,7 +1413,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "zilinsky",
@@ -1421,49 +1421,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.7,
-        "displayValue": "0,7",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 0.6,
+        "displayValue": "0,6",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 1.5,
-        "displayValue": "1,5",
-        "status": "observed"
-      },
-      {
-        "year": 2000,
-        "value": 0.9,
-        "displayValue": "0,9",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
-        "value": 3.9,
-        "displayValue": "3,9",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 0.4,
-        "displayValue": "0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0.5,
         "displayValue": "0,5",
         "status": "observed"
       },
       {
-        "year": 2050,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.7,
+        "displayValue": "0,7",
+        "status": "observed"
+      },
+      {
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.9,
+        "displayValue": "0,9",
+        "status": "observed"
+      },
+      {
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.6,
         "displayValue": "1,6",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.8,
         "displayValue": "1,8",
         "status": "projected"
@@ -1472,7 +1472,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1480,49 +1480,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": 0.4,
-        "displayValue": "+0,4",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.3,
+        "displayValue": "-1,3",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -0.9,
-        "displayValue": "-0,9",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.3,
+        "displayValue": "-1,3",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.5,
-        "displayValue": "+0,5",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": -0.7,
         "displayValue": "-0,7",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.6,
-        "displayValue": "+0,6",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2025,
-        "value": 0.8,
-        "displayValue": "+0,8",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.1,
         "displayValue": "+1,1",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.6,
         "displayValue": "+1,6",
         "status": "projected"
@@ -1531,7 +1531,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1539,49 +1539,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 10,
-        "displayValue": "10",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 5,
+        "displayValue": "5",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 0,
-        "displayValue": "0",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 5,
+        "displayValue": "5",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 15,
-        "displayValue": "15",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 8,
+        "displayValue": "8",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 12,
-        "displayValue": "12",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 17,
+        "displayValue": "17",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 1,
-        "displayValue": "1",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 11,
-        "displayValue": "11",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 21,
         "displayValue": "21",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 26,
         "displayValue": "26",
         "status": "projected"
@@ -1590,7 +1590,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1598,49 +1598,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 0,
-        "displayValue": "0",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 1,
+        "displayValue": "1",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 2,
         "displayValue": "2",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 3,
         "displayValue": "3",
         "status": "projected"
@@ -1649,7 +1649,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1657,49 +1657,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 112,
-        "displayValue": "112",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 142,
+        "displayValue": "142",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 107,
-        "displayValue": "107",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 141,
+        "displayValue": "141",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 115,
-        "displayValue": "115",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 134,
+        "displayValue": "134",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 129,
-        "displayValue": "129",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 122,
+        "displayValue": "122",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 116,
-        "displayValue": "116",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 115,
-        "displayValue": "115",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 109,
         "displayValue": "109",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 92,
         "displayValue": "92",
         "status": "projected"
@@ -1708,7 +1708,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1716,49 +1716,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.3,
-        "displayValue": "0,3",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 0.2,
+        "displayValue": "0,2",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 1.0,
-        "displayValue": "1,0",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 0.1,
+        "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.0,
-        "displayValue": "0,0",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.2,
+        "displayValue": "0,2",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 1.1,
-        "displayValue": "1,1",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.9,
+        "displayValue": "0,9",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.6,
-        "displayValue": "0,6",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.3,
-        "displayValue": "0,3",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.3,
         "displayValue": "1,3",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.5,
         "displayValue": "1,5",
         "status": "projected"
@@ -1767,7 +1767,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "presovsky",
@@ -1775,49 +1775,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": -0.1,
-        "displayValue": "-0,1",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.2,
+        "displayValue": "-1,2",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -0.9,
-        "displayValue": "-0,9",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.2,
+        "displayValue": "-1,2",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.5,
-        "displayValue": "+0,5",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": -0.6,
+        "displayValue": "-0,6",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": -0.4,
-        "displayValue": "-0,4",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 1.0,
-        "displayValue": "+1,0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 1.3,
-        "displayValue": "+1,3",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.2,
         "displayValue": "+1,2",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.8,
         "displayValue": "+1,8",
         "status": "projected"
@@ -1826,7 +1826,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "presovsky",
@@ -1834,49 +1834,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 2,
+        "displayValue": "2",
+        "status": "observed"
+      },
+      {
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 2,
+        "displayValue": "2",
+        "status": "observed"
+      },
+      {
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 4,
         "displayValue": "4",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 0,
-        "displayValue": "0",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 11,
+        "displayValue": "11",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 5,
-        "displayValue": "5",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
-        "value": 3,
-        "displayValue": "3",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 5,
-        "displayValue": "5",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 14,
         "displayValue": "14",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 18,
         "displayValue": "18",
         "status": "projected"
@@ -1885,7 +1885,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "presovsky",
@@ -1893,49 +1893,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2010,
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1,
         "displayValue": "1",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 2,
         "displayValue": "2",
         "status": "projected"
@@ -1944,7 +1944,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "presovsky",
@@ -1952,49 +1952,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 128,
-        "displayValue": "128",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 148,
+        "displayValue": "148",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 120,
-        "displayValue": "120",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 146,
+        "displayValue": "146",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 119,
-        "displayValue": "119",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 140,
+        "displayValue": "140",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 127,
-        "displayValue": "127",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 131,
+        "displayValue": "131",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 123,
-        "displayValue": "123",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 110,
-        "displayValue": "110",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 118,
         "displayValue": "118",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 101,
         "displayValue": "101",
         "status": "projected"
@@ -2003,7 +2003,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "presovsky",
@@ -2011,49 +2011,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.0,
-        "displayValue": "0,0",
-        "status": "observed"
-      },
-      {
-        "year": 1960,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0.4,
         "displayValue": "0,4",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.2,
-        "displayValue": "0,2",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 0.4,
+        "displayValue": "0,4",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 2.6,
-        "displayValue": "2,6",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.6,
+        "displayValue": "0,6",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.3,
-        "displayValue": "0,3",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.9,
+        "displayValue": "0,9",
         "status": "observed"
       },
       {
-        "year": 2025,
-        "value": 0.3,
-        "displayValue": "0,3",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.4,
         "displayValue": "1,4",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.6,
         "displayValue": "1,6",
         "status": "projected"
@@ -2062,7 +2062,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "kosicky",
@@ -2070,49 +2070,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": -0.4,
-        "displayValue": "-0,4",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.4,
+        "displayValue": "-1,4",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -1.1,
-        "displayValue": "-1,1",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.4,
+        "displayValue": "-1,4",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.2,
-        "displayValue": "+0,2",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": -0.8,
+        "displayValue": "-0,8",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": -0.6,
-        "displayValue": "-0,6",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.7,
-        "displayValue": "+0,7",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.9,
-        "displayValue": "+0,9",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.9,
         "displayValue": "+0,9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.5,
         "displayValue": "+1,5",
         "status": "projected"
@@ -2121,7 +2121,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "kosicky",
@@ -2129,49 +2129,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 9,
-        "displayValue": "9",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 6,
+        "displayValue": "6",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 1,
-        "displayValue": "1",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 6,
+        "displayValue": "6",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 16,
-        "displayValue": "16",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 10,
+        "displayValue": "10",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 11,
-        "displayValue": "11",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 18,
+        "displayValue": "18",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 4,
-        "displayValue": "4",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 16,
-        "displayValue": "16",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 22,
         "displayValue": "22",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 28,
         "displayValue": "28",
         "status": "projected"
@@ -2180,7 +2180,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "kosicky",
@@ -2188,49 +2188,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 0,
-        "displayValue": "0",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 1,
+        "displayValue": "1",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 3,
         "displayValue": "3",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 6,
         "displayValue": "6",
         "status": "projected"
@@ -2239,7 +2239,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "kosicky",
@@ -2247,49 +2247,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 109,
-        "displayValue": "109",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 130,
+        "displayValue": "130",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 99,
-        "displayValue": "99",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 129,
+        "displayValue": "129",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 106,
-        "displayValue": "106",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 124,
+        "displayValue": "124",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 115,
-        "displayValue": "115",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 117,
+        "displayValue": "117",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 98,
-        "displayValue": "98",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 98,
-        "displayValue": "98",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 103,
         "displayValue": "103",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 86,
         "displayValue": "86",
         "status": "projected"
@@ -2298,7 +2298,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "kosicky",
@@ -2306,49 +2306,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.0,
-        "displayValue": "0,0",
-        "status": "observed"
-      },
-      {
-        "year": 1960,
-        "value": 0.0,
-        "displayValue": "0,0",
-        "status": "observed"
-      },
-      {
-        "year": 2000,
-        "value": 0.0,
-        "displayValue": "0,0",
-        "status": "observed"
-      },
-      {
-        "year": 2010,
-        "value": 1.3,
-        "displayValue": "1,3",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0.1,
         "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 2025,
-        "value": 0.0,
-        "displayValue": "0,0",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 0.1,
+        "displayValue": "0,1",
         "status": "observed"
       },
       {
-        "year": 2050,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.2,
+        "displayValue": "0,2",
+        "status": "observed"
+      },
+      {
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.8,
+        "displayValue": "0,8",
+        "status": "observed"
+      },
+      {
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.2,
         "displayValue": "1,2",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.3,
         "displayValue": "1,3",
         "status": "projected"
@@ -2357,7 +2357,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "slovensko",
@@ -2365,49 +2365,49 @@
     "unit": "°C vs 1991–2020",
     "points": [
       {
-        "year": 1950,
-        "value": -0.2,
-        "displayValue": "-0,2",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": -1.3,
+        "displayValue": "-1,3",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": -0.9,
-        "displayValue": "-0,9",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": -1.3,
+        "displayValue": "-1,3",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 0.5,
-        "displayValue": "+0,5",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": -0.7,
+        "displayValue": "-0,7",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": -0.8,
-        "displayValue": "-0,8",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.0,
+        "displayValue": "0,0",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0.7,
-        "displayValue": "+0,7",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0.8,
-        "displayValue": "+0,8",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 0.9,
         "displayValue": "+0,9",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.5,
         "displayValue": "+1,5",
         "status": "projected"
@@ -2416,7 +2416,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "slovensko",
@@ -2424,49 +2424,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 13,
-        "displayValue": "13",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 6,
+        "displayValue": "6",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 2,
-        "displayValue": "2",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 7,
+        "displayValue": "7",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 16,
-        "displayValue": "16",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 11,
+        "displayValue": "11",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 12,
-        "displayValue": "12",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 18,
+        "displayValue": "18",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 10,
-        "displayValue": "10",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 15,
-        "displayValue": "15",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 22,
         "displayValue": "22",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 27,
         "displayValue": "27",
         "status": "projected"
@@ -2475,7 +2475,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "slovensko",
@@ -2483,49 +2483,49 @@
     "unit": "nocí / rok",
     "points": [
       {
-        "year": 1950,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 1960,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2000,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
         "value": 0,
         "displayValue": "0",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 1,
-        "displayValue": "1",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 2,
+        "displayValue": "2",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 0,
-        "displayValue": "0",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 4,
         "displayValue": "4",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 7,
         "displayValue": "7",
         "status": "projected"
@@ -2534,7 +2534,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "slovensko",
@@ -2542,49 +2542,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 111,
-        "displayValue": "111",
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
+        "value": 127,
+        "displayValue": "127",
         "status": "observed"
       },
       {
-        "year": 1960,
-        "value": 102,
-        "displayValue": "102",
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
+        "value": 126,
+        "displayValue": "126",
         "status": "observed"
       },
       {
-        "year": 2000,
-        "value": 98,
-        "displayValue": "98",
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 120,
+        "displayValue": "120",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 118,
-        "displayValue": "118",
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 110,
+        "displayValue": "110",
         "status": "observed"
       },
       {
-        "year": 2020,
-        "value": 101,
-        "displayValue": "101",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
-        "value": 96,
-        "displayValue": "96",
-        "status": "observed"
-      },
-      {
-        "year": 2050,
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 98,
         "displayValue": "98",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 81,
         "displayValue": "81",
         "status": "projected"
@@ -2593,7 +2593,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   },
   {
     "regionSlug": "slovensko",
@@ -2601,49 +2601,49 @@
     "unit": "dní / rok",
     "points": [
       {
-        "year": 1950,
-        "value": 0.5,
-        "displayValue": "0,5",
-        "status": "observed"
-      },
-      {
-        "year": 1960,
-        "value": 0.5,
-        "displayValue": "0,5",
-        "status": "observed"
-      },
-      {
-        "year": 2000,
+        "periodId": "1951-1980",
+        "labelSk": "1951–1980",
+        "year": 1965,
         "value": 0.2,
         "displayValue": "0,2",
         "status": "observed"
       },
       {
-        "year": 2010,
-        "value": 1.5,
-        "displayValue": "1,5",
-        "status": "observed"
-      },
-      {
-        "year": 2020,
-        "value": 0.4,
-        "displayValue": "0,4",
-        "status": "observed"
-      },
-      {
-        "year": 2025,
+        "periodId": "1961-1990",
+        "labelSk": "1961–1990",
+        "year": 1975,
         "value": 0.2,
         "displayValue": "0,2",
         "status": "observed"
       },
       {
-        "year": 2050,
+        "periodId": "1981-2010",
+        "labelSk": "1981–2010",
+        "year": 1995,
+        "value": 0.3,
+        "displayValue": "0,3",
+        "status": "observed"
+      },
+      {
+        "periodId": "1991-2020",
+        "labelSk": "1991–2020",
+        "year": 2005,
+        "value": 0.8,
+        "displayValue": "0,8",
+        "status": "observed"
+      },
+      {
+        "periodId": "2021-2050",
+        "labelSk": "2021–2050",
+        "year": 2035,
         "value": 1.2,
         "displayValue": "1,2",
         "status": "projected"
       },
       {
-        "year": 2100,
+        "periodId": "2071-2100",
+        "labelSk": "2071–2100",
+        "year": 2085,
         "value": 1.3,
         "displayValue": "1,3",
         "status": "projected"
@@ -2652,6 +2652,6 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-12"
+    "lastUpdated": "2026-09-18"
   }
 ]

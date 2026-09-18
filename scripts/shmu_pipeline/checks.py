@@ -85,13 +85,13 @@ def main() -> int:
         check(abs(e["heavy_days"] - s["heavy_days"]) < 2.0,
               f"{city}: E-OBS2000 heavy {e['heavy_days']} vs SHMU {s['heavy_days']}")
 
-    print("== 4. trend direction 1950 -> 2024 (E-OBS capitals) ==")
+    print("== 4. trend direction 1951 -> 2024 (E-OBS capitals) ==")
     for city, years in eobs["capitals"].items():
-        a, b = years["1950"], years["2024"]
+        a, b = years["1951"], years["2024"]
         check(b["avg_temp_c"] > a["avg_temp_c"],
-              f"{city}: TG 2024 {b['avg_temp_c']} > 1950 {a['avg_temp_c']}")
+              f"{city}: TG 2024 {b['avg_temp_c']} > 1951 {a['avg_temp_c']}")
         check(b["frost_days"] <= a["frost_days"],
-              f"{city}: frost 2024 {b['frost_days']} <= 1950 {a['frost_days']}")
+              f"{city}: frost 2024 {b['frost_days']} <= 1951 {a['frost_days']}")
 
     print("== 5. recent warmth vs normal ==")
     for city in shmu["capitals"]:
@@ -103,6 +103,20 @@ def main() -> int:
 
     print("== 6. SHMU daily JSON spot check (July 2025 hot-day share) ==")
     spot_ok = daily_spot_check(eobs)
+
+    print("== 6b. E-OBS 30-year periods monotonic warming ==")
+    periods = json.loads(
+        (BASE / "data_raw" / "eobs" / "periods.json").read_text(
+            encoding="utf-8"))
+    for slug, per in periods["kraje"].items():
+        ts = [per[p]["avg_temp_c"] for p in ("1951-1980", "1961-1990", "1981-2010")]
+        check(ts[2] > ts[0],
+              f"period kraj {slug}: TG 1981-2010 {ts[2]} > 1951-1980 {ts[0]}")
+        check(per["1981-2010"]["frost_days"] <= per["1951-1980"]["frost_days"],
+              f"period kraj {slug}: frost III <= I")
+        for p in ("1951-1980", "1961-1990", "1981-2010"):
+            check(per[p]["status"] == "ok" and per[p]["n_years"] == 30,
+                  f"period kraj {slug} {p}: ok/30y")
 
     print("== 7. RCP4.5 progression (SHMU normal < 2050 <= 2100) ==")
     rcps = {"rcp45": json.loads(

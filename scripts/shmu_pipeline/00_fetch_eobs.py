@@ -26,7 +26,7 @@ import cdsapi
 DATASET = "insitu-gridded-observations-europe"
 OUT_DIR = Path(__file__).resolve().parents[2] / "data_raw" / "eobs"
 
-CHUNKS = ["1950_1964", "1995_2010", "2011_2025"]
+CHUNKS = ["1950_1964", "1965_1979", "1980_1994", "1995_2010", "2011_2025"]
 VARIABLES = [
     "maximum_temperature",
     "minimum_temperature",

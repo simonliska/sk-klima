@@ -6,6 +6,12 @@ export const metadata = {
   description:
     "Odkiaľ pochádzajú dáta, čo sú pozorovania a projekcie, prečo existujú scenáre a prečo je budúcnosť neistá. Zrozumiteľne pre nevedcov.",
   alternates: { canonical: "/metodika" },
+  openGraph: {
+    title: "Metodika a zdroje",
+    description:
+      "Odkiaľ pochádzajú dáta, čo sú pozorovania a projekcie, prečo existujú scenáre a prečo je budúcnosť neistá.",
+    url: "https://sk-klima.sk/metodika",
+  },
 };
 
 export default function MetodikaPage() {

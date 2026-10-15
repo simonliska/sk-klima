@@ -28,7 +28,7 @@ export function DataEraBadge({ era }: { era: "HISTÓRIA" | "DNES" | "PROJEKCIA" 
     <span
       className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide ${styles[era]}`}
     >
-      {era === "HISTÓRIA" ? "Pozorované" : era === "DNES" ? "Rok 2025" : "Projekcia"}
+      {era === "HISTÓRIA" ? "Pozorované" : era === "DNES" ? "Normál" : "Projekcia"}
     </span>
   );
 }

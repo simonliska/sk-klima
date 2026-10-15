@@ -12,7 +12,7 @@ import {
 
 export interface PeriodChartPoint {
   periodId: string;
-  /** Compact tick label, e.g. "1951–80" / "2021–50". */
+  /** Compact tick label, e.g. "1980" / "2100". */
   label: string;
   value: number;
 }
@@ -69,7 +69,7 @@ export default function ClimateChart({
     }
   };
   return (
-    <div className="h-28 w-full [&_.recharts-wrapper]:outline-none">
+    <div className="h-28 w-full [&_*:focus]:outline-none [&_*:focus-visible]:outline-none">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}
@@ -94,9 +94,8 @@ export default function ClimateChart({
             tickLine={false}
             axisLine={false}
             width={40}
-            tickFormatter={(v: number) =>
-              String(Math.round(v * 10) / 10).replace(".", ",")
-            }
+            allowDecimals={false}
+            tickFormatter={(v: number) => String(Math.round(v))}
             domain={([dataMin, dataMax]: readonly [number, number]) => {
               const pad = (dataMax - dataMin) * 0.25 || 1;
               return [dataMin - pad, dataMax + pad] as [number, number];

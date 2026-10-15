@@ -100,7 +100,7 @@ export default function TimelineSection() {
               key={p.id}
               onClick={() => setPeriodId(p.id as TimelinePeriodId)}
               title={p.labelSk}
-              className={`min-h-[44px] min-w-[44px] rounded-full px-2.5 py-2 hover:bg-stone-100 ${p.id === periodId ? "bg-teal-700 text-white" : ""}`}
+              className={`min-h-[44px] min-w-[44px] rounded-full px-2.5 py-2 ${p.id === periodId ? "bg-teal-700 text-white" : "hover:bg-stone-100"}`}
             >
               {p.labelSk}
             </button>

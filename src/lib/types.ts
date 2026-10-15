@@ -16,16 +16,16 @@ export interface TimelinePeriod {
 
 /** Climate timeline: six 30-year WMO periods. Past = E-OBS observations,
  *  1991–2020 = SHMÚ normal (today's climate), future = SHMÚ RCP4.5
- *  projections 2021–2050 / 2071–2100 (in mini charts shortened to
- *  "2021–50" / "2071–00"). No single years — one year is weather,
+ *  projections 2021–2050 / 2071–2100 (in mini charts the X axis shows the
+ *  last year of the period, e.g. "1980"). No single years — one year is weather,
  *  not climate. */
 export const TIMELINE_PERIODS: TimelinePeriod[] = [
-  { id: "1951-1980", labelSk: "1951–1980", shortLabelSk: "1951–80", start: 1951, end: 1980, mid: 1965, era: "HISTÓRIA", status: "observed" },
-  { id: "1961-1990", labelSk: "1961–1990", shortLabelSk: "1961–90", start: 1961, end: 1990, mid: 1975, era: "HISTÓRIA", status: "observed" },
-  { id: "1981-2010", labelSk: "1981–2010", shortLabelSk: "1981–10", start: 1981, end: 2010, mid: 1995, era: "HISTÓRIA", status: "observed" },
-  { id: "1991-2020", labelSk: "1991–2020", shortLabelSk: "1991–20", start: 1991, end: 2020, mid: 2005, era: "DNES", status: "observed" },
-  { id: "2021-2050", labelSk: "2021–2050", shortLabelSk: "2021–50", start: 2021, end: 2050, mid: 2035, era: "PROJEKCIA", status: "projected" },
-  { id: "2071-2100", labelSk: "2071–2100", shortLabelSk: "2071–00", start: 2071, end: 2100, mid: 2085, era: "PROJEKCIA", status: "projected" },
+  { id: "1951-1980", labelSk: "1951–1980", shortLabelSk: "1980", start: 1951, end: 1980, mid: 1965, era: "HISTÓRIA", status: "observed" },
+  { id: "1961-1990", labelSk: "1961–1990", shortLabelSk: "1990", start: 1961, end: 1990, mid: 1975, era: "HISTÓRIA", status: "observed" },
+  { id: "1981-2010", labelSk: "1981–2010", shortLabelSk: "2010", start: 1981, end: 2010, mid: 1995, era: "HISTÓRIA", status: "observed" },
+  { id: "1991-2020", labelSk: "1991–2020", shortLabelSk: "2020", start: 1991, end: 2020, mid: 2005, era: "DNES", status: "observed" },
+  { id: "2021-2050", labelSk: "2021–2050", shortLabelSk: "2050", start: 2021, end: 2050, mid: 2035, era: "PROJEKCIA", status: "projected" },
+  { id: "2071-2100", labelSk: "2071–2100", shortLabelSk: "2100", start: 2071, end: 2100, mid: 2085, era: "PROJEKCIA", status: "projected" },
 ];
 export type TimelinePeriodId = (typeof TIMELINE_PERIODS)[number]["id"];
 

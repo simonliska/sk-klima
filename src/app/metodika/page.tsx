@@ -118,12 +118,11 @@ export default function MetodikaPage() {
         <h2 className="text-2xl font-black">Dajú sa obdobia z dvoch zdrojov porovnať?</h2>
         <div className="mt-3 space-y-3 text-sm leading-relaxed text-stone-700 sm:text-base">
           <p>
-            Staršie obdobia (1951–1980 až 1981–2010) pochádzajú z hrubšieho
-            gridu E-OBS (cca 11 km), normál 1991–2020 a projekcie
-            z jemných gridov SHMÚ (500 m). Hrubší grid vyhladzuje lokálne
-            extrémy — horúčavy a lejaky preto vychádzajú skôr nižšie,
-            mrazové dni vyššie. Smer zmeny je naprieč zdrojmi robustný;
-            presné čísla sa líšia aj rozlíšením, nielen klímou.
+            Obdobia 1951–2010 pochádzajú z E-OBS (grid cca 11 km), normál
+            1991–2020 a projekcie zo SHMÚ (grid 500 m). Hrubší grid vyhladzuje
+            extrémy: horúčavy a lejaky vychádzajú nižšie, mrazové dni vyššie.
+            Odchýlky teploty vs 1991–2020 navyše porovnávajú dva rôzne
+            datasety, takže môžu obsahovať malý rozdiel medzi zdrojmi.
           </p>
         </div>
       </section>

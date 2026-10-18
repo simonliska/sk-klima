@@ -51,6 +51,20 @@ body {
   outline-offset: 2px;
 }
 
+/* SVG (map, charts): an outline would box the whole bounding rectangle
+   of a path. Unlayered, so Tailwind's outline-none utilities can't win
+   against the rule above — it has to be overridden here. */
+svg:focus,
+svg:focus-visible,
+svg *:focus,
+svg *:focus-visible {
+  outline: none;
+}
+svg path:focus-visible {
+  stroke: #042f2e;
+  stroke-width: 3;
+}
+
 /* Range slider styling */
 input[type="range"].timeline-range {
   accent-color: #0d9488;

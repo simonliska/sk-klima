@@ -43,8 +43,8 @@ export default function Hero() {
           <div className="reveal rounded-3xl border border-white/15 bg-teal-950 p-5 shadow-xl" style={{ animationDelay: "120ms" }}>
             <svg
               viewBox={VIEWBOX}
-              role="img"
-              aria-label="Mapa Slovenska rozdelená na kraje"
+              role="group"
+              aria-label="Mapa Slovenska — vyberte kraj pre detail"
               className="h-auto w-full"
             >
               <g
@@ -54,12 +54,25 @@ export default function Hero() {
                 strokeLinejoin="round"
               >
                 {Object.entries(PATHS).map(([slug, p]) => (
-                  <path key={slug} d={p.d}>
-                    <title>{getRegion(slug)?.name ?? slug}</title>
-                  </path>
+                  <Link
+                    key={slug}
+                    href={`/kraj/${slug}`}
+                    aria-label={getRegion(slug)?.name ?? slug}
+                    className="group/kraj"
+                  >
+                    <path
+                      d={p.d}
+                      className="cursor-pointer transition-colors hover:fill-white/40 group-focus-visible/kraj:fill-white/40 group-focus-visible/kraj:stroke-white group-focus-visible/kraj:[stroke-width:2.5]"
+                    >
+                      <title>{getRegion(slug)?.name ?? slug}</title>
+                    </path>
+                  </Link>
                 ))}
               </g>
             </svg>
+            <p className="mt-1 text-center text-[11px] text-teal-50/80">
+              Kliknite na kraj pre detail.
+            </p>
             <p className="mt-3 text-center text-xs font-bold uppercase tracking-widest text-teal-100">
               Priemer Slovenska • Projekcia 2021-2050
             </p>

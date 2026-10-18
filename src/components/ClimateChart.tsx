@@ -69,7 +69,7 @@ export default function ClimateChart({
     }
   };
   return (
-    <div className="h-28 w-full [&_*:focus]:outline-none [&_*:focus-visible]:outline-none">
+    <div className="h-28 w-full [&_.recharts-wrapper]:outline-none">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}

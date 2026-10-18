@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getRegions } from "@/lib/climate";
+import { getTowns } from "@/lib/towns";
 
 export const dynamic = "force-static";
 
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.9,
+    })),
+    ...getTowns().map((t) => ({
+      url: `${base}/mesto/${t.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
   ];
 }

@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import TownSearchSection from "@/components/TownSearchSection";
 import TimelineSection from "@/components/TimelineSection";
 import MapSection from "@/components/MapSection";
 import ImpactsSection from "@/components/ImpactsSection";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <TimelineSection />
       <MapSection />
+      <TownSearchSection />
       <ImpactsSection />
     </div>
   );

@@ -9,6 +9,7 @@ import {
 } from "@/lib/climate";
 import { DataEraBadge } from "@/components/Badges";
 import KrajIndicators from "@/components/KrajIndicators";
+import { getTownsByKraj } from "@/lib/towns";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -50,6 +51,7 @@ export default async function RegionPage({
   const intro = getRegionIntro(slug, scenario);
   const impacts = getImpacts().slice(0, 4);
   const others = getRegions().filter((r) => r.slug !== slug);
+  const towns = getTownsByKraj(slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -118,6 +120,29 @@ export default async function RegionPage({
 
       {/* Normal → 2050 numbers (prerendered to static HTML at build time) */}
       <KrajIndicators slug={slug} />
+
+      {towns.length > 0 && (
+        <section aria-labelledby="mesta">
+          <h2 id="mesta" className="text-2xl font-black">
+            Okresné mestá v kraji
+          </h2>
+          <p className="mt-1 text-sm text-stone-600">
+            Priemer kraja skrýva rozdiely v nadmorkskej výške a lokalite. Pozrite si hodnoty pre konkrétne mesto.
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {towns.map((t) => (
+              <li key={t.slug}>
+                <Link
+                  href={`/mesto/${t.slug}`}
+                  className="inline-flex min-h-[44px] items-center rounded-full bg-stone-200 px-4 py-2 text-sm font-medium text-stone-800 hover:bg-stone-300"
+                >
+                  {t.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Practical meaning */}
       <section aria-labelledby="prax" className="rounded-3xl border border-stone-200 bg-white p-6 sm:p-8">

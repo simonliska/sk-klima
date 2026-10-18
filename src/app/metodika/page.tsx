@@ -166,6 +166,7 @@ export default function MetodikaPage() {
           <li>Skripty v <code>/scripts/shmu_pipeline</code> stiahli E-OBS gridy, SHMÚ normály 1991–2020 a RCP4.5 gridy 2021–2050 / 2071–2100 (raw dáta sa nepublikujú, len agregáty).</li>
           <li>Kontrola (<code>checks.py</code>) porovná E-OBS s normálmi SHMÚ a bodovo s jedným mesiacom denných dát; prejde len pri kompletnosti ≥ 90 % a potvrdenom oteplení (2024 teplejšie ako 1951, 2050 teplejšie ako normál).</li>
           <li>Emisia do <code>src/data/climate.real.json</code> v schéme ClimateRecord: obdobia 1951–1980, 1961–1990 a 1981–2010 (E-OBS, „observed“), normál 1991–2020 (SHMÚ, „observed“) a projekcie 2021–2050 / 2071–2100 (RCP4.5, „projected“).</li>
+          <li>Stránky okresných miest (<code>/mesto/…</code>) používajú len SHMÚ: normál 1991–2020 a projekcie RCP4.5 v bode centra mesta (priemer okolia cca 1,5 × 1,5 km zo 500 m gridov). Minulosť z E-OBS sa pri mestách neukazuje, lebo jeho 11 km grid nerozlíši rozdiely vo výške.</li>
           <li>Každý záznam nesie aj zdroj, referenčné obdobie, scenár a dátum (<code>sourceId, referencePeriod, scenario, lastUpdated</code>); každý bod obdobie, hodnotu a status (<code>periodId, value, displayValue, status</code>).</li>
         </ol>
       </section>

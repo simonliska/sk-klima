@@ -1,0 +1,72 @@
+slug,name,district,kraj,lat,lon,osm_id,source
+bratislava,Bratislava,Bratislava I–V,bratislavsky,48.153538,17.109671,17974736,drakh/slovakia-gps-data
+malacky,Malacky,Malacky,bratislavsky,48.43475,17.020348,26036837,drakh/slovakia-gps-data
+pezinok,Pezinok,Pezinok,bratislavsky,48.285586,17.27028,26037619,drakh/slovakia-gps-data
+senec,Senec,Senec,bratislavsky,48.219641,17.396776,26037969,drakh/slovakia-gps-data
+dunajska-streda,Dunajská Streda,Dunajská Streda,trnavsky,47.989309,17.620142,26037592,drakh/slovakia-gps-data
+galanta,Galanta,Galanta,trnavsky,48.191057,17.727778,26035885,drakh/slovakia-gps-data
+hlohovec,Hlohovec,Hlohovec,trnavsky,48.427951,17.798585,26036344,drakh/slovakia-gps-data
+piestany,Piešťany,Piešťany,trnavsky,48.589897,17.821604,26037507,drakh/slovakia-gps-data
+senica,Senica,Senica,trnavsky,48.679121,17.364383,26038255,drakh/slovakia-gps-data
+skalica,Skalica,Skalica,trnavsky,48.84,17.23,,Wikipedia (Skalica missing in drakh data)
+trnava,Trnava,Trnava,trnavsky,48.37729,17.586718,26037632,drakh/slovakia-gps-data
+banovce-nad-bebravou,Bánovce nad Bebravou,Bánovce nad Bebravou,trenciansky,48.721667,18.259826,26037344,drakh/slovakia-gps-data
+ilava,Ilava,Ilava,trenciansky,49,18.233333,26036262,drakh/slovakia-gps-data
+myjava,Myjava,Myjava,trenciansky,48.754035,17.565022,26036359,drakh/slovakia-gps-data
+nove-mesto-nad-vahom,Nové Mesto nad Váhom,Nové Mesto nad Váhom,trenciansky,48.763325,17.830386,26037614,drakh/slovakia-gps-data
+partizanske,Partizánske,Partizánske,trenciansky,48.627231,18.365466,26036300,drakh/slovakia-gps-data
+povazska-bystrica,Považská Bystrica,Považská Bystrica,trenciansky,49.114507,18.447319,26035956,drakh/slovakia-gps-data
+prievidza,Prievidza,Prievidza,trenciansky,48.77104,18.623306,26038145,drakh/slovakia-gps-data
+puchov,Púchov,Púchov,trenciansky,49.123992,18.324242,26035777,drakh/slovakia-gps-data
+trencin,Trenčín,Trenčín,trenciansky,48.892358,18.039372,26037142,drakh/slovakia-gps-data
+komarno,Komárno,Komárno,nitriansky,47.757388,18.129917,26037382,drakh/slovakia-gps-data
+levice,Levice,Levice,nitriansky,48.216667,18.6,26037646,drakh/slovakia-gps-data
+nitra,Nitra,Nitra,nitriansky,48.31257,18.09061,26036648,drakh/slovakia-gps-data
+nove-zamky,Nové Zámky,Nové Zámky,nitriansky,47.98334,18.166661,26038282,drakh/slovakia-gps-data
+sala,Šaľa,Šaľa,nitriansky,48.150995,17.876502,26498854,drakh/slovakia-gps-data
+topolcany,Topoľčany,Topoľčany,nitriansky,48.559116,18.176052,26036111,drakh/slovakia-gps-data
+zlate-moravce,Zlaté Moravce,Zlaté Moravce,nitriansky,48.383333,18.4,26037381,drakh/slovakia-gps-data
+bytca,Bytča,Bytča,zilinsky,49.219738,18.562215,26037461,drakh/slovakia-gps-data
+cadca,Čadca,Čadca,zilinsky,49.440819,18.788221,26037616,drakh/slovakia-gps-data
+dolny-kubin,Dolný Kubín,Dolný Kubín,zilinsky,49.218073,19.29539,26036873,drakh/slovakia-gps-data
+kysucke-nove-mesto,Kysucké Nové Mesto,Kysucké Nové Mesto,zilinsky,49.301674,18.785426,26037045,drakh/slovakia-gps-data
+liptovsky-mikulas,Liptovský Mikuláš,Liptovský Mikuláš,zilinsky,49.083333,19.616667,26037848,drakh/slovakia-gps-data
+martin,Martin,Martin,zilinsky,49.07226,18.929174,26036064,drakh/slovakia-gps-data
+namestovo,Námestovo,Námestovo,zilinsky,49.409512,19.480783,26036744,drakh/slovakia-gps-data
+ruzomberok,Ružomberok,Ružomberok,zilinsky,49.08187,19.302965,26037771,drakh/slovakia-gps-data
+turcianske-teplice,Turčianske Teplice,Turčianske Teplice,zilinsky,48.862737,18.858728,26036360,drakh/slovakia-gps-data
+tvrdosin,Tvrdošín,Tvrdošín,zilinsky,49.336574,19.554188,26037649,drakh/slovakia-gps-data
+zilina,Žilina,Žilina,zilinsky,49.223464,18.739498,26037035,drakh/slovakia-gps-data
+banska-bystrica,Banská Bystrica,Banská Bystrica,banskobystricky,48.738539,19.156869,26037873,drakh/slovakia-gps-data
+banska-stiavnica,Banská Štiavnica,Banská Štiavnica,banskobystricky,48.458093,18.89828,26036174,drakh/slovakia-gps-data
+brezno,Brezno,Brezno,banskobystricky,48.805335,19.640961,26037561,drakh/slovakia-gps-data
+detva,Detva,Detva,banskobystricky,48.544384,19.411609,26038066,drakh/slovakia-gps-data
+krupina,Krupina,Krupina,banskobystricky,48.352728,19.069182,26036792,drakh/slovakia-gps-data
+lucenec,Lučenec,Lučenec,banskobystricky,48.330282,19.664144,26037388,drakh/slovakia-gps-data
+poltar,Poltár,Poltár,banskobystricky,48.432586,19.793827,26036195,drakh/slovakia-gps-data
+revuca,Revúca,Revúca,banskobystricky,48.683333,20.116667,26037282,drakh/slovakia-gps-data
+rimavska-sobota,Rimavská Sobota,Rimavská Sobota,banskobystricky,48.383832,20.016302,26036617,drakh/slovakia-gps-data
+velky-krtis,Veľký Krtíš,Veľký Krtíš,banskobystricky,48.20896,19.349119,26037466,drakh/slovakia-gps-data
+zvolen,Zvolen,Zvolen,banskobystricky,48.576512,19.128476,26035729,drakh/slovakia-gps-data
+zarnovica,Žarnovica,Žarnovica,banskobystricky,48.483398,18.72155,26035810,drakh/slovakia-gps-data
+ziar-nad-hronom,Žiar nad Hronom,Žiar nad Hronom,banskobystricky,48.590505,18.853646,26038430,drakh/slovakia-gps-data
+bardejov,Bardejov,Bardejov,presovsky,49.292999,21.27554,26037409,drakh/slovakia-gps-data
+humenne,Humenné,Humenné,presovsky,48.934603,21.90314,26036482,drakh/slovakia-gps-data
+kezmarok,Kežmarok,Kežmarok,presovsky,49.136318,20.430447,26036067,drakh/slovakia-gps-data
+levoca,Levoča,Levoča,presovsky,49.025112,20.587999,26036345,drakh/slovakia-gps-data
+medzilaborce,Medzilaborce,Medzilaborce,presovsky,49.271132,21.903965,26036489,drakh/slovakia-gps-data
+poprad,Poprad,Poprad,presovsky,49.054152,20.29764,203077481,drakh/slovakia-gps-data
+presov,Prešov,Prešov,presovsky,49.000411,21.252273,26037569,drakh/slovakia-gps-data
+sabinov,Sabinov,Sabinov,presovsky,49.102044,21.100545,26036518,drakh/slovakia-gps-data
+snina,Snina,Snina,presovsky,48.990062,22.155625,26036532,drakh/slovakia-gps-data
+stara-lubovna,Stará Ľubovňa,Stará Ľubovňa,presovsky,49.297258,20.687317,26037357,drakh/slovakia-gps-data
+stropkov,Stropkov,Stropkov,presovsky,49.202387,21.651153,26037584,drakh/slovakia-gps-data
+svidnik,Svidník,Svidník,presovsky,49.308408,21.573643,26038362,drakh/slovakia-gps-data
+vranov-nad-toplou,Vranov nad Topľou,Vranov nad Topľou,presovsky,48.890524,21.680564,26038421,drakh/slovakia-gps-data
+gelnica,Gelnica,Gelnica,kosicky,48.853205,20.936916,26038139,drakh/slovakia-gps-data
+kosice,Košice,"Košice I–IV, Košice-okolie",kosicky,48.717227,21.249677,27359442,drakh/slovakia-gps-data
+michalovce,Michalovce,Michalovce,kosicky,48.75,21.933333,26036417,drakh/slovakia-gps-data
+roznava,Rožňava,Rožňava,kosicky,48.654392,20.531184,26036896,drakh/slovakia-gps-data
+sobrance,Sobrance,Sobrance,kosicky,48.742148,22.179139,26037153,drakh/slovakia-gps-data
+spisska-nova-ves,Spišská Nová Ves,Spišská Nová Ves,kosicky,48.943534,20.562964,26037190,drakh/slovakia-gps-data
+trebisov,Trebišov,Trebišov,kosicky,48.628622,21.720171,26037195,drakh/slovakia-gps-data

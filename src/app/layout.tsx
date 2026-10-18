@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Ako sa zmení Slovensko?",
     description:
       "Klimatická zmena nie je len číslo v grafe. Pozrite sa, čo môže znamenať pre vaše mesto, región a každodenný život.",

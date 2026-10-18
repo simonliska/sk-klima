@@ -29,7 +29,11 @@ export async function generateMetadata({
     title,
     description: `Ako sa môže zmeniť klíma v meste ${town.name}? Normál 1991–2020 a projekcie na rok 2050 a 2100 — teplota, horúce dni, mráz a zrážky.`,
     alternates: { canonical: `/mesto/${town.slug}` },
-    openGraph: { title, url: `https://sk-klima.sk/mesto/${town.slug}` },
+    openGraph: {
+      title,
+      url: `https://sk-klima.sk/mesto/${town.slug}`,
+      images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
+    },
   };
 }
 

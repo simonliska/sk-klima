@@ -11,6 +11,7 @@ export const metadata = {
     description:
       "Odkiaľ pochádzajú dáta, čo sú pozorovania a projekcie, prečo existujú scenáre a prečo je budúcnosť neistá.",
     url: "https://sk-klima.sk/metodika",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
   },
 };
 

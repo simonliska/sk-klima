@@ -34,6 +34,7 @@ export async function generateMetadata({
     openGraph: {
       title: `Klimatická zmena ${region.name} do roku 2050`,
       url: `https://sk-klima.sk/kraj/${region.slug}`,
+      images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
     },
   };
 }

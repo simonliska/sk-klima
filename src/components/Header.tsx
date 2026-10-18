@@ -1,16 +1,12 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-stone-200/70 bg-white/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:px-6">
         <Link href="/" className="flex min-w-0 items-center gap-2" aria-label="Domov — Ako sa zmení Slovensko?">
-          <span
-            aria-hidden="true"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-700 text-lg text-white"
-          >
-            ◍
-          </span>
+          <Logo className="h-9 w-9 shrink-0" />
           <span className="min-w-0 leading-tight">
             <span className="block truncate text-sm font-bold tracking-tight sm:text-[15px]">
               Ako sa zmení Slovensko?

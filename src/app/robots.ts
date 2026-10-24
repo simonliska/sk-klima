@@ -9,20 +9,23 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
       },
-      // AI scrapers / SEO crawlers — polite bots obey, saves bandwidth
-      // on the 10 GB free plan. Google/Bing/Seznam unaffected.
+      // Model-training crawlers — blocked (E-OBS licence: non-commercial
+      // research and education only). Search and user-initiated assistant
+      // fetchers (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User,
+      // PerplexityBot) stay allowed so assistants can read and cite the site.
       {
         userAgent: [
           "GPTBot",
-          "ChatGPT-User",
-          "CCBot",
           "ClaudeBot",
           "anthropic-ai",
-          "AhrefsBot",
-          "SemrushBot",
-          "DotBot",
-          "MJ12bot",
+          "CCBot",
+          "Google-Extended",
         ],
+        disallow: "/",
+      },
+      // SEO crawlers
+      {
+        userAgent: ["AhrefsBot", "SemrushBot", "DotBot", "MJ12bot"],
         disallow: "/",
       },
     ],

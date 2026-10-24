@@ -5,9 +5,9 @@ import MapSection from "@/components/MapSection";
 import ImpactsSection from "@/components/ImpactsSection";
 
 export const metadata = {
-  title: "Ako sa zmení Slovensko? | Klimatická zmena jednoducho",
+  title: "Klimatická zmena Slovensko: ako sa zmení klíma do roku 2100",
   description:
-    "Pozrite sa, čo môže klimatická zmena znamenať pre vaše mesto, región a každodenný život. Včera → dnes → 2050 → 2100.",
+    "Klimatická zmena Slovensko jednoducho: čo môže znamenať pre vaše mesto a kraj. Normál 1991–2020 a projekcie na rok 2050 a 2100.",
   alternates: { canonical: "/" },
 };
 

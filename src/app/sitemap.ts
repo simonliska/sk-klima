@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // otherwise every build looks "new" and wastes crawl budget.
   const lastModified = new Date("2026-09-17T00:00:00.000Z");
   return [
-    { url: `${base}/`, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: base, lastModified, changeFrequency: "weekly", priority: 1 },
     {
       url: `${base}/metodika`,
       lastModified,

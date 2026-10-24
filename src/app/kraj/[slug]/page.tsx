@@ -24,12 +24,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const region = getRegion(slug);
   if (!region) return { title: "Kraj sa nenašiel" };
-  const intro = getRegionIntro(slug);
   return {
-    title: `Klimatická zmena ${region.name} do roku 2050`,
-    description:
-      intro ||
-      `Ako sa môže zmeniť život v regióne ${region.name} do roku 2050? Teploty, horúčavy, mráz a zrážky — jednoducho a zrozumiteľne.`,
+    title: { absolute: `Klimatická zmena ${region.name} do roku 2050` },
+    description: `Klimatická zmena ${region.name}: ako sa zmení teplota, mráz a horúčavy do roku 2050.`,
     alternates: { canonical: `/kraj/${region.slug}` },
     openGraph: {
       title: `Klimatická zmena ${region.name} do roku 2050`,

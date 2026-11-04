@@ -1,7 +1,9 @@
 """Subset E-OBS chunks to Slovakia + needed years only.
 
-Input:  data_raw/eobs/eobs_v33_0e_<chunk>.nc (ZIPs with 4 NetCDF members)
-Output: data_raw/eobs/sk/<var>_<year>.nc  (small working files)
+Input:  data_raw/eobs_open/eobs_v33_0e_open.zip (ZIP with 4 NetCDF members,
+        each covering 1950-2025, from 00_fetch_eobs.py)
+Output: data_raw/eobs/sk/<var>_<year>.nc  (small working files; existing
+        files are skipped - delete data_raw/eobs/sk to regenerate)
 
 Needed years (timeline = 30-year WMO periods):
   1951..1980 (period 1951-1980), 1961..1990 (period 1961-1990),
@@ -20,30 +22,24 @@ import cftime
 import numpy as np
 from netCDF4 import Dataset
 
-BASE = Path(__file__).resolve().parents[2] / "data_raw" / "eobs"
-UNZIPPED = BASE / "unzipped"
-OUT = BASE / "sk"
+BASE = Path(__file__).resolve().parents[2] / "data_raw"
+ZIP_PATH = BASE / "eobs_open" / "eobs_v33_0e_open.zip"
+UNZIPPED = BASE / "eobs_open" / "unzipped"
+OUT = BASE / "eobs" / "sk"
 
 LAT_MIN, LAT_MAX = 47.5, 49.8
 LON_MIN, LON_MAX = 16.5, 22.8
 
-# chunk -> years we actually need from it
-CHUNK_YEARS = {
-    "1950_1964": list(range(1951, 1965)),
-    "1965_1979": list(range(1965, 1980)),
-    "1980_1994": list(range(1980, 1995)),
-    "1995_2010": list(range(1995, 2011)),
-    "2011_2025": [2020, 2021, 2022, 2023, 2024, 2025],
-}
+# years we actually need
+YEARS = list(range(1951, 2011)) + [2020, 2021, 2022, 2023, 2024, 2025]
 
 VAR_NAMES = {"tx": "tx", "tn": "tn", "tg": "tg", "rr": "rr"}
 
 
-def ensure_member(chunk: str, var: str) -> Path:
-    """Extract one variable file from the chunk ZIP, return its path."""
-    zippath = BASE / f"eobs_v33_0e_{chunk}.nc"
+def ensure_member(var: str) -> Path:
+    """Extract one variable file from the ZIP, return its path."""
     prefix = {"tx": "tx_", "tn": "tn_", "tg": "tg_", "rr": "rr_"}[var]
-    with zipfile.ZipFile(zippath) as z:
+    with zipfile.ZipFile(ZIP_PATH) as z:
         member = next(n for n in z.namelist() if n.startswith(prefix))
         target = UNZIPPED / member
         if not target.exists():
@@ -91,7 +87,7 @@ def subset_year(src: Path, var: str, year: int) -> Path:
     vd = out.createVariable(var, np.float32, ("time", "latitude", "longitude"), fill_value=-9999.0)
     vd[:] = data
     vd.units = ds.variables[var].units
-    out.setncattr("source", "E-OBS v33.0e ensemble_mean, CDS insitu-gridded-observations-europe")
+    out.setncattr("source", "E-OBS v33.0e ensemble_mean (open_data_licence, EU), CDS insitu-gridded-observations-europe")
     out.setncattr("subset_year", year)
     out.setncattr("subset_bbox", f"lat {LAT_MIN}-{LAT_MAX}, lon {LON_MIN}-{LON_MAX}")
     out.close()
@@ -104,13 +100,12 @@ def main(argv: list[str]) -> int:
     only_years = [int(a) for a in argv[1:] if a.isdigit()]
     OUT.mkdir(parents=True, exist_ok=True)
     UNZIPPED.mkdir(parents=True, exist_ok=True)
-    for chunk, years in CHUNK_YEARS.items():
-        for year in years:
-            if only_years and year not in only_years:
-                continue
-            for var in ("tx", "tn", "tg", "rr"):
-                src = ensure_member(chunk, var)
-                subset_year(src, var, year)
+    for year in YEARS:
+        if only_years and year not in only_years:
+            continue
+        for var in ("tx", "tn", "tg", "rr"):
+            src = ensure_member(var)
+            subset_year(src, var, year)
     return 0
 
 

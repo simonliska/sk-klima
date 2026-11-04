@@ -9,8 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
       },
-      // Model-training crawlers — blocked (E-OBS licence: non-commercial
-      // research and education only). Search and user-initiated assistant
+      // Model-training crawlers — blocked. Search and user-initiated assistant
       // fetchers (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User,
       // PerplexityBot) stay allowed so assistants can read and cite the site.
       {

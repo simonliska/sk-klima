@@ -7,7 +7,7 @@ export default function Footer() {
         <p>
           <span className="font-bold text-stone-800">Ako sa zmení Slovensko?</span>{" "}
           <span>
-            Dáta: SHMÚ (CC BY 4.0), E-OBS · Projekcie RCP4.5 sú orientačné,
+            Dáta: SHMÚ (CC BY 4.0), E-OBS_EU / Copernicus C3S (CC BY 4.0) · Projekcie RCP4.5 sú orientačné,
             nie predpoveď počasia.
           </span>
         </p>

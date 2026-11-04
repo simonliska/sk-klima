@@ -185,15 +185,34 @@ export default function MetodikaPage() {
             </p>
           </div>
           <div className="rounded-2xl bg-stone-100 p-4">
-            <p className="font-bold">E-OBS </p>
+            <p className="font-bold">E-OBS_EU (CC BY 4.0)</p>
+            <p className="mt-1">
+              Zdroj dát: E-OBS_EU, Copernicus Climate Change Service (C3S)
+              Climate Data Store, licencia{" "}
+              <a className="text-teal-800 hover:underline" href="https://creativecommons.org/licenses/by/4.0/deed.sk">CC BY 4.0</a>.
+              Údaje upravené a agregované do 30-ročných priemerov.
+            </p>
             <p className="mt-1" lang="en">
-              “We acknowledge the E-OBS dataset and the data providers in
-              the ECA&amp;D project (https://www.ecad.eu). Cornes, R., G. van
-              der Schrier, E.J.M. van den Besselaar, and P.D. Jones. 2018:
-              An Ensemble Version of the E-OBS Temperature and Precipitation
-              Datasets, J. Geophys. Res. Atmos., 123.
-              doi:10.1029/2017JD028200” Verzia datasetu: E-OBSv33.0e. DOI:
-              10.24381/cds.151d3ec6.
+              Generated using or contains modified Copernicus Climate Change
+              Service information 2025. Neither the European Commission nor
+              ECMWF is responsible for any use that may be made of the
+              Copernicus information or data it contains.
+            </p>
+            <p className="mt-1" lang="en">
+              We acknowledge the E-OBS dataset and the data providers in the
+              ECA&amp;D project (https://www.ecad.eu). Cornes, R., van der
+              Schrier, G., van den Besselaar, E.J.M., Jones, P., (2018): An
+              Ensemble Version of the E-OBS Temperature and Precipitation
+              Datasets, J. Geophys. Res. Atmos., 123. DOI:{" "}
+              <a className="text-teal-800 hover:underline" href="https://doi.org/10.1029/2017JD028200">10.1029/2017JD028200</a>
+            </p>
+            <p className="mt-1" lang="en">
+              Copernicus Climate Change Service, Climate Data Store, (2020):
+              E-OBS daily gridded meteorological data for Europe from 1950 to
+              present derived from in-situ observations. Copernicus Climate
+              Change Service (C3S) Climate Data Store (CDS). DOI:{" "}
+              <a className="text-teal-800 hover:underline" href="https://doi.org/10.24381/cds.151d3ec6">10.24381/cds.151d3ec6</a>{" "}
+              (Accessed on 04-Nov-2026). Verzia datasetu: E-OBS_EU v33.0e.
             </p>
           </div>
         </div>

@@ -245,31 +245,40 @@ Slovak template, used verbatim (field names stay Slovak):
 - ECA&D station daily series (including Slovak stations) are partly
   downloadable; updated to 2026-01-31.
 
-### 11.2 Licence: non-commercial research and education
+### 11.2 Licence: open data licence CC BY 4.0 (E-OBS_EU)
 
-Verbatim licence wording (E-OBS product licence rev. 1, CDS):
+Since 2026-11-04 the CDS dataset offers new license:
 
-> "These data … are strictly for use in **non-commercial research and
-> education projects only**.
+- **E-OBS_EU** (EU + NO, CH, IS, UK): **CC BY 4.0**, any use incl. commercial
+  with attribution.
 
-**This project is a non-commercial educational web (education), so it meets
-the licence terms.** The condition is that the project stays free of
-commercial elements (no ads, no paid services, no company operator).
+This project uses **E-OBS_EU** (`licence_type = open_data_licence`; Slovakia
+is covered). Values for Slovak cells are identical to the restricted product
+(compared 2026-11-04, TX/TN/TG/RR); only non-EU cells (e.g. Ukraine) are empty.
+Download: `scripts/shmu_pipeline/00_fetch_eobs.py` (one ZIP, 1950–2025).
 
-### 11.3 Mandatory E-OBS citation (when used)
+### 11.3 Mandatory attribution (CDS guidelines, 2026-11-04)
 
-Verbatim, at every number derived from E-OBS + on `/metodika`:
+On top of the licence, CDS requires: cite the catalogue entry, clear and
+visible Copernicus attribution, and the E-OBS data citation (both products).
+Shown on `/metodika`, short form in the footer:
 
-> "We acknowledge the E-OBS dataset and the data providers in the ECA&D
-> project (https://www.ecad.eu). Cornes, R., G. van der Schrier,
-> E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of
-> the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res.
-> Atmos., 123. doi:10.1029/2017JD028200"
+> "Generated using or contains modified Copernicus Climate Change Service
+> information 2025. Neither the European Commission nor ECMWF is
+> responsible for any use that may be made of the Copernicus information
+> or data it contains."
 >
-> "Dataset version: E-OBSv33.0e (or newer). DOI: 10.24381/cds.151d3ec6."
-
-(The CDS variant additionally cites the Copernicus Climate Change Service,
-https://surfobs.climate.copernicus.eu — used according to the download source.)
+> "We acknowledge the E-OBS dataset and the data providers in the ECA&D
+> project (https://www.ecad.eu). Cornes, R., van der Schrier, G., van den
+> Besselaar, E.J.M., Jones, P., (2018): An Ensemble Version of the E-OBS
+> Temperature and Precipitation Datasets, J. Geophys. Res. Atmos., 123.
+> DOI: 10.1029/2017JD028200"
+>
+> "Copernicus Climate Change Service, Climate Data Store, (2020): E-OBS
+> daily gridded meteorological data for Europe from 1950 to present
+> derived from in-situ observations. Copernicus Climate Change Service
+> (C3S) Climate Data Store (CDS). DOI: 10.24381/cds.151d3ec6 (Accessed on
+> DD-MMM-YYYY)" — access date of our download: 04-Nov-2026.
 
 ### 11.4 E-OBS methodological notes
 

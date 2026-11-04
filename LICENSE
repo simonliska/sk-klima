@@ -27,17 +27,26 @@ DATA LICENCE NOTE (not covered by the MIT licence above):
 This repository contains derived climate indicators
 (`src/data/climate.real.json`, annual aggregates only — no raw grids).
 
-- E-OBS derived values (history up to 2025): strictly for use in
-  NON-COMMERCIAL research and education projects only. Any commercial
-  element (company as operator, advertising, paid services) violates the
-  E-OBS licence — such use requires a different history source.
-  Required acknowledgment (see also the in-app `/metodika` page):
+- E-OBS derived values (history up to 2025): E-OBS_EU product (EU, Norway,
+  Switzerland, Iceland, UK), downloaded from the Copernicus Climate Data
+  Store under the open data licence CC BY 4.0
+  (https://creativecommons.org/licenses/by/4.0/). Data modified and
+  aggregated into annual indicators.
+  Attribution (see also the in-app `/metodika` page):
+  "Generated using or contains modified Copernicus Climate Change Service
+  information 2025. Neither the European Commission nor ECMWF is
+  responsible for any use that may be made of the Copernicus information
+  or data it contains."
   "We acknowledge the E-OBS dataset and the data providers in the ECA&D
-  project (https://www.ecad.eu). Cornes, R., G. van der Schrier,
-  E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of
-  the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res.
-  Atmos., 123. doi:10.1029/2017JD028200. Dataset version: E-OBSv33.0e.
-  DOI: 10.24381/cds.151d3ec6."
+  project (https://www.ecad.eu). Cornes, R., van der Schrier, G., van den
+  Besselaar, E.J.M., Jones, P., (2018): An Ensemble Version of the E-OBS
+  Temperature and Precipitation Datasets, J. Geophys. Res. Atmos., 123.
+  DOI: 10.1029/2017JD028200"
+  "Copernicus Climate Change Service, Climate Data Store, (2020): E-OBS
+  daily gridded meteorological data for Europe from 1950 to present
+  derived from in-situ observations. Copernicus Climate Change Service
+  (C3S) Climate Data Store (CDS). DOI: 10.24381/cds.151d3ec6 (Accessed on
+  04-Nov-2026)". Dataset version: E-OBS_EU v33.0e.
 - SHMÚ derived values (1991–2020 normals, RCP4.5 projections):
   source SHMÚ open data (https://opendata.shmu.sk), licence CC BY 4.0
   (https://creativecommons.org/licenses/by/4.0/deed.sk).

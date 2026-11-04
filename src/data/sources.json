@@ -8,10 +8,10 @@
   },
   {
     "id": "EOBS",
-    "nameSk": "E-OBS (ECA&D / Copernicus C3S)",
+    "nameSk": "E-OBS_EU (ECA&D / Copernicus C3S)",
     "name": "E-OBS ensemble dataset",
     "url": "https://www.ecad.eu",
-    "roleSk": "História 1951–2010 (E-OBS denný grid 0,1°, 30-ročné priemery): tropické dni/noci, mrazové dni, dni so zrážkami nad 40 mm a priemerná teplota. Len na nekomerčné vzdelávacie použitie."
+    "roleSk": "História 1951–2010 (E-OBS denný grid 0,1°, 30-ročné priemery): tropické dni/noci, mrazové dni, dni so zrážkami nad 40 mm a priemerná teplota. Produkt E-OBS_EU, licencia CC BY 4.0."
   },
   {
     "id": "IPCC",

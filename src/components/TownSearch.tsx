@@ -38,7 +38,7 @@ export default function TownSearch({ towns }: { towns: TownOption[] }) {
   const showList = open && query.trim().length > 0;
 
   return (
-    <div className="relative mx-auto w-full max-w-xl">
+    <div className="relative w-full max-w-xl">
       <label htmlFor={`${id}-input`} className="sr-only">
         Nájdite svoje okresné mesto
       </label>
@@ -76,13 +76,13 @@ export default function TownSearch({ towns }: { towns: TownOption[] }) {
             setOpen(false);
           }
         }}
-        className="w-full rounded-full border border-stone-300 bg-white px-5 py-3 text-base shadow-sm placeholder:text-stone-400"
+        className="w-full rounded-xs border border-stone-400 bg-white px-4 py-3 text-base placeholder:text-stone-400 focus:border-accent-700"
       />
       {showList && (
         <ul
           id={listId}
           role="listbox"
-          className="absolute z-20 mt-2 w-full overflow-hidden rounded-2xl border border-stone-200 bg-white text-left shadow-lg"
+          className="absolute z-20 mt-2 w-full overflow-hidden border border-stone-200 bg-white text-left shadow-lg"
         >
           {results.length === 0 ? (
             <li className="px-5 py-3 text-sm text-stone-500">
@@ -102,7 +102,7 @@ export default function TownSearch({ towns }: { towns: TownOption[] }) {
                 }}
                 onMouseEnter={() => setActive(i)}
                 className={`flex cursor-pointer items-baseline justify-between gap-3 px-5 py-3 ${
-                  i === active ? "bg-teal-50" : ""
+                  i === active ? "bg-accent-50" : ""
                 }`}
               >
                 <span className="font-semibold text-stone-900">{t.name}</span>

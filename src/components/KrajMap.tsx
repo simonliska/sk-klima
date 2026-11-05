@@ -91,8 +91,8 @@ export default function KrajMap({
                 aria-label={r.name}
                 aria-pressed={isActive}
                 className="cursor-pointer transition-all"
-                fill={isActive ? "#0d9488" : "#e7e5e4"}
-                stroke={isActive ? "#0f766e" : "#57534e"}
+                fill={isActive ? "#2b5043" : "#e7e5e4"}
+                stroke={isActive ? "#2b5043" : "#57534e"}
                 strokeWidth={isActive ? 2.5 : 1}
                 strokeLinejoin="round"
               >
@@ -107,7 +107,7 @@ export default function KrajMap({
                 fill={isActive ? "#ffffff" : "#44403c"}
                 pointerEvents="none"
                 paintOrder="stroke"
-                stroke={isActive ? "#0d9488" : "#e7e5e4"}
+                stroke={isActive ? "#2b5043" : "#e7e5e4"}
                 strokeWidth={3}
                 strokeLinejoin="round"
               >
@@ -123,7 +123,7 @@ export default function KrajMap({
                   fill={isActive ? "#ffffff" : "#44403c"}
                   pointerEvents="none"
                   paintOrder="stroke"
-                  stroke={isActive ? "#0d9488" : "#e7e5e4"}
+                  stroke={isActive ? "#2b5043" : "#e7e5e4"}
                   strokeWidth={3}
                   strokeLinejoin="round"
                 >
@@ -159,9 +159,9 @@ export default function KrajMap({
           <button
             key={r.slug}
             onClick={() => onSelect?.(r.slug)}
-            className={`min-h-[44px] rounded-full px-3 py-2 text-sm font-medium ${
+            className={`min-h-[44px] rounded-xs px-3 py-2 text-sm font-medium ${
               selected === r.slug
-                ? "bg-teal-700 text-white"
+                ? "bg-accent-700 text-white"
                 : "bg-stone-200 text-stone-800 hover:bg-stone-300"
             }`}
             aria-pressed={selected === r.slug}

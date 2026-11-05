@@ -11,9 +11,9 @@ export default function RegionSelector({ active }: { active?: string }) {
           key={r.slug}
           href={`/kraj/${r.slug}`}
           aria-current={active === r.slug ? "page" : undefined}
-          className={`rounded-full px-4 py-2 text-sm font-bold ${
+          className={`rounded-xs px-4 py-2 text-sm font-semibold ${
             active === r.slug
-              ? "bg-teal-700 text-white"
+              ? "bg-accent-700 text-white"
               : "bg-stone-200 text-stone-800 hover:bg-stone-300"
           }`}
         >

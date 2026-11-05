@@ -85,7 +85,6 @@ export interface MetricDef {
   id: MetricId;
   labelSk: string;
   shortLabelSk: string;
-  icon: string;
   unit: string;
   definitionSk: string;
   goodDirection: "up-bad" | "down-bad" | "neutral";
@@ -94,7 +93,6 @@ export interface MetricDef {
 
 export interface ImpactCategory {
   id: string;
-  icon: string;
   titleSk: string;
   headlineSk: string;
   statSk: string;

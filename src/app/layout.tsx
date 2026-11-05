@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -41,6 +42,20 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const plex = IBM_Plex_Sans({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-plex",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin", "latin-ext"],
+  weight: ["600"],
+  variable: "--font-source-serif",
+  display: "swap",
+});
+
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -57,7 +72,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sk" className="h-full antialiased">
+    <html
+      lang="sk"
+      className={`${plex.variable} ${sourceSerif.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col bg-stone-50 text-stone-900">
         <script
           type="application/ld+json"

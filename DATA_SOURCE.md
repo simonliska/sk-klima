@@ -186,14 +186,14 @@ licence, and indicate changes. Below are the binding formulations for this
 project — used verbatim, without rephrasing. The Slovak wording is legally
 binding; the English version is provided only where noted.
 
-### 10.1 Short badge (at every number / in `SourceBadge`)
+### 10.1 Short form (footer on every page; optional `SourceBadge` near data)
 
 > Zdroj: SHMÚ · CC BY 4.0
 
 Linked as source: `https://opendata.shmu.sk`;
 licence link: `https://creativecommons.org/licenses/by/4.0/deed.sk`.
 
-### 10.2 Full wording (`/metodika` page, footer, under charts)
+### 10.2 Full wording (`/metodika` page)
 
 > Zdroj dát: Slovenský hydrometeorologický ústav (SHMÚ), otvorené dáta
 > opendata.shmu.sk, licencia CC BY 4.0
@@ -218,9 +218,18 @@ Slovak template, used verbatim (field names stay Slovak):
 
 ### 10.4 Usage rules
 
-1. The short wording (§10.1) is shown at **every** number with
-   `status: "observed"` / `"projected"` and `sourceId: "SHMU"`.
-2. The full wording (§10.2) always appears on `/metodika` and in the footer.
+1. Attribution follows CC BY 4.0 §3(a)(2) — "in any reasonable manner
+   based on the medium", which explicitly allows a link to a resource that
+   contains the required information. For this site that means:
+   - the **footer on every page** names SHMÚ and E-OBS with the licence
+     (short form §10.1, §11.3) and links to `/metodika`;
+   - **`/metodika`** carries the full wording (§10.2), the licence link and
+     the "data modified" notice;
+   - every **data section** (timeline, kraj/mesto tables, map panel) has a
+     visible link to `/metodika` („Ako vznikli tieto údaje? →").
+   A per-number badge is **not** required. Never remove the footer credit
+   without putting attribution back next to the data.
+2. The full wording (§10.2) always appears on `/metodika`.
 3. **Never use data from `www.shmu.sk`** (articles, tables, charts on the
    website) — those fall under stricter terms ("for personal use only").
    Use exclusively `opendata.shmu.sk` and the grids from

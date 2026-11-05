@@ -74,7 +74,7 @@ export default async function RegionPage({
   };
 
   return (
-    <div className="mx-auto max-w-6xl space-y-8 px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-6xl space-y-12 px-4 py-8 pb-16 sm:px-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -96,19 +96,19 @@ export default async function RegionPage({
         <span className="font-semibold text-stone-800">{region.name}</span>
       </nav>
 
-      <header className="rounded-3xl bg-teal-950 p-6 text-white sm:p-10">
+      <header className="bg-accent-950 p-6 text-white sm:p-10">
         <div className="flex flex-wrap items-center gap-2">
-          <DataEraBadge era="HISTÓRIA" />
-          <span aria-hidden className="text-teal-300">→</span>
-          <DataEraBadge era="PROJEKCIA" />
+          <DataEraBadge era="HISTÓRIA" onDark />
+          <span aria-hidden className="text-accent-300">→</span>
+          <DataEraBadge era="PROJEKCIA" onDark />
         </div>
-        <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
+        <h1 className="mt-4 text-4xl sm:text-5xl">
           {region.name}: klimatická zmena do roku 2050
         </h1>
-        <p className="mt-3 max-w-2xl text-lg leading-relaxed text-teal-50/90">
+        <p className="mt-3 max-w-2xl text-lg leading-relaxed text-accent-50/90">
           {intro || `Ako sa môže zmeniť život v regióne ${region.shortName} do roku 2050?`}
         </p>
-        <p className="mt-3 text-xs text-teal-100/60">
+        <p className="mt-3 text-xs text-accent-100/60">
           Normál 1991–2020 a projekcia 2021–2050 (RCP4.5) • SHMÚ •{" "}
           <Link href="/metodika" className="underline hover:text-white">
             Ako vznikli tieto údaje? →
@@ -121,20 +121,21 @@ export default async function RegionPage({
 
       {towns.length > 0 && (
         <section aria-labelledby="mesta">
-          <h2 id="mesta" className="text-2xl font-black">
+          <h2 id="mesta" className="text-2xl sm:text-3xl">
             Okresné mestá v kraji
           </h2>
-          <p className="mt-1 text-sm text-stone-600">
-            Priemer kraja skrýva rozdiely v nadmorkskej výške a lokalite. Pozrite si hodnoty pre konkrétne mesto.
+          <p className="mt-1 text-stone-600">
+            Priemer kraja skrýva rozdiely v nadmorskej výške a lokalite. Pozrite si hodnoty pre konkrétne mesto.
           </p>
-          <ul className="mt-3 flex flex-wrap gap-2">
+          <ul className="mt-4 grid grid-cols-2 border-t-2 border-stone-900 sm:grid-cols-3 lg:grid-cols-4">
             {towns.map((t) => (
-              <li key={t.slug}>
+              <li key={t.slug} className="border-b border-stone-300">
                 <Link
                   href={`/mesto/${t.slug}`}
-                  className="inline-flex min-h-[44px] items-center rounded-full bg-stone-200 px-4 py-2 text-sm font-medium text-stone-800 hover:bg-stone-300"
+                  className="flex min-h-[44px] items-center justify-between gap-2 py-2 pr-4 font-medium text-stone-900 hover:text-accent-700 hover:underline"
                 >
                   {t.name}
+                  <span aria-hidden className="text-stone-400">→</span>
                 </Link>
               </li>
             ))}
@@ -143,76 +144,75 @@ export default async function RegionPage({
       )}
 
       {/* Practical meaning */}
-      <section aria-labelledby="prax" className="rounded-3xl border border-stone-200 bg-white p-6 sm:p-8">
-        <h2 id="prax" className="text-2xl font-black">
+      <section aria-labelledby="prax">
+        <h2 id="prax" className="text-2xl sm:text-3xl">
           Čo to môže znamenať v {region.shortName}?
         </h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl bg-amber-50 p-4">
-            <p className="font-bold">☀️ V lete</p>
-            <p className="mt-1 text-sm leading-relaxed text-stone-700">
-              Očakáva sa častejšie prehrievanie bytov počas horúčav.
-              Najnáročnejšie sú podkrovia a byty bez tienenia. Tropické
-              noci môžu zhoršiť spánok.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-sky-50 p-4">
-            <p className="font-bold">❄️ V zime</p>
-            <p className="mt-1 text-sm leading-relaxed text-stone-700">
-              Sneh môže byť menej pravidelný, mrazových dní sa očakáva
-              menej. Zima bude pravdepodobne kratšia a teplejšia.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-blue-50 p-4">
-            <p className="font-bold">⛈️ Pri dažďoch</p>
-            <p className="mt-1 text-sm leading-relaxed text-stone-700">
-              Krátke intenzívne zrážky môžu predstavovať väčšie riziko
-              lokálnych prívalových povodní — aj keď celkovo prší podobne.
-            </p>
-          </div>
-          <div className="rounded-2xl bg-green-50 p-4">
-            <p className="font-bold">🌲 Pre prírodu</p>
-            <p className="mt-1 text-sm leading-relaxed text-stone-700">
-              Dlhšie obdobia sucha môžu zvyšovať stres lesov a vegetácie,
-              množiť škodcov a zvyšovať riziko požiarov.
-            </p>
-          </div>
-        </div>
-
-        <h3 className="mt-6 font-bold">Vybrané dopady na život</h3>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">
-          {impacts.map((c) => (
-            <div key={c.id} className="rounded-2xl bg-stone-50 p-4 text-sm">
-              <p className="font-bold">
-                <span aria-hidden>{c.icon} </span>
-                {c.titleSk}: {c.headlineSk}
-              </p>
-              <p className="mt-1 text-stone-600">{c.praxSk}</p>
+        <dl className="mt-4 border-t-2 border-stone-900">
+            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
+              <dt className="font-serif text-lg font-semibold">V lete</dt>
+              <dd className="leading-relaxed text-stone-700">
+                Očakáva sa častejšie prehrievanie bytov počas horúčav. Najnáročnejšie sú podkrovia a byty bez tienenia. Tropické noci môžu zhoršiť spánok.
+              </dd>
             </div>
+            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
+              <dt className="font-serif text-lg font-semibold">V zime</dt>
+              <dd className="leading-relaxed text-stone-700">
+                Sneh môže byť menej pravidelný, mrazových dní sa očakáva menej. Zima bude pravdepodobne kratšia a teplejšia.
+              </dd>
+            </div>
+            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
+              <dt className="font-serif text-lg font-semibold">Pri dažďoch</dt>
+              <dd className="leading-relaxed text-stone-700">
+                Krátke intenzívne zrážky môžu predstavovať väčšie riziko lokálnych prívalových povodní — aj keď celkovo prší podobne.
+              </dd>
+            </div>
+            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
+              <dt className="font-serif text-lg font-semibold">Pre prírodu</dt>
+              <dd className="leading-relaxed text-stone-700">
+                Dlhšie obdobia sucha môžu zvyšovať stres lesov a vegetácie, množiť škodcov a zvyšovať riziko požiarov.
+              </dd>
+            </div>
+        </dl>
+
+        <h3 className="mt-8 text-xs font-semibold uppercase tracking-[0.06em] text-stone-500">
+          Vybrané dopady na život
+        </h3>
+        <ul className="mt-2 border-t border-stone-900">
+          {impacts.map((c) => (
+            <li
+              key={c.id}
+              className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)_minmax(0,1fr)] sm:gap-6"
+            >
+              <p className="font-serif text-lg font-semibold">{c.titleSk}</p>
+              <p className="font-medium text-stone-900">{c.headlineSk}</p>
+              <p className="leading-relaxed text-stone-600">{c.praxSk}</p>
+            </li>
           ))}
-        </div>
+        </ul>
         <Link
           href="/#zivot"
-          className="mt-4 inline-block font-bold text-teal-800 hover:underline"
+          className="mt-4 inline-block font-medium text-accent-800 underline underline-offset-2 hover:text-accent-950"
         >
           Zobraziť všetkých 8 oblastí života →
         </Link>
       </section>
 
       {/* Other regions */}
-      <nav aria-label="Ostatné kraje" className="rounded-3xl bg-stone-100 p-6">
-        <h2 className="font-black">Pozrite si aj iné kraje</h2>
-        <div className="mt-3 flex flex-wrap gap-2">
+      <nav aria-label="Ostatné kraje" className="border-t-2 border-stone-900 pt-4">
+        <h2 className="text-xl">Pozrite si aj iné kraje</h2>
+        <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
           {others.map((r) => (
-            <Link
-              key={r.slug}
-              href={`/kraj/${r.slug}`}
-              className="rounded-full bg-white px-4 py-2 text-sm font-bold shadow-sm hover:bg-teal-700 hover:text-white"
-            >
-              {r.shortName}
-            </Link>
+            <li key={r.slug}>
+              <Link
+                href={`/kraj/${r.slug}`}
+                className="inline-flex min-h-[44px] items-center font-medium text-accent-800 underline underline-offset-2 hover:text-accent-950"
+              >
+                {r.shortName}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </nav>
     </div>
   );

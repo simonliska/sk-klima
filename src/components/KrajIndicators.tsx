@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { SourceBadge } from "./Badges";
 import {
   compareNormalVs2050,
   DEFAULT_SCENARIO,
@@ -14,62 +14,69 @@ export default function KrajIndicators({ slug }: { slug: string }) {
   return (
     <section aria-labelledby="indikatory">
       <div className="flex flex-wrap items-end justify-between gap-2">
-        <div>
-          <h2 id="indikatory" className="text-2xl font-black">
-            Normál 1991–2020 → projekcia 2021–2050 v číslach
-          </h2>
-        </div>
-        <span className="inline-flex rounded-full bg-violet-700 px-3 py-1.5 text-xs font-bold text-white">
-          Stredný (RCP4.5)
+        <h2 id="indikatory" className="text-2xl sm:text-3xl">
+          Normál 1991–2020 → projekcia 2021–2050 v číslach
+        </h2>
+        <span className="inline-flex rounded-xs border border-future-700 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.06em] text-future-700">
+          Scenár RCP4.5 (stredný)
         </span>
       </div>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {comparison.map(({ metric, today, future, delta }) => (
-          <article
-            key={metric.id}
-            className="rounded-3xl border border-stone-200 bg-white p-5 shadow-sm"
-          >
-            <div>
-              <h3 className="font-bold">
-                <span aria-hidden>{metric.icon} </span>
-                {metric.labelSk}
-              </h3>
-            </div>
-            <div className="mt-3 flex items-center justify-between gap-2">
-              <div className="rounded-2xl bg-teal-50 px-4 py-3 text-center">
-                <p className="text-[11px] font-bold uppercase text-teal-800">Normál 1991–2020</p>
-                <p className="text-2xl font-black tabular-nums">
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full min-w-[520px] border-collapse text-left">
+          <thead>
+            <tr className="border-b-2 border-stone-900 text-xs font-semibold uppercase tracking-[0.06em] text-stone-500">
+              <th scope="col" className="py-2 pr-4 font-semibold">Ukazovateľ</th>
+              <th scope="col" className="py-2 pr-4 text-right font-semibold text-accent-700">
+                Normál 1991–2020
+              </th>
+              <th scope="col" className="py-2 pr-4 text-right font-semibold text-future-700">
+                Projekcia 2021–2050
+              </th>
+              <th scope="col" className="py-2 text-right font-semibold">Zmena</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map(({ metric, today, future, delta }) => (
+              <tr key={metric.id} className="border-b border-stone-300 align-top">
+                <th scope="row" className="py-4 pr-4 font-normal">
+                  <span className="font-serif text-lg font-semibold text-stone-900">
+                    {metric.labelSk}
+                  </span>
+                  <span className="mt-0.5 block text-sm text-stone-600">
+                    {metric.definitionSk}
+                  </span>
+                </th>
+                <td className="py-4 pr-4 text-right text-2xl font-semibold tabular-nums sm:text-3xl">
                   {today?.displayValue}
-                </p>
-              </div>
-              <span aria-hidden className="text-2xl text-teal-700">→</span>
-              <div className="rounded-2xl bg-violet-50 px-4 py-3 text-center">
-                <p className="text-[11px] font-bold uppercase text-violet-800">Projekcia 2021–2050</p>
-                <p className="text-2xl font-black tabular-nums">
+                </td>
+                <td className="py-4 pr-4 text-right text-2xl font-semibold tabular-nums sm:text-3xl">
                   {future?.displayValue}
-                </p>
-              </div>
-            </div>
-            {delta && (
-              <p className="mt-2 text-sm font-bold text-teal-800">
-                Zmena oproti normálu: {delta}
-                {metric.id === "avg_temp"
-                  ? ""
-                  : ` ${skCountUnit(
-                      metric.id,
-                      Number(delta.replace("+", "").replace(",", "."))
-                    )}`}
-              </p>
-            )}
-            <p className="mt-1 text-sm text-stone-600">{metric.definitionSk}</p>
-          </article>
-        ))}
+                </td>
+                <td className="whitespace-nowrap py-4 text-right tabular-nums">
+                  {delta ? (
+                    <span className="text-base font-semibold text-stone-900">
+                      {delta}
+                      <span className="ml-1 text-sm font-normal text-stone-500">
+                        {metric.id === "avg_temp"
+                          ? ""
+                          : skCountUnit(
+                              metric.id,
+                              Number(delta.replace("+", "").replace(",", "."))
+                            )}
+                      </span>
+                    </span>
+                  ) : (
+                    <span className="text-stone-400">—</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <p className="mt-3 text-sm">
-        <Link href="/metodika" className="font-medium text-teal-800 hover:underline">
-          Ako vznikli tieto údaje? →
-        </Link>
-      </p>
+      <div className="mt-3">
+        <SourceBadge source="SHMÚ" />
+      </div>
     </section>
   );
 }

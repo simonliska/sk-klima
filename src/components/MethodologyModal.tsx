@@ -10,7 +10,7 @@ export default function MethodologyModal({ label = "Ako vznikli tieto údaje?" }
     <>
       <button
         onClick={() => setOpen(true)}
-        className="text-xs font-medium text-teal-800 hover:underline"
+        className="text-xs font-medium text-accent-800 hover:underline"
       >
         {label}
       </button>
@@ -23,10 +23,10 @@ export default function MethodologyModal({ label = "Ako vznikli tieto údaje?" }
           onClick={() => setOpen(false)}
         >
           <div
-            className="w-full max-w-md rounded-3xl bg-white p-6"
+            className="w-full max-w-md bg-white p-6"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-lg font-black">Ako vznikli tieto údaje?</h2>
+            <h2 className="text-lg font-semibold">Ako vznikli tieto údaje?</h2>
             <p className="mt-2 text-sm leading-relaxed text-stone-600">
               1951–2010 pozorovania E-OBS (30-ročné priemery), 1991–2020
               klimatický normál SHMÚ (teplotné odchýlky sa vzťahujú k nemu).
@@ -36,13 +36,13 @@ export default function MethodologyModal({ label = "Ako vznikli tieto údaje?" }
             <div className="mt-4 flex gap-2">
               <Link
                 href="/metodika"
-                className="flex-1 rounded-full bg-teal-700 px-4 py-2.5 text-center font-bold text-white hover:bg-teal-800"
+                className="flex-1 rounded-xs bg-accent-700 px-4 py-2.5 text-center font-semibold text-white hover:bg-accent-800"
               >
                 Prečítať metodiku
               </Link>
               <button
                 onClick={() => setOpen(false)}
-                className="rounded-full border border-stone-300 px-4 py-2.5 font-bold hover:bg-stone-100"
+                className="rounded-xs border border-stone-300 px-4 py-2.5 font-semibold hover:bg-stone-100"
               >
                 Zavrieť
               </button>

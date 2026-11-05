@@ -79,7 +79,7 @@ export default function ClimateChart({
         >
           <Tooltip
             content={() => null}
-            cursor={{ stroke: "#0f766e", strokeOpacity: 0.25 }}
+            cursor={{ stroke: "#2b5043", strokeOpacity: 0.25 }}
           />
           <XAxis
             dataKey="label"
@@ -104,7 +104,7 @@ export default function ClimateChart({
           <Line
             type="monotone"
             dataKey="value"
-            stroke="#0f766e"
+            stroke="#2b5043"
             strokeWidth={2.5}
             dot={(props: {
               cx?: number;
@@ -130,7 +130,7 @@ export default function ClimateChart({
                       cx={cx}
                       cy={cy}
                       r={2.5}
-                      fill="#0f766e"
+                      fill="#2b5043"
                       stroke="#fff"
                       strokeWidth={1.5}
                       pointerEvents="none"
@@ -147,7 +147,7 @@ export default function ClimateChart({
               x={active.label}
               y={active.value}
               r={5}
-              fill="#0f766e"
+              fill="#2b5043"
               stroke="#fff"
               strokeWidth={2}
             />

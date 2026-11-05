@@ -53,7 +53,7 @@ export default function TimelineSection() {
   return (
     <section id="cas" className="mx-auto max-w-6xl scroll-mt-20 px-4 sm:px-6">
       <div className="max-w-2xl">
-        <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
+        <h2 className="text-3xl sm:text-4xl">
           Slovensko včera, dnes a zajtra
         </h2>
         <p className="mt-2 text-lg text-stone-600">
@@ -64,10 +64,10 @@ export default function TimelineSection() {
       </div>
 
       {/* Slider */}
-      <div className="mt-5 rounded-3xl border border-stone-200 bg-white p-5 shadow-sm">
-        <label htmlFor="timeline" className="mt-4 block">
+      <div className="mt-6 border-y border-stone-300 py-5">
+        <label htmlFor="timeline" className="block">
           <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-            <span className="text-4xl font-black tabular-nums sm:text-5xl">
+            <span className="text-4xl font-semibold tabular-nums sm:text-5xl">
               {period?.labelSk}
             </span>
             <span className="text-sm text-stone-500 sm:text-right">
@@ -100,7 +100,7 @@ export default function TimelineSection() {
               key={p.id}
               onClick={() => setPeriodId(p.id as TimelinePeriodId)}
               title={p.labelSk}
-              className={`min-h-[44px] min-w-[44px] rounded-full px-2.5 py-2 ${p.id === periodId ? "bg-teal-700 text-white" : "hover:bg-stone-100"}`}
+              className={`min-h-[44px] min-w-[44px] rounded-xs px-2.5 py-2 ${p.id === periodId ? "bg-accent-700 text-white" : "hover:bg-stone-100"}`}
             >
               {p.labelSk}
             </button>
@@ -108,38 +108,46 @@ export default function TimelineSection() {
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="mt-5 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+      {/* Metric rows */}
+      <div
+        aria-hidden="true"
+        className="mt-8 hidden grid-cols-[minmax(0,1.1fr)_minmax(0,0.7fr)_minmax(0,1.4fr)] gap-8 border-b-2 border-stone-900 pb-2 text-xs font-semibold uppercase tracking-[0.06em] text-stone-500 lg:grid"
+      >
+        <span>Ukazovateľ</span>
+        <span>{period?.labelSk}</span>
+        <span>Vývoj 1951–2100 (ťuknite na bod)</span>
+      </div>
+      <ul className="mt-8 border-t-2 border-stone-900 lg:mt-0 lg:border-t-0">
         {cards.map(({ metric, series, point }) => (
-          <article
+          <li
             key={metric.id}
-            className="reveal rounded-3xl border border-stone-200 bg-white p-5 shadow-sm"
+            className="grid gap-x-8 gap-y-3 border-b border-stone-300 py-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.7fr)_minmax(0,1.4fr)] lg:items-center"
           >
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <p className="text-2xl" aria-hidden>
-                  {metric.icon}
-                </p>
-                <h3 className="mt-1 font-bold">{metric.labelSk}</h3>
-                <p className="text-xs text-stone-500">{metric.unit}</p>
-              </div>
-              <DataEraBadge era={point?.era ?? "DNES"} />
-            </div>
-            <p className="mt-3 text-4xl font-black tabular-nums">
-              {point?.displayValue}
-              <span className="ml-1 text-sm font-medium text-stone-500">
-                {metric.id === "avg_temp" ? "°C" : ""}
-              </span>
-            </p>
-            <p className="mt-1 text-sm text-stone-600">
-              {metric.definitionSk}
-            </p>
-            {point && (
-              <p className="mt-1 text-xs text-stone-500">
-                {pointHint(point.periodId, point.status)} • {point.labelSk}
+            <div>
+              <h3 className="font-serif text-xl font-semibold">
+                {metric.labelSk}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-stone-600">
+                {metric.definitionSk}
               </p>
-            )}
-            <div className="mt-3">
+            </div>
+            <div>
+              <p className="text-4xl font-semibold leading-none tabular-nums sm:text-5xl">
+                {point?.displayValue}
+                <span className="ml-1.5 text-base font-medium text-stone-500">
+                  {metric.unit}
+                </span>
+              </p>
+              <div className="mt-3">
+                <DataEraBadge era={point?.era ?? "DNES"} />
+              </div>
+              {point && (
+                <p className="mt-1 text-xs text-stone-500">
+                  {pointHint(point.periodId, point.status)}
+                </p>
+              )}
+            </div>
+            <div className="min-w-0">
               <ClimateChart
                 data={series.map((s) => ({
                   periodId: s.periodId,
@@ -150,31 +158,13 @@ export default function TimelineSection() {
                 onSelectPeriod={(id) => setPeriodId(id as TimelinePeriodId)}
               />
             </div>
-            <div className="mt-3 flex items-center justify-between">
-              <SourceBadge source={point?.sourceId ?? "E-OBS"} />
-              <span className="text-xs tabular-nums text-stone-400">
-                30-ročný priemer
-              </span>
-            </div>
-          </article>
+          </li>
         ))}
-      </div>
+      </ul>
 
-      <div className="mt-4 text-center">
-        <a
-          href="/metodika"
-          className="text-sm font-medium text-teal-800 hover:underline"
-        >
-          Ako vznikli tieto údaje? →
-        </a>
+      <div className="mt-4">
+        <SourceBadge source="E-OBS, SHMÚ" />
       </div>
-
-      <p className="mt-4 rounded-2xl bg-violet-50 p-4 text-sm leading-relaxed text-violet-950">
-        <strong>Budúce hodnoty sú projekcie, nie predpoveď.</strong>{" "}
-        1951–2010 pozorovania E-OBS, 1991–2020 normál SHMÚ, 2021–2050 /
-        2071–2100 projekcia RCP4.5 (30-ročné priemery). Skutočný vývoj
-        závisí od budúcich emisií a ďalších faktorov.
-      </p>
     </section>
   );
 }

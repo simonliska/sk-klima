@@ -13,11 +13,11 @@ export default function Logo({ className }: { className?: string }) {
     <clipPath id="logo-hist"><rect x="0" y="0" width="254" height="340"/></clipPath>
     <clipPath id="logo-proj"><rect x="466" y="0" width="260" height="340"/></clipPath>
   </defs>
-      <rect width="100" height="100" rx="22" fill="#ffffff" stroke="#e7e5e4" stroke-width="2"/>
+      <rect width="100" height="100" rx="22" fill="#ffffff" stroke="#e7e5e4" strokeWidth="2"/>
   <g transform="translate(14 50) scale(0.1132) translate(-42 -170)">
-    <use href="#sk" fill="#0f766e" stroke="#0f766e" stroke-width="3" stroke-linejoin="round"/>
-    <use href="#sk" fill="#0284c7" clip-path="url(#logo-hist)"/>
-    <use href="#sk" fill="#7c3aed" clip-path="url(#logo-proj)"/>
+    <use href="#sk" fill="#0f766e" stroke="#0f766e" strokeWidth="3" strokeLinejoin="round"/>
+    <use href="#sk" fill="#0284c7" clipPath="url(#logo-hist)"/>
+    <use href="#sk" fill="#7c3aed" clipPath="url(#logo-proj)"/>
   </g>
     </svg>
   );

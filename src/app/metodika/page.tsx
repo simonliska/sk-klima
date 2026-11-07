@@ -80,8 +80,7 @@ export default function MetodikaPage() {
           <p className="mt-2 text-sm leading-relaxed text-stone-700">
             Modelované scenáre vývoja klímy. Používame strednú cestu{" "}
             <strong>RCP4.5</strong> (SHMÚ gridy, generácia CMIP5), ako 30-ročné priemery
-            2021–2050 a 2071–2100: emisie
-            ešte rastú, potom klesajú. Skutočný výsledok závisí od
+            2021–2050 a 2071–2100. Skutočný výsledok závisí od
             budúcich emisií, preto neexistuje „jedna zaručená hodnota pre
             rok 2050“.
           </p>

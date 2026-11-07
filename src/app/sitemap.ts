@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://sk-klima.sk";
   // Stable date: sitemap `lastmod` should only change when content changes,
   // otherwise every build looks "new" and wastes crawl budget.
-  const lastModified = new Date("2026-09-17T00:00:00.000Z");
+  const lastModified = new Date("2026-11-07T00:00:00.000Z");
   return [
     { url: base, lastModified, changeFrequency: "weekly", priority: 1 },
     {

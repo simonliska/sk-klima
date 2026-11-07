@@ -56,7 +56,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "bratislavsky",
@@ -115,7 +115,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "bratislavsky",
@@ -174,7 +174,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "bratislavsky",
@@ -185,8 +185,8 @@
         "periodId": "1951-1980",
         "labelSk": "1951–1980",
         "year": 1965,
-        "value": 100,
-        "displayValue": "100",
+        "value": 99,
+        "displayValue": "99",
         "status": "observed"
       },
       {
@@ -233,7 +233,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "bratislavsky",
@@ -292,7 +292,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trnavsky",
@@ -351,7 +351,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trnavsky",
@@ -410,7 +410,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trnavsky",
@@ -469,7 +469,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trnavsky",
@@ -488,8 +488,8 @@
         "periodId": "1961-1990",
         "labelSk": "1961–1990",
         "year": 1975,
-        "value": 100,
-        "displayValue": "100",
+        "value": 99,
+        "displayValue": "99",
         "status": "observed"
       },
       {
@@ -528,7 +528,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trnavsky",
@@ -587,7 +587,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trenciansky",
@@ -598,8 +598,8 @@
         "periodId": "1951-1980",
         "labelSk": "1951–1980",
         "year": 1965,
-        "value": -1.5,
-        "displayValue": "-1,5",
+        "value": -1.6,
+        "displayValue": "-1,6",
         "status": "observed"
       },
       {
@@ -646,7 +646,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trenciansky",
@@ -705,7 +705,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trenciansky",
@@ -764,7 +764,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trenciansky",
@@ -791,8 +791,8 @@
         "periodId": "1981-2010",
         "labelSk": "1981–2010",
         "year": 1995,
-        "value": 121,
-        "displayValue": "121",
+        "value": 120,
+        "displayValue": "120",
         "status": "observed"
       },
       {
@@ -823,7 +823,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "trenciansky",
@@ -882,7 +882,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "nitriansky",
@@ -941,7 +941,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "nitriansky",
@@ -1000,7 +1000,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "nitriansky",
@@ -1059,7 +1059,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "nitriansky",
@@ -1070,16 +1070,16 @@
         "periodId": "1951-1980",
         "labelSk": "1951–1980",
         "year": 1965,
-        "value": 101,
-        "displayValue": "101",
+        "value": 100,
+        "displayValue": "100",
         "status": "observed"
       },
       {
         "periodId": "1961-1990",
         "labelSk": "1961–1990",
         "year": 1975,
-        "value": 100,
-        "displayValue": "100",
+        "value": 99,
+        "displayValue": "99",
         "status": "observed"
       },
       {
@@ -1118,7 +1118,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "nitriansky",
@@ -1177,7 +1177,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "zilinsky",
@@ -1236,7 +1236,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "zilinsky",
@@ -1295,7 +1295,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "zilinsky",
@@ -1354,7 +1354,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "zilinsky",
@@ -1381,8 +1381,8 @@
         "periodId": "1981-2010",
         "labelSk": "1981–2010",
         "year": 1995,
-        "value": 154,
-        "displayValue": "154",
+        "value": 153,
+        "displayValue": "153",
         "status": "observed"
       },
       {
@@ -1413,7 +1413,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "zilinsky",
@@ -1472,7 +1472,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1531,7 +1531,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1590,7 +1590,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1649,7 +1649,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1660,24 +1660,24 @@
         "periodId": "1951-1980",
         "labelSk": "1951–1980",
         "year": 1965,
-        "value": 142,
-        "displayValue": "142",
+        "value": 141,
+        "displayValue": "141",
         "status": "observed"
       },
       {
         "periodId": "1961-1990",
         "labelSk": "1961–1990",
         "year": 1975,
-        "value": 141,
-        "displayValue": "141",
+        "value": 139,
+        "displayValue": "139",
         "status": "observed"
       },
       {
         "periodId": "1981-2010",
         "labelSk": "1981–2010",
         "year": 1995,
-        "value": 134,
-        "displayValue": "134",
+        "value": 132,
+        "displayValue": "132",
         "status": "observed"
       },
       {
@@ -1708,7 +1708,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "banskobystricky",
@@ -1767,7 +1767,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "presovsky",
@@ -1826,7 +1826,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "presovsky",
@@ -1885,7 +1885,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "presovsky",
@@ -1944,7 +1944,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "presovsky",
@@ -1971,8 +1971,8 @@
         "periodId": "1981-2010",
         "labelSk": "1981–2010",
         "year": 1995,
-        "value": 140,
-        "displayValue": "140",
+        "value": 139,
+        "displayValue": "139",
         "status": "observed"
       },
       {
@@ -2003,7 +2003,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "presovsky",
@@ -2062,7 +2062,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "kosicky",
@@ -2121,7 +2121,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "kosicky",
@@ -2180,7 +2180,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "kosicky",
@@ -2239,7 +2239,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "kosicky",
@@ -2258,16 +2258,16 @@
         "periodId": "1961-1990",
         "labelSk": "1961–1990",
         "year": 1975,
-        "value": 129,
-        "displayValue": "129",
+        "value": 128,
+        "displayValue": "128",
         "status": "observed"
       },
       {
         "periodId": "1981-2010",
         "labelSk": "1981–2010",
         "year": 1995,
-        "value": 124,
-        "displayValue": "124",
+        "value": 122,
+        "displayValue": "122",
         "status": "observed"
       },
       {
@@ -2298,7 +2298,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "kosicky",
@@ -2357,7 +2357,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "slovensko",
@@ -2416,7 +2416,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "slovensko",
@@ -2475,7 +2475,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "slovensko",
@@ -2534,7 +2534,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "slovensko",
@@ -2553,16 +2553,16 @@
         "periodId": "1961-1990",
         "labelSk": "1961–1990",
         "year": 1975,
-        "value": 126,
-        "displayValue": "126",
+        "value": 125,
+        "displayValue": "125",
         "status": "observed"
       },
       {
         "periodId": "1981-2010",
         "labelSk": "1981–2010",
         "year": 1995,
-        "value": 120,
-        "displayValue": "120",
+        "value": 119,
+        "displayValue": "119",
         "status": "observed"
       },
       {
@@ -2593,7 +2593,7 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   },
   {
     "regionSlug": "slovensko",
@@ -2652,6 +2652,6 @@
     "referencePeriod": "1991–2020",
     "scenario": "RCP4.5",
     "sourceId": "E-OBS + SHMÚ",
-    "lastUpdated": "2026-09-18"
+    "lastUpdated": "2026-11-07"
   }
 ]

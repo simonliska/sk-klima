@@ -241,8 +241,8 @@ Slovak template, used verbatim (field names stay Slovak):
 
 ### 11.1 Availability: YES, technically suitable
 
-- **Current version: E-OBSv33.0e** (released May 2026), covering
-  **1950-01-01 → 2025-12-31**, daily values, **0.1° (~11 km)**
+- **Current version: E-OBSv34.0e** (released October 2026), covering
+  **1950-01-01 → 2026-06-30** (the pipeline uses years up to 2025), daily values, **0.1° (~11 km)**
   and 0.25° grid, NetCDF-4 format, variables `TX` (daily max),
   `TN` (daily min), `TG` (mean), `RR` (precipitation) + pressure,
   wind, humidity, radiation.
@@ -264,7 +264,9 @@ Since 2026-11-04 the CDS dataset offers new license:
 This project uses **E-OBS_EU** (`licence_type = open_data_licence`; Slovakia
 is covered). Values for Slovak cells are identical to the restricted product
 (compared 2026-11-04, TX/TN/TG/RR); only non-EU cells (e.g. Ukraine) are empty.
-Download: `scripts/shmu_pipeline/00_fetch_eobs.py` (one ZIP, 1950–2025).
+Download: `scripts/shmu_pipeline/00_fetch_eobs.py` (one ZIP, 1950–2026-06).
+Switched from 33.0e to 34.0e on 2026-11-07; period means per kraj changed
+by < 0.01 °C, < 0.3 tropical days, ≤ 2 frost days, ≤ 3 mm precipitation.
 
 ### 11.3 Mandatory attribution (CDS guidelines, 2026-11-04)
 
@@ -287,7 +289,7 @@ Shown on `/metodika`, short form in the footer:
 > daily gridded meteorological data for Europe from 1950 to present
 > derived from in-situ observations. Copernicus Climate Change Service
 > (C3S) Climate Data Store (CDS). DOI: 10.24381/cds.151d3ec6 (Accessed on
-> DD-MMM-YYYY)" — access date of our download: 04-Nov-2026.
+> DD-MMM-YYYY)" — access date of our download: 06-Nov-2026.
 
 ### 11.4 E-OBS methodological notes
 
@@ -304,7 +306,7 @@ One year is weather, not climate (WMO normals are 30-year means), so the
 timeline shows only 30-year periods — six points, computed 2026-09-18 from
 the full E-OBS 1950–2025 chunks plus SHMÚ grids:
 
-- **1951–1980, 1961–1990, 1981–2010** — E-OBS v33.0e period means
+- **1951–1980, 1961–1990, 1981–2010** — E-OBS v34.0e period means
   (`data_raw/eobs/periods.json`, kraj threshold counts = mean of
   per-cell annual counts to match SHMÚ per-pixel semantics).
 - **1991–2020** — SHMÚ 500 m normals (authoritative; the same value the

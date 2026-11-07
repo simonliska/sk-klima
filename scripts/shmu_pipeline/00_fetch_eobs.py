@@ -1,4 +1,4 @@
-"""Download E-OBS daily grids (v33.0e, open data licence) for sk-klima.
+"""Download E-OBS daily grids (v34.0e, open data licence) for sk-klima.
 
 Dataset: insitu-gridded-observations-europe (Copernicus CDS)
 Auth: ~/.cdsapirc (created manually by the user, never touched by this script).
@@ -9,7 +9,7 @@ splits the archive into periods: one request returns 1950-present.
 open_data_licence = E-OBS_EU (EU + NO/CH/IS/UK), CC BY 4.0.
 
 Variables: TX/TN/TG/RR (max/min/mean temperature, precipitation).
-Product: ensemble_mean, resolution 0.1deg, version 33.0e.
+Product: ensemble_mean, resolution 0.1deg, version 34.0e.
 
 Raw file lands in data_raw/eobs_open/ (git-ignored). Later steps subset it
 to Slovakia + single years and delete nothing until verified.
@@ -49,7 +49,7 @@ def main(argv: list[str]) -> int:
     print("Progress: CDS prepares the request on its servers first (queue),")
     print("then downloads. cdsapi shows a progress bar per file.")
     print()
-    target = OUT_DIR / "eobs_v33_0e_open.zip"
+    target = OUT_DIR / "eobs_v34_0e_open.zip"
     print(f"{target.name}")
     if target.exists():
         size_mb = target.stat().st_size / 1024 / 1024
@@ -61,7 +61,7 @@ def main(argv: list[str]) -> int:
         "product_type": ["ensemble_mean"],
         "variable": VARIABLES,
         "grid_resolution": ["0_1deg"],
-        "version": ["33_0e"],
+        "version": ["34_0e"],
     }
     try:
         client.retrieve(DATASET, request, str(target))

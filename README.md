@@ -27,7 +27,7 @@ Všetky zobrazené hodnoty sú ročné agregáty.
 (zdroje dát v `DATA_SOURCE.md`, reprodukovateľná pipeline
 v `scripts/shmu_pipeline/`):
 
-- **História do roku 2025** — E-OBS_EU v33.0e (ECA&D / Copernicus, licencia
+- **História do roku 2025** — E-OBS_EU v34.0e (ECA&D / Copernicus, licencia
   CC BY 4.0), denný grid 0,1°.
 - **Normály 1991–2020 + projekcie 2050/2100 (RCP4.5)** — otvorené dáta
   SHMÚ ([opendata.shmu.sk](https://opendata.shmu.sk)).

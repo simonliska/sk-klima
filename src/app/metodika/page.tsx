@@ -216,7 +216,7 @@ export default function MetodikaPage() {
               present derived from in-situ observations. Copernicus Climate
               Change Service (C3S) Climate Data Store (CDS). DOI:{" "}
               <a className="text-accent-800 underline underline-offset-2 hover:text-accent-950" href="https://doi.org/10.24381/cds.151d3ec6">10.24381/cds.151d3ec6</a>{" "}
-              (Accessed on 04-Nov-2026). Verzia datasetu: E-OBS_EU v33.0e.
+              (Accessed on 06-Nov-2026). Verzia datasetu: E-OBS_EU v34.0e.
             </p>
           </div>
         </div>

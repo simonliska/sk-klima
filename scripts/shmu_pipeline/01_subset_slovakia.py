@@ -1,6 +1,6 @@
 """Subset E-OBS chunks to Slovakia + needed years only.
 
-Input:  data_raw/eobs_open/eobs_v33_0e_open.zip (ZIP with 4 NetCDF members,
+Input:  data_raw/eobs_open/eobs_v34_0e_open.zip (ZIP with 4 NetCDF members,
         each covering 1950-2025, from 00_fetch_eobs.py)
 Output: data_raw/eobs/sk/<var>_<year>.nc  (small working files; existing
         files are skipped - delete data_raw/eobs/sk to regenerate)
@@ -23,7 +23,7 @@ import numpy as np
 from netCDF4 import Dataset
 
 BASE = Path(__file__).resolve().parents[2] / "data_raw"
-ZIP_PATH = BASE / "eobs_open" / "eobs_v33_0e_open.zip"
+ZIP_PATH = BASE / "eobs_open" / "eobs_v34_0e_open.zip"
 UNZIPPED = BASE / "eobs_open" / "unzipped"
 OUT = BASE / "eobs" / "sk"
 
@@ -87,7 +87,7 @@ def subset_year(src: Path, var: str, year: int) -> Path:
     vd = out.createVariable(var, np.float32, ("time", "latitude", "longitude"), fill_value=-9999.0)
     vd[:] = data
     vd.units = ds.variables[var].units
-    out.setncattr("source", "E-OBS v33.0e ensemble_mean (open_data_licence, EU), CDS insitu-gridded-observations-europe")
+    out.setncattr("source", "E-OBS v34.0e ensemble_mean (open_data_licence, EU), CDS insitu-gridded-observations-europe")
     out.setncattr("subset_year", year)
     out.setncattr("subset_bbox", f"lat {LAT_MIN}-{LAT_MAX}, lon {LON_MIN}-{LON_MAX}")
     out.close()

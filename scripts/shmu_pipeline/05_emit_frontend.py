@@ -3,7 +3,7 @@
 Timeline = six 30-year WMO periods (no single years — climate is
 statistics over ≥30 years, not weather in one year):
 
-  1951-1980, 1961-1990, 1981-2010  (E-OBS v33.0e, status "observed")
+  1951-1980, 1961-1990, 1981-2010  (E-OBS v34.0e, status "observed")
   1991-2020                        (SHMU 500 m normals, status "observed")
    2021-2050, 2071-2100             (SHMU RCP4.5 grids, status "projected",
                                      UI chart short labels "2021-50" / "2071-00")

@@ -46,7 +46,7 @@ This repository contains derived climate indicators
   daily gridded meteorological data for Europe from 1950 to present
   derived from in-situ observations. Copernicus Climate Change Service
   (C3S) Climate Data Store (CDS). DOI: 10.24381/cds.151d3ec6 (Accessed on
-  04-Nov-2026)". Dataset version: E-OBS_EU v33.0e.
+  06-Nov-2026)". Dataset version: E-OBS_EU v34.0e.
 - SHMÚ derived values (1991–2020 normals, RCP4.5 projections):
   source SHMÚ open data (https://opendata.shmu.sk), licence CC BY 4.0
   (https://creativecommons.org/licenses/by/4.0/deed.sk).

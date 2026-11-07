@@ -299,7 +299,7 @@ def main(argv: list[str]) -> int:
     masks = kraj_cell_masks(lat, lon)
 
     result: dict = {
-        "source": "E-OBS v33.0e ensemble_mean, CDS insitu-gridded-observations-europe",
+        "source": "E-OBS v34.0e ensemble_mean, CDS insitu-gridded-observations-europe",
         "method": ("capitals = nearest 0.1deg grid cell; kraje linear "
                    "(avg_temp_c, precip_sum_mm) = daily spatial mean of cells, "
                    "then indicators; kraje threshold counts (tropical_days "
@@ -310,7 +310,7 @@ def main(argv: list[str]) -> int:
                      "ECA&D project (https://www.ecad.eu). Cornes, R., G. van der Schrier, "
                      "E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of "
                      "the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res. "
-                     "Atmos., 123. doi:10.1029/2017JD028200. Version E-OBSv33.0e, "
+                     "Atmos., 123. doi:10.1029/2017JD028200. Version E-OBSv34.0e, "
                      "DOI: 10.24381/cds.151d3ec6."),
         "years": years,
         "capitals": {},

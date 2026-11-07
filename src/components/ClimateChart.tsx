@@ -15,6 +15,8 @@ export interface PeriodChartPoint {
   /** Compact tick label, e.g. "1980" / "2100". */
   label: string;
   value: number;
+  /** Formatted value shown above the active point ("+0,9", "22"). */
+  display?: string;
 }
 
 export default function ClimateChart({
@@ -69,11 +71,11 @@ export default function ClimateChart({
     }
   };
   return (
-    <div className="h-28 w-full [&_.recharts-wrapper]:outline-none">
+    <div className="h-32 w-full [&_.recharts-wrapper]:outline-none">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}
-          margin={{ top: 8, right: 16, bottom: 8, left: 0 }}
+          margin={{ top: 22, right: 18, bottom: 4, left: 18 }}
           onClick={handleClick}
           style={onSelectPeriod ? { cursor: "pointer" } : undefined}
         >
@@ -89,16 +91,15 @@ export default function ClimateChart({
             interval="preserveStartEnd"
             minTickGap={12}
           />
+          {/* No visible Y axis: the exact value is the big number next to
+              the chart and the label above the active point. Count metrics
+              never go below 0. */}
           <YAxis
-            tick={{ fontSize: 10, fill: "#78716c" }}
-            tickLine={false}
-            axisLine={false}
-            width={40}
-            allowDecimals={false}
-            tickFormatter={(v: number) => String(Math.round(v))}
+            hide
             domain={([dataMin, dataMax]: readonly [number, number]) => {
-              const pad = (dataMax - dataMin) * 0.25 || 1;
-              return [dataMin - pad, dataMax + pad] as [number, number];
+              const pad = (dataMax - dataMin) * 0.15 || 1;
+              const min = dataMin >= 0 ? Math.max(0, dataMin - pad) : dataMin - pad;
+              return [min, dataMax + pad] as [number, number];
             }}
           />
           <Line
@@ -150,6 +151,18 @@ export default function ClimateChart({
               fill="#2b5043"
               stroke="#fff"
               strokeWidth={2}
+              label={
+                active.display
+                  ? {
+                      value: active.display,
+                      position: "top",
+                      offset: 8,
+                      fontSize: 11,
+                      fontWeight: 600,
+                      fill: "#1c1917",
+                    }
+                  : undefined
+              }
             />
           )}
         </LineChart>

@@ -2,14 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   DEFAULT_SCENARIO,
-  getImpacts,
   getRegion,
   getRegionIntro,
   getRegions,
+  krajAdjective,
 } from "@/lib/climate";
-import { DataEraBadge } from "@/components/Badges";
-import KrajIndicators from "@/components/KrajIndicators";
-import { getTownsByKraj } from "@/lib/towns";
+import IndicatorTable from "@/components/IndicatorTable";
+import { getKrajIndicators, getTownsByKraj } from "@/lib/towns";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -25,11 +24,11 @@ export async function generateMetadata({
   const region = getRegion(slug);
   if (!region) return { title: "Kraj sa nenašiel" };
   return {
-    title: { absolute: `Klimatická zmena ${region.name} do roku 2050` },
-    description: `Klimatická zmena ${region.name}: ako sa zmení teplota, mráz a horúčavy do roku 2050.`,
+    title: { absolute: `Klimatická zmena ${region.name} do roku 2100` },
+    description: `${region.name}: klimatická zmena a globálne otepľovanie — ako sa zmení teplota, tropické dni, mráz a zrážky do roku 2050 a 2100 oproti obdobiu 1991–2020.`,
     alternates: { canonical: `/kraj/${region.slug}` },
     openGraph: {
-      title: `Klimatická zmena ${region.name} do roku 2050`,
+      title: `Klimatická zmena ${region.name} do roku 2100`,
       url: `https://sk-klima.sk/kraj/${region.slug}`,
       images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
     },
@@ -47,14 +46,13 @@ export default async function RegionPage({
 
   const scenario = DEFAULT_SCENARIO;
   const intro = getRegionIntro(slug, scenario);
-  const impacts = getImpacts().slice(0, 4);
   const others = getRegions().filter((r) => r.slug !== slug);
   const towns = getTownsByKraj(slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `Klimatická zmena ${region.name} do roku 2050`,
+    headline: `Klimatická zmena ${region.name} do roku 2100`,
     description: intro,
     inLanguage: "sk-SK",
     mainEntityOfPage: `https://sk-klima.sk/kraj/${region.slug}`,
@@ -97,27 +95,16 @@ export default async function RegionPage({
       </nav>
 
       <header className="bg-accent-950 p-6 text-white sm:p-10">
-        <div className="flex flex-wrap items-center gap-2">
-          <DataEraBadge era="HISTÓRIA" onDark />
-          <span aria-hidden className="text-accent-300">→</span>
-          <DataEraBadge era="PROJEKCIA" onDark />
-        </div>
-        <h1 className="mt-4 text-4xl sm:text-5xl">
-          {region.name}: klimatická zmena do roku 2050
+        <h1 className="text-4xl sm:text-5xl">
+          {region.name}: klimatická zmena
         </h1>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-accent-50/90">
-          {intro || `Ako sa môže zmeniť život v regióne ${region.shortName} do roku 2050?`}
-        </p>
-        <p className="mt-3 text-xs text-accent-100/60">
-          Normál 1991–2020 a projekcia 2021–2050 (RCP4.5) • SHMÚ •{" "}
-          <Link href="/metodika" className="underline hover:text-white">
-            Ako vznikli tieto údaje? →
-          </Link>
+          Čo môžete čakať v kraji {region.shortName} do roku 2100 oproti
+          obdobiu 1991–2020.
         </p>
       </header>
 
-      {/* Normal → 2050 numbers (prerendered to static HTML at build time) */}
-      <KrajIndicators slug={slug} />
+      <IndicatorTable indicators={getKrajIndicators(slug)} />
 
       {towns.length > 0 && (
         <section aria-labelledby="mesta">
@@ -143,61 +130,6 @@ export default async function RegionPage({
         </section>
       )}
 
-      {/* Practical meaning */}
-      <section aria-labelledby="prax">
-        <h2 id="prax" className="text-2xl sm:text-3xl">
-          Čo to môže znamenať v {region.shortName}?
-        </h2>
-        <dl className="mt-4 border-t-2 border-stone-900">
-            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
-              <dt className="font-serif text-lg font-semibold">V lete</dt>
-              <dd className="leading-relaxed text-stone-700">
-                Očakáva sa častejšie prehrievanie bytov počas horúčav. Najnáročnejšie sú podkrovia a byty bez tienenia. Tropické noci môžu zhoršiť spánok.
-              </dd>
-            </div>
-            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
-              <dt className="font-serif text-lg font-semibold">V zime</dt>
-              <dd className="leading-relaxed text-stone-700">
-                Sneh môže byť menej pravidelný, mrazových dní sa očakáva menej. Zima bude pravdepodobne kratšia a teplejšia.
-              </dd>
-            </div>
-            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
-              <dt className="font-serif text-lg font-semibold">Pri dažďoch</dt>
-              <dd className="leading-relaxed text-stone-700">
-                Krátke intenzívne zrážky môžu predstavovať väčšie riziko lokálnych prívalových povodní — aj keď celkovo prší podobne.
-              </dd>
-            </div>
-            <div className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
-              <dt className="font-serif text-lg font-semibold">Pre prírodu</dt>
-              <dd className="leading-relaxed text-stone-700">
-                Dlhšie obdobia sucha môžu zvyšovať stres lesov a vegetácie, množiť škodcov a zvyšovať riziko požiarov.
-              </dd>
-            </div>
-        </dl>
-
-        <h3 className="mt-8 text-xs font-semibold uppercase tracking-[0.06em] text-stone-500">
-          Vybrané dopady na život
-        </h3>
-        <ul className="mt-2 border-t border-stone-900">
-          {impacts.map((c) => (
-            <li
-              key={c.id}
-              className="grid gap-1 border-b border-stone-300 py-4 sm:grid-cols-[10rem_minmax(0,1fr)_minmax(0,1fr)] sm:gap-6"
-            >
-              <p className="font-serif text-lg font-semibold">{c.titleSk}</p>
-              <p className="font-medium text-stone-900">{c.headlineSk}</p>
-              <p className="leading-relaxed text-stone-600">{c.praxSk}</p>
-            </li>
-          ))}
-        </ul>
-        <Link
-          href="/#zivot"
-          className="mt-4 inline-block font-medium text-accent-800 underline underline-offset-2 hover:text-accent-950"
-        >
-          Zobraziť všetkých 8 oblastí života →
-        </Link>
-      </section>
-
       {/* Other regions */}
       <nav aria-label="Ostatné kraje" className="border-t-2 border-stone-900 pt-4">
         <h2 className="text-xl">Pozrite si aj iné kraje</h2>
@@ -208,7 +140,7 @@ export default async function RegionPage({
                 href={`/kraj/${r.slug}`}
                 className="inline-flex min-h-[44px] items-center font-medium text-accent-800 underline underline-offset-2 hover:text-accent-950"
               >
-                {r.shortName}
+                {krajAdjective(r)}
               </Link>
             </li>
           ))}

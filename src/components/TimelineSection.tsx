@@ -13,7 +13,7 @@ import {
   periodById,
   type TimelinePeriodId,
 } from "@/lib/types";
-import { DataEraBadge, SourceBadge } from "./Badges";
+import { SourceBadge } from "./Badges";
 import ClimateChart from "./ClimateChart";
 
 function periodHint(periodId: string): string {
@@ -26,11 +26,18 @@ function periodHint(periodId: string): string {
   return "Pozorovaný 30-ročný priemer (E-OBS)";
 }
 
-function pointHint(periodId: string, status: string): string {
-  if (status === "projected") return "Projekcia: 30-ročný priemer";
-  if (periodId === "1991-2020") return "Klimatický normál (SHMÚ)";
-  return "Pozorovaný 30-ročný priemer (E-OBS)";
-}
+/** Temperature on the timeline is the change vs the 1991–2020 normal
+ *  (joins E-OBS history and SHMÚ projections on one scale), so it gets
+ *  its own wording instead of the shared "Priemerná teplota". */
+const TIMELINE_TEXT: Record<string, { label: string; definition: string }> = {
+  avg_temp: {
+    label: "Odchýlka teploty",
+    definition: "Rozdiel priemernej ročnej teploty oproti 1991–2020.",
+  },
+};
+
+const ROW_GRID =
+  "lg:grid-cols-[minmax(0,1fr)_minmax(0,0.6fr)_minmax(0,1.4fr)]";
 
 export default function TimelineSection() {
   const [periodId, setPeriodId] = useState<TimelinePeriodId>(DEFAULT_PERIOD_ID);
@@ -59,7 +66,7 @@ export default function TimelineSection() {
         <p className="mt-2 text-lg text-stone-600">
           Ako sa menila klíma na Slovensku a čo sa očakáva v najbližších
           desaťročiach? Vyberte obdobie na posuvníku alebo ťuknite na graf.
-          Každý bod je 30-ročný priemer — jeden rok je počasie, nie klíma.
+          Každý bod je 30-ročný priemer.
         </p>
       </div>
 
@@ -111,59 +118,58 @@ export default function TimelineSection() {
       {/* Metric rows */}
       <div
         aria-hidden="true"
-        className="mt-8 hidden grid-cols-[minmax(0,1.1fr)_minmax(0,0.7fr)_minmax(0,1.4fr)] gap-8 border-b-2 border-stone-900 pb-2 text-xs font-semibold uppercase tracking-[0.06em] text-stone-500 lg:grid"
+        className={`mt-8 hidden gap-8 border-b border-stone-900 pb-3 text-sm lg:grid ${ROW_GRID}`}
       >
-        <span>Ukazovateľ</span>
-        <span>{period?.labelSk}</span>
-        <span>Vývoj 1951–2100 (ťuknite na bod)</span>
+        <span />
+        <span className="font-semibold text-accent-700">{period?.labelSk}</span>
+        <span className="text-stone-500">Vývoj 1951–2100 · ťuknite na bod</span>
       </div>
-      <ul className="mt-8 border-t-2 border-stone-900 lg:mt-0 lg:border-t-0">
-        {cards.map(({ metric, series, point }) => (
-          <li
-            key={metric.id}
-            className="grid gap-x-8 gap-y-3 border-b border-stone-300 py-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.7fr)_minmax(0,1.4fr)] lg:items-center"
-          >
-            <div>
-              <h3 className="font-serif text-xl font-semibold">
-                {metric.labelSk}
-              </h3>
-              <p className="mt-1 text-sm leading-relaxed text-stone-600">
-                {metric.definitionSk}
-              </p>
-            </div>
-            <div>
-              <p className="text-4xl font-semibold leading-none tabular-nums sm:text-5xl">
-                {point?.displayValue}
-                <span className="ml-1.5 text-base font-medium text-stone-500">
-                  {metric.unit}
-                </span>
-              </p>
-              <div className="mt-3">
-                <DataEraBadge era={point?.era ?? "DNES"} />
-              </div>
-              {point && (
-                <p className="mt-1 text-xs text-stone-500">
-                  {pointHint(point.periodId, point.status)}
+      <ul className="mt-6 border-t border-stone-900 lg:mt-0 lg:border-t-0">
+        {cards.map(({ metric, series, point }) => {
+          const text = TIMELINE_TEXT[metric.id];
+          return (
+            <li
+              key={metric.id}
+              className={`grid gap-x-8 gap-y-3 border-b border-stone-200 py-6 lg:items-center ${ROW_GRID}`}
+            >
+              <div>
+                <h3 className="text-lg font-semibold text-stone-900">
+                  {text?.label ?? metric.labelSk}
+                  <span className="ml-1.5 text-sm font-normal text-stone-400">
+                    {metric.unit}
+                  </span>
+                </h3>
+                <p className="text-sm text-stone-500">
+                  {text?.definition ?? metric.definitionSk}
                 </p>
-              )}
-            </div>
-            <div className="min-w-0">
-              <ClimateChart
-                data={series.map((s) => ({
-                  periodId: s.periodId,
-                  label: s.shortLabelSk,
-                  value: s.value,
-                }))}
-                activePeriodId={periodId}
-                onSelectPeriod={(id) => setPeriodId(id as TimelinePeriodId)}
-              />
-            </div>
-          </li>
-        ))}
+              </div>
+              <p className="text-4xl font-semibold tracking-tight tabular-nums text-stone-900">
+                <span className="sr-only">{period?.labelSk}: </span>
+                {point?.displayValue}
+              </p>
+              <div className="min-w-0">
+                <ClimateChart
+                  data={series.map((s) => ({
+                    periodId: s.periodId,
+                    label: s.shortLabelSk,
+                    value: s.value,
+                    display: s.displayValue,
+                  }))}
+                  activePeriodId={periodId}
+                  onSelectPeriod={(id) => setPeriodId(id as TimelinePeriodId)}
+                />
+              </div>
+            </li>
+          );
+        })}
       </ul>
 
-      <div className="mt-4">
+      <div className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1">
         <SourceBadge source="E-OBS, SHMÚ" />
+        <span className="text-[11px] text-stone-500">
+          Každá hodnota je 30-ročný priemer. Do 2010 pozorovania (E-OBS),
+          1991–2020 normál (SHMÚ), 2050 a 2100 projekcia RCP4.5 (SHMÚ).
+        </span>
       </div>
     </section>
   );

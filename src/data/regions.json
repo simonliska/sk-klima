@@ -2,49 +2,41 @@
   {
     "slug": "bratislavsky",
     "name": "Bratislavský kraj",
-    "shortName": "Bratislava",
-    "populationApprox": "≈ 730-tisíc"
+    "shortName": "Bratislava"
   },
   {
     "slug": "trnavsky",
     "name": "Trnavský kraj",
-    "shortName": "Trnava",
-    "populationApprox": "≈ 560-tisíc"
+    "shortName": "Trnava"
   },
   {
     "slug": "trenciansky",
     "name": "Trenčiansky kraj",
-    "shortName": "Trenčín",
-    "populationApprox": "≈ 580-tisíc"
+    "shortName": "Trenčín"
   },
   {
     "slug": "nitriansky",
     "name": "Nitriansky kraj",
-    "shortName": "Nitra",
-    "populationApprox": "≈ 670-tisíc"
+    "shortName": "Nitra"
   },
   {
     "slug": "zilinsky",
     "name": "Žilinský kraj",
-    "shortName": "Žilina",
-    "populationApprox": "≈ 690-tisíc"
+    "shortName": "Žilina"
   },
   {
     "slug": "banskobystricky",
-    "name": "Banská Bystrica",
-    "shortName": "Banská Bystrica",
-    "populationApprox": "≈ 620-tisíc"
+    "name": "Banskobystrický kraj",
+    "shortName": "Banská Bystrica"
   },
   {
     "slug": "presovsky",
     "name": "Prešovský kraj",
-    "shortName": "Prešov",
-    "populationApprox": "≈ 820-tisíc"
+    "shortName": "Prešov"
   },
   {
     "slug": "kosicky",
     "name": "Košický kraj",
-    "shortName": "Košice",
-    "populationApprox": "≈ 780-tisíc"
+    "shortName": "Košice"
   }
 ]

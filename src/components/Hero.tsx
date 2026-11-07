@@ -20,8 +20,9 @@ export default function Hero() {
               Ako sa zmení Slovensko?
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-accent-50/90">
-              Klimatická zmena nie je len číslo v grafe. Pozrite sa, čo môže
-              znamenať pre vaše mesto, región a každodenný život.
+              Klimatická zmena a globálne otepľovanie nie sú len čísla v grafe.
+              Pozrite sa, čo môžu znamenať pre váš región, mesto a každodenný
+              život.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
@@ -73,36 +74,23 @@ export default function Hero() {
             <p className="mt-1 text-center text-[11px] text-accent-50/80">
               Kliknite na kraj pre detail.
             </p>
-            <p className="mt-3 text-center text-xs font-semibold uppercase tracking-widest text-accent-100">
-              Priemer Slovenska • Projekcia 2021-2050
+            <p className="mt-5 text-center text-sm text-accent-100">
+              Slovensko do roku 2050
             </p>
-            <div className="mt-2 grid grid-cols-3 gap-1.5 text-center sm:gap-2">
+            <div className="mt-3 grid grid-cols-3 gap-1.5 text-center sm:gap-2">
               {cards.map((c) => (
-                <div key={c.metric.id} className="min-w-0 bg-white/95 px-1.5 py-2.5 sm:px-2 sm:py-3">
-                  <div className="truncate text-[11px] font-semibold uppercase tracking-wide text-stone-500">
-                    {c.metric.shortLabelSk}
+                <div key={c.metric.id} className="min-w-0 rounded-xs bg-white/95 px-1.5 py-3 sm:px-2">
+                  <div className="text-xs leading-tight text-stone-500">
+                    {c.metric.labelSk}
                   </div>
-                  <div className="mt-1 text-base font-semibold tabular-nums text-stone-900 sm:text-lg">
-                    {c.big}
+                  <div className="mt-1.5 text-xl font-semibold tabular-nums tracking-tight text-stone-900 sm:text-2xl">
+                    {c.change}
                   </div>
-                  {c.delta !== null && (
-                    <div
-                      className="mx-auto mt-1.5 w-fit rounded-xs border border-accent-700/30 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-accent-900"
-                      aria-label={
-                        c.delta
-                          ? `${c.delta} oproti klimatickému normálu 1991 až 2020`
-                          : "Oproti klimatickému normálu 1991 až 2020"
-                      }
-                    >
-                      {c.delta ? `${c.delta} ` : ""}oproti 1991–2020
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
-            <p className="mt-2 text-center text-[11px] leading-relaxed text-accent-50/90">
-              Projekcia porovnáva 30-ročný priemer 2021–2050 s klimatickým normálom 1991–2020.
-              Scenár RCP4.5 (stredne optimistický klimatický scenár).
+            <p className="mt-3 text-center text-[11px] leading-relaxed text-accent-50/70">
+              Zmena priemeru 2021–2050 oproti 1991–2020, scenár RCP4.5.
             </p>
             <div className="mt-2 flex justify-center">
               <SourceBadge source="E-OBS, SHMÚ" onDark />

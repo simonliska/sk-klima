@@ -78,7 +78,6 @@ export interface Region {
   slug: string;
   name: string;
   shortName: string;
-  populationApprox: string;
 }
 
 export interface MetricDef {

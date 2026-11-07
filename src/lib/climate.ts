@@ -42,6 +42,11 @@ export function getRegions(): Region[] {
   return REGIONS;
 }
 
+/** Kraj adjective for short labels: "Prešovský kraj" -> "Prešovský". */
+export function krajAdjective(region: Region): string {
+  return region.name.replace(/ kraj$/, "");
+}
+
 export function getRegion(slug: string): Region | undefined {
   return REGIONS.find((r) => r.slug === slug);
 }
@@ -141,12 +146,8 @@ export function skCountUnit(metricId: MetricId, value: number): string {
 
 export interface HeroCard {
   metric: MetricDef;
-  /** Veľké číslo karty: hodnota 2050 ("+0,9 °C" / "22 dní" / "4 noci"). */
-  big: string;
-  /** Pilulka zmeny oproti normálu 1991–2020 ("+4 dni" / "+2 noci").
-   *  U teploty je prázdny reťazec — pilulka sa zobrazí len s textom
-   *  „oproti normálu", hodnota +0,9 °C už sama je odchýlka od normálu. */
-  delta: string | null;
+  /** Change 2021–2050 vs normal 1991–2020 ("+0,9 °C" / "+4 dni" / "+2 noci"). */
+  change: string;
 }
 
 const HERO_METRICS: MetricId[] = [
@@ -164,19 +165,10 @@ export function getHeroCards(
   return HERO_METRICS.map((id) => {
     const metric = METRICS.find((m) => m.id === id)!;
     const future = getPoint(NATIONAL_SLUG, id, "2021-2050", scenario);
-    const base = NORMAL_PRECISE[id] ?? 0;
-    const rawDelta = (future?.value ?? 0) - base;
-    let big: string;
-    let delta: string | null;
-    if (id === "avg_temp") {
-      big = `${future?.displayValue} °C`;
-      delta = "";
-    } else {
-      const d = Math.round(rawDelta);
-      big = `${future?.displayValue} ${skCountUnit(id, future?.value ?? 0)}`;
-      delta = `${d > 0 ? "+" : ""}${d} ${skCountUnit(id, d)}`;
-    }
-    return { metric, big, delta };
+    // avg_temp is stored as anomaly vs the normal, so its value IS the change.
+    if (id === "avg_temp") return { metric, change: `${future?.displayValue} °C` };
+    const d = Math.round((future?.value ?? 0) - (NORMAL_PRECISE[id] ?? 0));
+    return { metric, change: `${d > 0 ? "+" : ""}${d} ${skCountUnit(id, d)}` };
   });
 }
 
@@ -285,8 +277,8 @@ export function getRegionIntro(
 
   return (
     `Ako sa môže zmeniť klíma v regióne ${region.name}? ` +
-    `Porovnávame klimatický normál 1991–2020 s projekciou 2021–2050 (scenár RCP4.5). ` +
-    `Pre ${region.shortName} to znamená, že ${focus}.`
+    `Porovnávame klimatický normál 1991–2020 s projekciami na roky 2050 a 2100 (scenár RCP4.5). ` +
+    `Pre ${region.name} to znamená, že ${focus}.`
   );
 }
 

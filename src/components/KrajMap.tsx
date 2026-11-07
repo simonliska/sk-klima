@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { getRegions } from "@/lib/climate";
+import { getRegions, krajAdjective } from "@/lib/climate";
 import geo from "@/data/kraje.paths.json";
 
 const PATHS = (geo.paths as unknown) as Record<string, { d: string; label: [number, number] }>;
@@ -166,7 +166,7 @@ export default function KrajMap({
             }`}
             aria-pressed={selected === r.slug}
           >
-            {r.shortName}
+            {krajAdjective(r)}
           </button>
         ))}
       </div>

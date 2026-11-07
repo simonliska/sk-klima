@@ -12,22 +12,11 @@ export const metadata: Metadata = {
     template: "%s | Ako sa zmení Slovensko?",
   },
   description:
-    "Jednoduchý vizuálny preklad klimatických dát do každodenného života. Pozrite sa, čo môže klimatická zmena znamenať pre vaše mesto, región a domov — včera, dnes, v roku 2050 a 2100.",
-  keywords: [
-    "klimatická zmena Slovensko",
-    "globálne otepľovanie Slovensko",
-    "klimatická zmena Bratislava",
-    "klimatická zmena Košice",
-    "ako sa zmení Slovensko",
-    "horúčavy Slovensko",
-    "mráz Slovensko",
-    "klimatická zmena regióny Slovenska",
-    "počasie Slovensko 2050",
-  ],
+    "Jednoduchý vizuálny preklad klimatických dát do každodenného života. Pozrite sa, čo môže klimatická zmena znamenať pre váš región, mesto a domov — včera, dnes, v roku 2050 a 2100.",
   openGraph: {
     title: "Ako sa zmení Slovensko?",
     description:
-      "Klimatická zmena nie je len číslo v grafe. Pozrite sa, čo môže znamenať pre vaše mesto, región a každodenný život.",
+      "Klimatická zmena nie je len číslo v grafe. Pozrite sa, čo môže znamenať pre váš región, mesto a každodenný život.",
     url: "https://sk-klima.sk/",
     siteName: "Ako sa zmení Slovensko?",
     locale: "sk_SK",
@@ -37,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ako sa zmení Slovensko?",
     description:
-      "Klimatická zmena nie je len číslo v grafe. Pozrite sa, čo môže znamenať pre vaše mesto, región a každodenný život.",
+      "Klimatická zmena nie je len číslo v grafe. Pozrite sa, čo môže znamenať pre váš región, mesto a každodenný život.",
   },
   robots: { index: true, follow: true },
 };

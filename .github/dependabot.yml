@@ -9,6 +9,13 @@ updates:
       npm-dependencies:
         patterns:
           - "*"
+    # Stay within peer-dependency ranges of eslint-config-next / typescript-eslint.
+    # Remove once they support the newer majors.
+    ignore:
+      - dependency-name: "typescript"
+        versions: [">=7"]
+      - dependency-name: "eslint"
+        versions: [">=10"]
     commit-message:
       prefix: "chore"
       include: "scope"

@@ -99,7 +99,7 @@ export default async function RegionPage({
           {region.name}: klimatická zmena
         </h1>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-accent-50/90">
-          Čo môžete čakať v kraji {region.shortName} do roku 2100 oproti
+          Čo môžete čakať v {region.nameLocative} do roku 2100 oproti
           obdobiu 1991–2020.
         </p>
       </header>

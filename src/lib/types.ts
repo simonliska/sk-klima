@@ -78,6 +78,8 @@ export interface Region {
   slug: string;
   name: string;
   shortName: string;
+  /** Locative after "v": "Prešovskom kraji" (v Prešovskom kraji). */
+  nameLocative: string;
 }
 
 export interface MetricDef {

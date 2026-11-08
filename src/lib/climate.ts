@@ -276,7 +276,7 @@ export function getRegionIntro(
   }
 
   return (
-    `Ako sa môže zmeniť klíma v regióne ${region.name}? ` +
+    `Ako sa môže zmeniť klíma v ${region.nameLocative}? ` +
     `Porovnávame klimatický normál 1991–2020 s projekciami na roky 2050 a 2100 (scenár RCP4.5). ` +
     `Pre ${region.name} to znamená, že ${focus}.`
   );

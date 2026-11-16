@@ -220,6 +220,17 @@ export default function MetodikaPage() {
           </div>
         </div>
       </section>
+
+      <section className="border-t-2 border-stone-900 pt-4">
+        <h2 className="text-2xl">Autor a kontakt</h2>
+        <p className="mt-3 text-sm leading-relaxed text-stone-700 sm:text-base">
+          Stránku vytvoril Šimon Liška. Ak ste našli chybu alebo máte otázku,
+          napíšte na{" "}
+          <a className="text-accent-800 underline underline-offset-2 hover:text-accent-950" href="mailto:simon.liska@gmail.com">simon.liska@gmail.com</a>{" "}
+          alebo nahláste problém na{" "}
+          <a className="text-accent-800 underline underline-offset-2 hover:text-accent-950" href="https://github.com/simonliska/sk-klima/issues" target="_blank" rel="noreferrer">GitHube</a>.
+        </p>
+      </section>
     </div>
   );
 }

@@ -15,6 +15,9 @@ export default function Footer() {
           <Link className="whitespace-nowrap hover:underline" href="/metodika">
             Metodika a zdroje
           </Link>
+          <a className="whitespace-nowrap hover:underline" href="mailto:simon.liska@gmail.com">
+            Kontakt
+          </a>
           <a
             href="https://github.com/simonliska/sk-klima"
             target="_blank"
